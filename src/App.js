@@ -1,9 +1,11 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { ReactComponent as ProduccionTitle } from "./img/producción.svg";
-
 import ReactPlayer from "react-player";
+import Smooth from "smooth-scrolling";
+
+import Loader from "./Loader";
 
 import video from "./video/video.mp4";
 
@@ -79,7 +81,7 @@ function Header() {
   );
 }
 
-function VideoBackground() {
+function VideoBackground(play) {
   const [isPlaying, setPlaying] = useState(false);
   useEffect(() => {
     setPlaying(true);
@@ -99,10 +101,30 @@ function VideoBackground() {
   );
 }
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
+function App() {
+  const [hasLoaded, setLoaded] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+      const section = document.querySelector(".Page");
+      const listener = document.querySelector(".App");
+      const smooth = new Smooth({
+        native: false,
+        listener: listener,
+        vs: "limitInertia",
+        section: section,
+        noscrollbar: true,
+        ease: 0.04
+      });
+      smooth.init();
+      //smooth.on();
+      //smooth.scrollTo(500);
+    }, 500);
+  });
+  return (
+    <div className="App">
+      <Loader class={`loader-fade-out ${hasLoaded && "invisible"}`} />
+      <div className={`app-fade-in ${hasLoaded && "visible"}`}>
         <Router>
           <Header />
           <VideoBackground />
@@ -138,8 +160,8 @@ class App extends Component {
           />
         </Router>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;

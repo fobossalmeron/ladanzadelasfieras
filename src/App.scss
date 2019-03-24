@@ -79,7 +79,7 @@ nav {
     top:0;
     width: 100vw;
     height: 100vh;
-    overflow:auto;
+    overflow:hidden;
 }
 
 .App-logo {
@@ -126,6 +126,31 @@ nav {
 .App-link {
     color: #61dafb;
 }
+
+//Loader
+
+.app-fade-in {
+    opacity: 0;
+}
+.app-fade-in.visible {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+}
+
+.loader-fade-out{
+    opacity: 1;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    &.invisible{
+        transition: opacity .2s ease-in;
+        opacity:0;
+    }
+}
+
+//Animations
 
 @keyframes App-logo-spin {
     from {
