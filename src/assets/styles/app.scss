@@ -13,33 +13,39 @@ html {
 
 html {
     background-color: #000000;
-}
-
-html,
-body,
-#root {
-    display: block;
-    height: 100%;
-    width: 100%;
-    max-height: 100vh;
-    overflow: hidden;
     color: #fff;
     font-family: 'Share', cursive;
     -webkit-font-smoothing: antialiased;
 }
 
+body {
+    font-family: inherit;
+    display: block;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vh;
+    font-size: 18px;
+}
+
 nav {
-    display: flex;
+    display: block;
     width: auto;
     z-index: 2;
-    position: absolute;
+    left: 0;
+    position: fixed;
+    margin-top: 20px;
+    font-size: .76em;
     ul li {
         list-style: none;
-        line-height: 2;
+        line-height: 3;
         a {
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: 1px;
+            color: $white;
+            &.is-active{
+                font-weight: bold;
+            }
             &:visited {
                 color: $white;
             }
@@ -48,7 +54,7 @@ nav {
 }
 
 .video_container {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     video {
         position: fixed;
@@ -63,7 +69,7 @@ nav {
         transition: 1s opacity;
     }
     .overlay {
-        background-image: url(img/noise2.png);
+        background-image: url(./../img/layout/noise.png);
         animation: rotation 200ms infinite steps(4);
         position: fixed;
         left: -100%;
@@ -76,30 +82,31 @@ nav {
 
 .PageWrapper {
     position: absolute;
-    top:0;
-    width: 100vw;
-    height: 100vh;
-    overflow:hidden;
+    top: 0;
+    width: 100%;
+    max-width:1280px;
 }
 
 .Page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width:100%;
+    position: relative;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(8, 1fr);
+
     h1 {
         text-transform: uppercase;
         font-weight: bold;
         color: rgba(255, 255, 255, 0);
         -webkit-text-stroke: 0.5px $white;
-        font-size: 8em;
-        width:100%;
-        svg{
-            width:100%;
+        font-size: 3em;
+        width: 100%;
+        text-align: center;
+        svg {
+            width: 100%;
             text {
                 fill: none;
                 stroke: $white;
-                stroke-width: 2px;
+                stroke-width: 1.2px;
             }
         }
     }
@@ -111,35 +118,72 @@ nav {
     }
 }
 
-.App-link {
-    color: #61dafb;
-}
-
 //Loader
-
 .app-fade-in {
     opacity: 0;
+    transition: opacity .3s ease-in;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
+
 .app-fade-in.visible {
     transition: opacity .3s ease-in;
     opacity: 1;
 }
 
-.loader-fade-out{
+.loader-fade-out {
     opacity: 1;
     width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
-    &.invisible{
+    &.invisible {
         transition: opacity .2s ease-in;
-        opacity:0;
+        opacity: 0;
     }
 }
 
-//Animations
+//Pages
+//Inicio
 
+#Inicio{
+    grid-template-rows: 85vh 15vh 1fr;
+    p:first-of-type{
+        grid-column: 3 / span 5;
+        grid-row-start: 3;
+        margin:20% 0;
+    }
+}
+.logoHome{
+    grid-column: 3 / span 4;
+    grid-row: 1;
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-self: end;
+    max-width:620px;
+    justify-self: center;
+}
+.laurelesHome{
+    grid-column: 3 / span 4;
+    grid-row: 2;
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    max-width:620px;
+
+}
+
+#Prensa, #Cortometrajes, #Produccion{
+    display: flex;
+    flex-direction: column;
+}
+
+//Animations
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
@@ -149,19 +193,28 @@ nav {
     }
 }
 
+.titleSlide-enter {
+    opacity: 0;
+    transition: all 800ms ease-out;
+    transform: translateY(-121px);
+}
+
+.titleSlide-enter-active {
+    transition: all 800ms ease-out;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 @keyframes Slide-in {
     0% {
-        -webkit-transform: translate3d(0, 21px, 0);
         transform: translate3d(0, 21px, 0);
         opacity: 0;
     }
     30% {
-        -webkit-transform: translate3d(0, 21px, 0);
         transform: translate3d(0, 21px, 0);
         opacity: 0;
     }
     100% {
-        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         opacity: 1;
         visibility: visible;
@@ -170,14 +223,12 @@ nav {
 
 @keyframes Slide-out {
     0% {
-        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         opacity: 1;
     }
     100% {
         visibility: hidden;
         opacity: 0;
-        -webkit-transform: translate3d(0, 21px, 0);
         transform: translate3d(0, 21px, 0);
     }
 }
