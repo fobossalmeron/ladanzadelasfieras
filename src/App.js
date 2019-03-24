@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, withRouter,  Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { ReactComponent as ProduccionTitle } from "./img/producción.svg";
 import ReactPlayer from "react-player";
@@ -14,21 +14,32 @@ import "./App.scss";
 function Inicio() {
   return (
     <div className="Page">
-      <h2>La Danza de las Fieras</h2>
-      <p>
-        This page demonstrate the page transition animation done on react router
-        URLs with styled components and react-transition-group.
-      </p>
+      <h1>La Danza de las Fieras</h1>
+      <h1>La Danza de las Fieras</h1>
+      <h1>La Danza de las Fieras</h1>
+      <h1>La Danza de las Fieras</h1>
+      <h1>La Danza de las Fieras</h1>
+      <h1>La Danza de las Fieras</h1>
+      <h1>La Danza de las Fieras</h1>
+      <h1>La Danza de las Fieras</h1>
+      <h1>La Danza de las Fieras</h1>
+
     </div>
   );
 }
 function Produccion() {
   return (
     <div className="Page">
-      <h1>
-        <ProduccionTitle />
-      </h1>
-      <p>Demo page. Click below to go back to previous page.</p>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
+      <h1><ProduccionTitle /></h1>
     </div>
   );
 }
@@ -37,12 +48,26 @@ function Cortometrajes() {
   return (
     <div className="Page">
       <h1>Cortometrajes</h1>
-      <p>Demo page. Click below to go back to previous page.</p>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
+      <h1>Cortometrajes</h1>
     </div>
   );
 }
 
 function Prensa() {
+  /*useEffect(() => {
+    setTimeout(() => {
+      var section = document.querySelector(".Page");
+    }, 0);
+  });*/
   return (
     <div className="Page">
       <h1>Prensa</h1>
@@ -106,8 +131,10 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-      const section = document.querySelector(".Page");
-      const listener = document.querySelector(".App");
+
+      //Scrolling
+      var section = document.querySelector(".Page");
+      const listener = document.querySelector(".app-fade-in");
       const smooth = new Smooth({
         native: false,
         listener: listener,
@@ -117,9 +144,9 @@ function App() {
         ease: 0.04
       });
       smooth.init();
-      //smooth.on();
-      //smooth.scrollTo(500);
     }, 500);
+    //End Scrolling
+
   });
   return (
     <div className="App">
@@ -131,6 +158,7 @@ function App() {
           <Route
             render={({ location }) => {
               return (
+               // withRouter(
                 <div className="PageWrapper">
                   <TransitionGroup component={null}>
                     <CSSTransition
@@ -155,6 +183,7 @@ function App() {
                     </CSSTransition>
                   </TransitionGroup>
                 </div>
+                //)
               );
             }}
           />
@@ -163,5 +192,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
