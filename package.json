@@ -4,16 +4,18 @@
   "private": true,
   "dependencies": {
     "animejs": "^3.0.1",
+    "formik": "^1.5.2",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.5",
-    "react-appear": "^1.0.1",
     "react-dom": "^16.8.5",
     "react-player": "^1.9.3",
+    "react-reveal": "^1.2.2",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-transition-group": "^2.7.0",
-    "smooth-scrolling": "^2.3.11"
+    "smooth-scrolling": "^2.3.11",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "predeploy": "yarn run build",

@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  NavLink,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ReactPlayer from "react-player";
 
 import Loader from "./loader";
+import Nav from "./nav";
 import PageWrapper from "./pageWrapper";
 
 import Inicio from "../pages/inicio";
@@ -16,37 +12,33 @@ import Cortometrajes from "../pages/cortometrajes";
 import Produccion from "../pages/produccion";
 import Prensa from "../pages/prensa";
 import NoMatch from "../pages/404";
- 
+
 import video from "./../assets/video/video.mp4";
+import { ReactComponent as IMDBIcon } from "./../assets/img/layout/imdb.svg";
+import { ReactComponent as FacebookIcon } from "./../assets/img/layout/facebook.svg";
+import { ReactComponent as MailIcon } from "./../assets/img/layout/mail.svg";
 
 import "./../assets/styles/app.scss";
 
-function Nav() {
+function SocialLinks() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink exact={true} activeClassName="is-active" to="/">
-            Inicio
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact={true} activeClassName="is-active" to="/produccion">
-            Producción
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact={true} activeClassName="is-active" to="/cortometrajes">
-            Cortometrajes
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact={true} activeClassName="is-active" to="/prensa">
-            Prensa
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+    <ul className="socialLinks">
+      <li>
+        <a href="https://www.imdb.com/title/tt7072396/">
+          <IMDBIcon />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/ladanzadelasfieras/">
+          <FacebookIcon />
+        </a>
+      </li>
+      <li>
+        <a href="mailto:alayde.castro@gmail.com">
+          <MailIcon />
+        </a>
+      </li>
+    </ul>
   );
 }
 
@@ -84,6 +76,7 @@ function App(props) {
       <div className={`app-fade-in ${hasLoaded && "visible"}`}>
         <Router>
           <Nav />
+          <SocialLinks />
           <VideoBackground />
           <Route
             render={({ location }) => {
