@@ -1,10 +1,11 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import ReactPlayer from "react-player";
 import { Section, Intro } from "./pagesStylesheet";
 import Footer from "./../components/footer";
+import VideoPlayer from "./../components/videoPlayer";
 import { ReactComponent as Logo } from "./../assets/img/layout/homeLogo.svg";
 import { ReactComponent as Laureles } from "./../assets/img/layout/homeLaureles.svg";
+import trailerstill from "./../assets/img/videos/trailer.png";
 
 export default function Inicio() {
   document.title = "La Danza de las Fieras";
@@ -12,10 +13,10 @@ export default function Inicio() {
     <div id="Inicio" className="Page">
       <h1 style={{ fontSize: 0, opacity: 0 }}>La Danza de las Fieras</h1>
       <Section columnStart="3" columnEnd="7">
-          <Intro>
-            <Logo className="logoHome" />
-            <Laureles className="laurelesHome" />
-          </Intro>
+        <Intro>
+          <Logo className="logoHome" />
+          <Laureles className="laurelesHome" />
+        </Intro>
       </Section>
       <Section columnStart="3" columnEnd="7">
         <Fade bottom>
@@ -35,13 +36,10 @@ export default function Inicio() {
       </Section>
       <Section columnStart="2" columnEnd="8">
         <Fade bottom>
-          <div className="trailer">
-            <ReactPlayer
-              className="hide"
-              url={"https://player.vimeo.com/video/226767311"}
-              width="100%"
-            />
-          </div>
+          <VideoPlayer
+            url={"https://player.vimeo.com/video/226767311"}
+            still={trailerstill}
+          />
         </Fade>
       </Section>
       <Section columnStart="4" columnEnd="6">
@@ -93,7 +91,7 @@ export default function Inicio() {
           </p>
         </Fade>
       </Section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as PrensaTitle } from "./../assets/img/layout/prensa.svg";
 import { Section, PageTitle } from "./pagesStylesheet";
 import Fade from "react-reveal/Fade";
-import styled from "styled-components";
+import styled from 'styled-components/macro';
 import Footer from "./../components/footer";
 
 import englishPresskit from "./../assets/img/descargables/englishPresskit.png";

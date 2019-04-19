@@ -89,6 +89,7 @@ function App(props) {
                   >
                     <Switch location={location}>
                       <Route name="inicio" exact path="/" component={Inicio} />
+                      <Route name="inicio" exact path="/ladanzadelasfieras" component={Inicio} />
                       <Route exact path="/produccion" component={Produccion} />
                       <Route
                         exact

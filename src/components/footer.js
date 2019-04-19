@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from 'styled-components/macro';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Fade from "react-reveal/Fade";
 

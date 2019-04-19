@@ -36,6 +36,7 @@
   ],
   "homepage": "https://fobossalmeron.github.io/ladanzadelasfieras/",
   "devDependencies": {
+    "babel-plugin-macros": "^2.5.1",
     "gh-pages": "^2.0.1"
   }
 }

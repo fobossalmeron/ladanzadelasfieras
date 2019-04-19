@@ -8,8 +8,7 @@ export default function PageWrapper(props) {
         var smooth = new Smooth({
           native: false,
           listener: listener,
-          vs: "limitInertia",
-          limitInertia: true,
+          vs: "mouseMultiplier",
           section: section,
           noscrollbar: true,
           ease: 0.04

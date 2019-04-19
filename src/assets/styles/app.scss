@@ -6,6 +6,7 @@ $red: #C64028;
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -250,25 +251,8 @@ nav {
 //Inicio
 
 #Inicio {
-    .trailer {
-        margin-bottom: 10%;
-        padding-bottom: 56.2%;
-        display: block;
-        position: relative;
-
-        .hide {
-            height: auto !important;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background-color: black;
-        }
-    }
-
     .tecnical {
+        margin-top:20%;
         border: 1px solid $white;
         padding: 6% 5%;
     }
@@ -283,12 +267,12 @@ nav {
 .laurelesHome {
     max-width: 620px;
     margin-bottom: 10%;
-
 }
 
-#Cortometrajes {
-    display: flex;
-    flex-direction: column;
+//Cortometrajes
+
+#Cortometrajes p {
+    margin:0;
 }
 
 //Animations
