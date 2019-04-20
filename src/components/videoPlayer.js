@@ -7,7 +7,7 @@ const VideoWrapper = styled.div`
   div:nth-of-type(2) {
     height: auto !important;
   }
-  padding-bottom: 53.2%;
+  padding-bottom: 53.01%;
   display: block;
   position: relative;
   iframe {
@@ -31,15 +31,15 @@ const OverStill = styled.div`
 `;
 
 const PlayButton = styled(Play)`
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   position: absolute;
-  left: calc(50% - 20px);
-  top: calc(50% - 20px);
+  left: calc(50% - 17.5px);
+  top: calc(50% - 17.5px);
   z-index: 1;
   cursor: pointer;
   polygon {
-    stroke-width: 16px;
+    stroke-width: 26px;
   }
 `;
 
