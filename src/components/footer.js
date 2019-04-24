@@ -2,6 +2,7 @@ import React from "react";
 import styled from 'styled-components/macro';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Fade from "react-reveal/Fade";
+import { Heading3, blackColor, redColor } from "./../pages/pagesStylesheet";
 
 import { ReactComponent as credit } from "./../assets/img/layout/creditos.svg";
 
@@ -130,6 +131,7 @@ const SendButton = styled.button`
   width: auto;
   align-self: flex-end;
   margin-right: -17px;
+  cursor:pointer;
 `;
 
 const MovieCredits = styled(credit)`
@@ -159,7 +161,7 @@ function Footer() {
   return (
     <FooterWrapper>
       <Fade bottom>
-        <h3>Contacto</h3>
+        <Heading3 color={blackColor} backgroundColor={redColor}>Contacto</Heading3>
         <EmailForm />
         <MovieCredits />
         <FinalCredit>

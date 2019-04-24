@@ -1,5 +1,9 @@
 import styled, { css } from "styled-components";
 
+export const whiteColor = "#f9f9f9";
+export const blackColor = "#0A0A0A";
+export const redColor =  "#C64028";
+
 export const columnStartProps = props => css`
   ${props.columnStart && `grid-column-start: ${props.columnStart || "1"}`};
 `;
@@ -33,4 +37,15 @@ export const PageTitle = styled.h1`
       font-family:inherit;
     }
   }
+`;
+
+export const Heading3 = styled.h3` 
+  font-weight:bold;
+  background-color: ${props => props.backgroundColor || blackColor};
+  color: ${props => props.color || whiteColor};
+  text-transform: uppercase;
+  padding: 4px 7px 2px 8px;
+  display: inline-block;
+  font-size: 1.64rem;
+  margin-left: -8px;
 `;

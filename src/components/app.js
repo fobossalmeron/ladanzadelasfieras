@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ReactPlayer from "react-player";
+import Fade from "react-reveal/Fade";
 
 import Loader from "./loader";
 import Nav from "./nav";
@@ -23,6 +24,7 @@ import "./../assets/styles/app.scss";
 function SocialLinks() {
   return (
     <ul className="socialLinks">
+    <Fade right>
       <li>
         <a href="https://www.imdb.com/title/tt7072396/">
           <IMDBIcon />
@@ -38,6 +40,7 @@ function SocialLinks() {
           <MailIcon />
         </a>
       </li>
+      </Fade>
     </ul>
   );
 }

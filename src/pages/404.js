@@ -7,24 +7,6 @@ export default function NoMatch(props) {
         <h1>
           No match for <code>{props.location.pathname}</code>
         </h1>
-        <h1>
-          No match for <code>{props.location.pathname}</code>
-        </h1>
-        <h1>
-          No match for <code>{props.location.pathname}</code>
-        </h1>
-        <h1>
-          No match for <code>{props.location.pathname}</code>
-        </h1>
-        <h1>
-          No match for <code>{props.location.pathname}</code>
-        </h1>
-        <h1>
-          No match for <code>{props.location.pathname}</code>
-        </h1>
-        <h1>
-          No match for <code>{props.location.pathname}</code>
-        </h1>
       </div>
     );
   }

@@ -3,6 +3,7 @@ import { Section, PageTitle } from "./pagesStylesheet";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Footer from "./../components/footer";
+import Productor from "./../components/productor";
 
 import { ReactComponent as ProduccionTitle } from "./../assets/img/layout/produccion.svg";
 
@@ -15,26 +16,11 @@ import { ReactComponent as AntitesisIcon } from "./../assets/img/casas/antitesis
 import { ReactComponent as BalaIcon } from "./../assets/img/casas/bala.svg";
 import { ReactComponent as EducadoresIcon } from "./../assets/img/casas/educadores.svg";
 
-
 const Productores = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   margin-bottom: 10%;
-`;
-
-const Productor = styled.li`
-  display: flex;
-  flex-direction: column;
-  img {
-    border-radius: 100%;
-    max-width: 80px;
-    margin-bottom: 18px;
-  }
-  b {
-    width: 100%;
-    text-transform: uppercase;
-  }
 `;
 
 const Productora = styled.div`
@@ -71,22 +57,41 @@ export default function Produccion() {
         <h2>Productores</h2>
         <Fade cascade>
           <Productores>
-            <Productor>
-              <img src={silvia} alt="Silvia Garza" />
-              <b>Productora Ejecutiva</b>Silvia Garza
-            </Productor>
-            <Productor>
-              <img src={martha} alt="Martha Hernández" />
-              <b>Productora Ejecutiva</b>Martha Hernández
-            </Productor>
-            <Productor>
-              <img src={german} alt="German Castilla" />
-              <b>Productora</b>German Castilla
-            </Productor>
-            <Productor>
-              <img src={bernardo} alt="Bernardo de Urquidi" />
-              <b>Productor Asociado</b> Bernardo de Urquidi
-            </Productor>
+            <Productor
+              img={silvia}
+              title={"Productora Ejecutiva"}
+              name={"Silvia Garza"}
+              web={"http://www.educadoressinfronteras.mx/"}
+              mail={"silvia@educadoresainfronteras.mx"}
+            />
+            <Productor
+              img={martha}
+              title={"Productora Ejecutiva"}
+              name={"Martha Hernández"}
+              linked={
+                "https://www.linkedin.com/in/martha-hern%C3%A1ndez-aguilar-58b32735/"
+              }
+              web={"http://ojosdepapelvolando.com/"}
+              mail={"marthahernandez@ojosdepapelvolando.com"}
+            />
+            <Productor
+              img={german}
+              title={"Productor"}
+              name={"German Castilla"}
+              ig={"https://www.instagram.com/germancastillag/"}
+              imdb={"http://m.imdb.com/name/nm5720839/"}
+              mail={"castilla.german@gmail.com"}
+            />
+            <Productor
+              img={bernardo}
+              title={"Productor Asociado"}
+              name={"Bernardo de Urquidi"}
+              linked={
+                "https://www.linkedin.com/in/bernardo-de-urquidi-6b3b8a15/"
+              }
+              imdb={"http://www.imdb.com/name/nm5153681/"}
+              mail={"bernardo.deurquidi@kapturaprojects.com"}
+            />
           </Productores>
         </Fade>
       </Section>

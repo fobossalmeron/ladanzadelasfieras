@@ -16,9 +16,9 @@ function Nav() {
     setClick(0);
   }
   return (
-    <Fade left>
     <nav>
       <ul>
+      <Fade left>
         <li>
           <NavLink
             exact={true}
@@ -63,9 +63,9 @@ function Nav() {
             Prensa
           </NavLink>
         </li>
+        </Fade>
       </ul>
     </nav>
-    </Fade>
   );
 }
 
