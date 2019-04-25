@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Transition } from "react-transition-group";
 import styled from "styled-components/macro";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Fade from "react-reveal/Fade";
-import { Heading3, blackColor, redColor } from "./../pages/pagesStylesheet";
+import {
+  Heading3,
+  blackColor,
+  redColor
+} from "./../pages/pagesStylesheet";
 
 import { ReactComponent as credit } from "./../assets/img/layout/creditos.svg";
+import { ReactComponent as SuccessIcon } from "./../assets/img/layout/success.svg";
 
 const StyledForm = styled.div`
   display: grid;
@@ -62,9 +68,9 @@ const SendButton = styled.button`
   align-self: flex-end;
   margin-right: -17px;
   cursor: pointer;
-  transition: transform .4s ease;
-  :hover{
-    transform:scale(1.1);
+  transition: transform 0.4s ease;
+  :hover {
+    transform: scale(1.1);
   }
 `;
 
@@ -91,14 +97,68 @@ const FinalCredit = styled.div`
   }
 `;
 
+const defaultStyle = {
+  transition: `opacity 400ms ease-in-out`,
+  opacity: 0
+};
+
+const transitionStyles = {
+  entering: { opacity: 1 },
+  entered: { opacity: 1 },
+  exiting: { opacity: 0 },
+  exited: { opacity: 0 }
+};
+
+const SuccessMessage = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  z-index: -2;
+  pointer-events: none;
+  b {
+    text-transform: uppercase;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+`;
+
+const ErroredMessage = styled.div`
+  background-color: ${redColor};
+  color: ${blackColor};
+  padding: 5px;
+`;
+
+function Success() {
+  return (
+    <SuccessMessage>
+      <SuccessIcon />
+      <b>Mensaje enviado</b>
+      <p>Gracias! Nos pondremos en contacto contigo a la brevedad</p>
+    </SuccessMessage>
+  );
+}
+
 function Footer() {
   const [hasBeenSent, setSent] = useState(false);
 
-  const EmailForm = () => {
+  const EmailForm = props => {
+    console.log(props.style);
     function doSetSent() {
       setSent(true);
     }
-    var opaC = hasBeenSent? "0" : "1";
+
+    var clickable = hasBeenSent ? "none" : "auto";
 
     return (
       <Formik
@@ -110,26 +170,25 @@ function Footer() {
         validate={values => {
           let errors = {};
           if (!values.email) {
-            errors.email = "Escribe tu email";
+            errors.email = "Olvidaste escribir tu email";
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
-            errors.email = "Escribe una dirección de Email real";
+            errors.email = "Escribe una dirección de correo real";
           }
           if (!values.name) {
-            errors.name = "Escribe tu nombre";
+            errors.name = "Olvidaste escribir tu nombre";
           }
           if (!values.message) {
-            errors.message = "Escribe tu mensaje";
+            errors.message = "Olvidaste escribir tu mensaje";
           }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
           doSetSent();
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-            /*axios
+            console.log(JSON.stringify(values, null, 2));
+            axios
             .post("https://formcarry.com/s/CRlt34grpHi", values, {
               headers: { Accept: "application/json" }
             })
@@ -138,8 +197,10 @@ function Footer() {
             })
             .catch(function(error) {
               console.log(error);
-            });*/
+            });
           }, 400);
+          setSubmitting(false);
+
         }}
       >
         {({ isSubmitting }) => (
@@ -147,10 +208,8 @@ function Footer() {
             style={{
               display: "flex",
               flexDirection: "column",
-              transition: ".4s ease all",
-              opacity: opaC,
+              pointerEvents: clickable
             }}
-            id="checkMyHeight"
           >
             <StyledForm>
               <Capture>
@@ -160,7 +219,7 @@ function Footer() {
                   name="name"
                   placeholder="Escribe tu nombre"
                 />
-                <ErrorMessage name="name" component="div" />
+                <ErrorMessage name="name" component={ErroredMessage} />
               </Capture>
 
               <Capture>
@@ -170,7 +229,7 @@ function Footer() {
                   name="email"
                   placeholder="Escribe tu email"
                 />
-                <ErrorMessage name="email" component="div" />
+                <ErrorMessage name="email" component={ErroredMessage} />
               </Capture>
 
               <Capture>
@@ -181,7 +240,7 @@ function Footer() {
                   component="textarea"
                   placeholder="Escribe tu mensaje"
                 />
-                <ErrorMessage name="message" component="div" />
+                <ErrorMessage name="message" component={ErroredMessage} style={{marginTop:"-4px"}}/>
               </Capture>
             </StyledForm>
 
@@ -200,8 +259,30 @@ function Footer() {
         <Heading3 color={blackColor} backgroundColor={redColor}>
           Contacto
         </Heading3>
-        <EmailForm />
-        {!hasBeenSent ? "" : "Gracias!"}
+        <Transition in={!hasBeenSent} timeout={400}>
+          {state => (
+            <div
+              style={{
+                ...defaultStyle,
+                ...transitionStyles[state]
+              }}
+            >
+              <EmailForm />
+            </div>
+          )}
+        </Transition>
+        <Transition in={hasBeenSent} timeout={400}>
+          {state => (
+            <div
+              style={{
+                ...defaultStyle,
+                ...transitionStyles[state]
+              }}
+            >
+              <Success />
+            </div>
+          )}
+        </Transition>
         <MovieCredits />
         <FinalCredit>
           Diseño y desarrollo por

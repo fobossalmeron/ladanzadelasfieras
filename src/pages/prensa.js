@@ -34,10 +34,10 @@ const Descargable = styled.li`
   flex-direction: column;
   cursor: pointer;
   align-items: center;
-  a{
-    color:${whiteColor};
-    text-decoration:none;
-    width:100%;
+  a {
+    color: ${whiteColor};
+    text-decoration: none;
+    width: 100%;
   }
   :hover {
     div {
@@ -166,14 +166,14 @@ export default function Prensa() {
         <PrensaTitle />
       </PageTitle>
       <Section columnStart="3" columnEnd="7">
-        <h2>Descargables</h2>
         <Fade cascade>
           <Descargables>
             <Descargable>
               <a
+                target={"_blank"}
                 href={
                   process.env.PUBLIC_URL +
-                  "/descargables/TheWildDance_Presskit_English.pdf"
+                  "/descargables/TheWildDance_Presskit.pdf"
                 }
               >
                 <Imagen
@@ -189,9 +189,10 @@ export default function Prensa() {
             </Descargable>
             <Descargable>
               <a
+                target={"_blank"}
                 href={
                   process.env.PUBLIC_URL +
-                  "/descargables/LaDanzaDeLasFieras_Presskit_Español.pdf"
+                  "/descargables/LaDanzaDeLasFieras_Presskit.pdf"
                 }
               >
                 <Imagen
@@ -206,7 +207,10 @@ export default function Prensa() {
               </a>
             </Descargable>
             <Descargable>
-              <a href={process.env.PUBLIC_URL + "/descargables/Poster.png"}>
+              <a
+                target={"_blank"}
+                href={process.env.PUBLIC_URL + "/descargables/Poster.png"}
+              >
                 <Imagen
                   style={{ backgroundImage: `url(${poster})` }}
                   alt="Poster"

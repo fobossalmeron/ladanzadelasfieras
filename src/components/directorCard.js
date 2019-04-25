@@ -107,12 +107,12 @@ function DirectorCard(props) {
         <b>{title}:</b> {name}
         <IconContainer>
           {props.imdb ? (
-            <a href={props.imdb}>
+            <a target="_blank" rel="noopener noreferrer" href={props.imdb}>
               <IMDBIcon />
             </a>
           ) : null}
           {props.ig ? (
-            <a href={props.ig}>
+            <a target="_blank" rel="noopener noreferrer" href={props.ig}>
               <IGIcon />
             </a>
           ) : null}

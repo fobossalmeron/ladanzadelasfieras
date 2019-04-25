@@ -74,22 +74,22 @@ function Productor(props) {
         <b>{title}</b> {name}
         <IconContainer>
         {props.web ? (
-            <a href={props.web}>
+            <a target="_blank" rel="noopener noreferrer" href={props.web}>
               <WebIcon />
             </a>
           ) : null}
           {props.linked ? (
-            <a href={props.linked}>
+            <a target="_blank" rel="noopener noreferrer" href={props.linked}>
               <LinkedIcon />
             </a>
           ) : null}
           {props.imdb ? (
-            <a href={props.imdb}>
+            <a target="_blank" rel="noopener noreferrer" href={props.imdb}>
               <IMDBIcon />
             </a>
           ) : null}
           {props.ig ? (
-            <a href={props.ig}>
+            <a target="_blank" rel="noopener noreferrer" href={props.ig}>
               <IGIcon />
             </a>
           ) : null}

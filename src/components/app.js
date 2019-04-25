@@ -26,12 +26,12 @@ function SocialLinks() {
     <ul className="socialLinks">
     <Fade right>
       <li>
-        <a href="https://www.imdb.com/title/tt7072396/">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.imdb.com/title/tt7072396/">
           <IMDBIcon />
         </a>
       </li>
       <li>
-        <a href="https://www.facebook.com/ladanzadelasfieras/">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ladanzadelasfieras/">
           <FacebookIcon />
         </a>
       </li>

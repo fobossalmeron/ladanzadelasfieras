@@ -48,4 +48,5 @@ export const Heading3 = styled.h3`
   display: inline-block;
   font-size: 1.64rem;
   margin-left: -8px;
+  margin-top:0;
 `;
