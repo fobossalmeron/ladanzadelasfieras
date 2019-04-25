@@ -17,7 +17,7 @@ const InfoDirector = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  z-index: ${props => props.double? "2" : "3"};
+  z-index: ${props => props.double? "2" : "4"};
   cursor: pointer;
   transition: 0.3s ease all;
   width: 100%;
@@ -79,7 +79,7 @@ const HoverDirector = styled.div`
     props.hovered &&
     css`
       opacity: 1;
-      z-index: ${props => props.double? "2" : "1"};
+      z-index: ${props => props.double? "1" : "3"};
       transition: opacity 0.4s ease, z-index 0.5s ease;
     `}
 `;
@@ -93,6 +93,7 @@ function DirectorCard(props) {
 
   function handleShow(bool = !isHovered) {
     setHovered(bool);
+    console.log(props.double)
   }
 
   function createBio() {
@@ -122,7 +123,7 @@ function DirectorCard(props) {
           ) : null}
         </IconContainer>
       </InfoDirector>
-      <HoverDirector hovered={isHovered}>
+      <HoverDirector hovered={isHovered} double={props.double}>
         <p dangerouslySetInnerHTML={createBio()} />
       </HoverDirector>
     </Director>

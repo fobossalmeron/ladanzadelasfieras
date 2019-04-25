@@ -22,7 +22,6 @@ import angel from "./../assets/img/directores/angel.jpg";
 import stillQCLN from "./../assets/img/videos/qcln.jpg";
 import gina from "./../assets/img/directores/gina.jpg";
 
-
 const InfoSection = styled.div`
   padding-top: 5%;
   display: grid;
@@ -49,6 +48,8 @@ const Directors = styled.div`
 const Credits = styled.p`
   grid-column: 3 / span 4;
   columns: 2;
+  column-fill: auto;
+  height: 100px;
   column-gap: 40px;
   margin: 0;
 `;
@@ -96,9 +97,10 @@ export default function Cortometrajes() {
               bio={`Socia fundadora y Directora Creativa de la casa productora 
                 <b>Antítesis</b> que ha trabajado para clientes como la UNAM, 
                 el STC Metro y la Secretaría de Turismo del Estado de Puebla.`}
+              double={false}
             />
             <DirectorCard
-              double
+              double={true}
               name={"Stacy Perskie"}
               title={"CO-DIRECTOR"}
               img={stacy}
@@ -111,7 +113,7 @@ export default function Cortometrajes() {
               la serie <em>Mozart in the Jungle</em> (2014).`}
             />
           </Directors>
-          <Credits>
+          <Credits style={{ height: "120px" }}>
             <b>GÉNERO:</b> Ficción
             <br />
             <b>DURACIÓN:</b> 15:00 minutos
@@ -342,7 +344,8 @@ export default function Cortometrajes() {
             </b>
             Renato Martínez Gómez
             <br />
-            <b>CAST:</b> Aurelina Díaz, Olivia Ponce, Silvia Ponce, Don Enrique, Pedro Galviz
+            <b>CAST:</b> Aurelina Díaz, Olivia Ponce, Silvia Ponce, Don Enrique,
+            Pedro Galviz
           </Credits>
         </InfoSection>
       </Section>
@@ -350,7 +353,12 @@ export default function Cortometrajes() {
         <Fade bottom>
           <h2>Que Canten Los Niños</h2>
           <p style={{ marginBottom: "5%" }}>
-          <b>QUE CANTEN LOS NIÑOS</b> sigue los esfuerzos de Xochi y Ceci, dos niñas de 12 y 10 años, que intentan escapar de su existencia llena de abusos físicos, emocionales y sexuales dentro de un albergue disfuncional. ¿Cuántos niños desamparados y olvidados sobreviven en esas condiciones? Es la historia del abuso de poder que sometió a niños durante décadas para fundar una fábrica de esclavos ignorados.
+            <b>QUE CANTEN LOS NIÑOS</b> sigue los esfuerzos de Xochi y Ceci, dos
+            niñas de 12 y 10 años, que intentan escapar de su existencia llena
+            de abusos físicos, emocionales y sexuales dentro de un albergue
+            disfuncional. ¿Cuántos niños desamparados y olvidados sobreviven en
+            esas condiciones? Es la historia del abuso de poder que sometió a
+            niños durante décadas para fundar una fábrica de esclavos ignorados.
           </p>
         </Fade>
       </Section>
@@ -387,8 +395,11 @@ export default function Cortometrajes() {
             </b>
             Flavia Martínez
             <br />
-            <b>CAST:</b> Nicole Reyes, Matilde Luna, María Lourdes Pérez, Catalina López<br/>
-            <b>Música:</b> Compuesta por Jose Luis Perales, interpretado por el cast
+            <b>CAST:</b> Nicole Reyes, Matilde Luna, María Lourdes Pérez,
+            Catalina López
+            <br />
+            <b>Música:</b> Compuesta por Jose Luis Perales, interpretado por el
+            cast
           </Credits>
         </InfoSection>
       </Section>
