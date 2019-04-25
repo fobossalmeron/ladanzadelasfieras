@@ -77,7 +77,6 @@ nav {
             }
 
             &.animate {
-                animation: navclick 500ms;
                 transform-origin: 0% 50%;
                 display: block;
             }
@@ -104,10 +103,16 @@ nav {
     margin-right: 40px;
 
     li {
+        &:hover{
+            svg{
+                transform:scale(1.1)
+            }
+        }
 
         svg {
             height: 22px;
             margin-bottom: 15px;
+            transition: transform .3s ease-out;
 
             * {
                 fill: $white;
@@ -298,7 +303,7 @@ nav {
     }
 
     60% {
-        transform: scale(1.03);
+        transform: scale(1);
 
     }
 

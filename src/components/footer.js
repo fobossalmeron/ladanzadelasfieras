@@ -1,81 +1,11 @@
-import React from "react";
-import styled from 'styled-components/macro';
+import React, { useState } from "react";
+import axios from "axios";
+import styled from "styled-components/macro";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Fade from "react-reveal/Fade";
 import { Heading3, blackColor, redColor } from "./../pages/pagesStylesheet";
 
 import { ReactComponent as credit } from "./../assets/img/layout/creditos.svg";
-
-const EmailForm = () => (
-  <Formik
-    initialValues={{
-      name: "",
-      email: "",
-      message: ""
-    }}
-    validate={values => {
-      let errors = {};
-      if (!values.email) {
-        errors.email = "Escribe tu email";
-      } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-      ) {
-        errors.email = "Escribe una dirección de Email real";
-      }
-      if (!values.name) {
-        errors.name = "Escribe tu nombre";
-      }
-      if (!values.message) {
-        errors.message = "Escribe tu mensaje";
-      }
-      return errors;
-    }}
-    onSubmit={(values, { setSubmitting }) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-        setSubmitting(false);
-      }, 400);
-    }}
-  >
-    {({ isSubmitting }) => (
-      <Form
-        style={{
-          display: "flex",
-          flexDirection: "column"
-        }}
-      >
-        <StyledForm>
-          <Capture>
-            <label htmlFor="name">Nombre</label>
-            <Field type="text" name="name" placeholder="Escribe tu nombre" />
-            <ErrorMessage name="name" component="div" />
-          </Capture>
-
-          <Capture>
-            <label htmlFor="email">Email</label>
-            <Field type="text" name="email" placeholder="Escribe tu email" />
-            <ErrorMessage name="email" component="div" />
-          </Capture>
-
-          <Capture>
-            <label htmlFor="message">Mensaje</label>
-            <Field
-              type="text"
-              name="message"
-              component="textarea"
-              placeholder="Escribe tu mensaje"
-            />
-            <ErrorMessage name="message" component="div" />
-          </Capture>
-        </StyledForm>
-
-        <SendButton type="submit" disabled={isSubmitting}>
-          Enviar
-        </SendButton>
-      </Form>
-    )}
-  </Formik>
-);
 
 const StyledForm = styled.div`
   display: grid;
@@ -131,7 +61,11 @@ const SendButton = styled.button`
   width: auto;
   align-self: flex-end;
   margin-right: -17px;
-  cursor:pointer;
+  cursor: pointer;
+  transition: transform .4s ease;
+  :hover{
+    transform:scale(1.1);
+  }
 `;
 
 const MovieCredits = styled(credit)`
@@ -158,11 +92,116 @@ const FinalCredit = styled.div`
 `;
 
 function Footer() {
+  const [hasBeenSent, setSent] = useState(false);
+
+  const EmailForm = () => {
+    function doSetSent() {
+      setSent(true);
+    }
+    var opaC = hasBeenSent? "0" : "1";
+
+    return (
+      <Formik
+        initialValues={{
+          name: "",
+          email: "",
+          message: ""
+        }}
+        validate={values => {
+          let errors = {};
+          if (!values.email) {
+            errors.email = "Escribe tu email";
+          } else if (
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+          ) {
+            errors.email = "Escribe una dirección de Email real";
+          }
+          if (!values.name) {
+            errors.name = "Escribe tu nombre";
+          }
+          if (!values.message) {
+            errors.message = "Escribe tu mensaje";
+          }
+          return errors;
+        }}
+        onSubmit={(values, { setSubmitting }) => {
+          doSetSent();
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+            /*axios
+            .post("https://formcarry.com/s/CRlt34grpHi", values, {
+              headers: { Accept: "application/json" }
+            })
+            .then(function(response) {
+              console.log(response);
+            })
+            .catch(function(error) {
+              console.log(error);
+            });*/
+          }, 400);
+        }}
+      >
+        {({ isSubmitting }) => (
+          <Form
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              transition: ".4s ease all",
+              opacity: opaC,
+            }}
+            id="checkMyHeight"
+          >
+            <StyledForm>
+              <Capture>
+                <label htmlFor="name">Nombre</label>
+                <Field
+                  type="text"
+                  name="name"
+                  placeholder="Escribe tu nombre"
+                />
+                <ErrorMessage name="name" component="div" />
+              </Capture>
+
+              <Capture>
+                <label htmlFor="email">Email</label>
+                <Field
+                  type="text"
+                  name="email"
+                  placeholder="Escribe tu email"
+                />
+                <ErrorMessage name="email" component="div" />
+              </Capture>
+
+              <Capture>
+                <label htmlFor="message">Mensaje</label>
+                <Field
+                  type="text"
+                  name="message"
+                  component="textarea"
+                  placeholder="Escribe tu mensaje"
+                />
+                <ErrorMessage name="message" component="div" />
+              </Capture>
+            </StyledForm>
+
+            <SendButton type="submit" disabled={isSubmitting}>
+              Enviar
+            </SendButton>
+          </Form>
+        )}
+      </Formik>
+    );
+  };
+
   return (
     <FooterWrapper>
       <Fade bottom>
-        <Heading3 color={blackColor} backgroundColor={redColor}>Contacto</Heading3>
+        <Heading3 color={blackColor} backgroundColor={redColor}>
+          Contacto
+        </Heading3>
         <EmailForm />
+        {!hasBeenSent ? "" : "Gracias!"}
         <MovieCredits />
         <FinalCredit>
           Diseño y desarrollo por

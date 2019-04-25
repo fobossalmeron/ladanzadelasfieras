@@ -1,9 +1,8 @@
 ## Notes
 
-Alayde email en el contact form
-el mail de berni es de kaptura
-Nav interaction
-configurar videos en vimeo & Images treatment and optim
+Configurar videos en vimeo & Video Images treatment and optim
 Easing hover out on directors & double
-Contact form errors & link 
-Prensa descargables
+Contact form errors & submit 
+Alayde cuenta en (https://formcarry.com/register)
+Revisar con Arte los formatos de los descargables
+Redo background video

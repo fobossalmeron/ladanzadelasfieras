@@ -5,7 +5,8 @@ import {
   PageTitle,
   Heading3,
   columnStartProps,
-  columnEndProps
+  columnEndProps,
+  whiteColor
 } from "./pagesStylesheet";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components/macro";
@@ -33,12 +34,14 @@ const Descargable = styled.li`
   flex-direction: column;
   cursor: pointer;
   align-items: center;
+  a{
+    color:${whiteColor};
+    text-decoration:none;
+    width:100%;
+  }
   :hover {
     div {
       background-size: 110%;
-    }
-    p {
-      text-decoration: underline;
     }
   }
   img {
@@ -167,39 +170,66 @@ export default function Prensa() {
         <Fade cascade>
           <Descargables>
             <Descargable>
-              <Imagen
-                style={{ backgroundImage: `url(${englishPresskit})` }}
-                alt="English Presskit"
-              />
-              <p>
-                Download
-                <br />
-                English Presskit
-              </p>
+              <a
+                href={
+                  process.env.PUBLIC_URL +
+                  "/descargables/TheWildDance_Presskit_English.pdf"
+                }
+              >
+                <Imagen
+                  style={{ backgroundImage: `url(${englishPresskit})` }}
+                  alt="English Presskit"
+                />
+                <p>
+                  Download
+                  <br />
+                  English Presskit
+                </p>
+              </a>
             </Descargable>
             <Descargable>
-              <img src={spanishPresskit} alt="Presskit en Español" />
-              <p>
-                Descargar
-                <br />
-                Presskit
-              </p>
+              <a
+                href={
+                  process.env.PUBLIC_URL +
+                  "/descargables/LaDanzaDeLasFieras_Presskit_Español.pdf"
+                }
+              >
+                <Imagen
+                  style={{ backgroundImage: `url(${spanishPresskit})` }}
+                  alt="Presskit en Español"
+                />
+                <p>
+                  Descargar
+                  <br />
+                  Presskit
+                </p>
+              </a>
             </Descargable>
             <Descargable>
-              <img src={poster} alt="Poster" />
-              <p>
-                Descargar
-                <br />
-                Poster
-              </p>
+              <a href={process.env.PUBLIC_URL + "/descargables/Poster.png"}>
+                <Imagen
+                  style={{ backgroundImage: `url(${poster})` }}
+                  alt="Poster"
+                />
+                <p>
+                  Descargar
+                  <br />
+                  Poster
+                </p>
+              </a>
             </Descargable>
             <Descargable>
-              <img src={stickers} alt="Stickers" />
-              <p>
-                Descargar
-                <br />
-                Stickers
-              </p>
+              <a href={process.env.PUBLIC_URL + "/descargables/Stickers.zip"}>
+                <Imagen
+                  style={{ backgroundImage: `url(${stickers})` }}
+                  alt="Stickers"
+                />
+                <p>
+                  Descargar
+                  <br />
+                  Stickers
+                </p>
+              </a>
             </Descargable>
           </Descargables>
         </Fade>

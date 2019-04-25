@@ -90,7 +90,6 @@ export default function Produccion() {
                 "https://www.linkedin.com/in/bernardo-de-urquidi-6b3b8a15/"
               }
               imdb={"http://www.imdb.com/name/nm5153681/"}
-              mail={"bernardo.deurquidi@kapturaprojects.com"}
             />
           </Productores>
         </Fade>
