@@ -6,8 +6,8 @@ Textos Arte
 Precise:
 Revisar scroll :test
 No scroll on top of iframes?
-Low fidelity photos on Presskits
 Responsive
+Prensa página Fades
 
 Ext:
 Noticias Arte && Textos directores

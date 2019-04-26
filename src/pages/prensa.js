@@ -241,12 +241,16 @@ export default function Prensa() {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <h2>Premios</h2>
-        <Premios style={{ marginBottom: "10%" }} />
+        <Fade bottom>
+          <h2>Premios</h2>
+          <Premios style={{ marginBottom: "10%" }} />
+        </Fade>
       </Section>
       <Section columnStart="3" columnEnd="8">
-        <h2>Festivales</h2>
-        <Selecciones style={{ marginBottom: "10%" }} />
+        <Fade bottom>
+          <h2>Festivales</h2>
+          <Selecciones style={{ marginBottom: "10%" }} />
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
         <h2>Noticias</h2>

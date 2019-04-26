@@ -19,13 +19,14 @@ import video from "./../assets/video/video.mp4";
 import "./../assets/styles/app.scss";
 
 const AppFadeIn = styled.div`
-  opacity: 0;
   overflow: hidden;
-  transition: opacity 0.3s ease-in;
-  display: flex;
-  justify-content: center;
+  position: fixed;
   width: 100vw;
   height: 100vh;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  transition: opacity 0.3s ease-in;
   ${props =>
     props.visible &&
     css`
@@ -65,7 +66,7 @@ function App(props) {
         setLoaded(true);
         setTimeout(() => {
           // remove from DOM
-          ele.outerHTML = ''
+          ele.remove()
         }, 1000);
       }
     });

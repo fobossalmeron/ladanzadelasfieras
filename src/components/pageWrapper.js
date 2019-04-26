@@ -1,22 +1,26 @@
 import React, {useEffect} from "react";
 import Smooth from "smooth-scrolling";
+import { TweenLite } from "gsap/TweenMax";
+
 
 export default function PageWrapper(props) {
     useEffect(() => {
         const section = document.querySelector(".PageWrapper");
-        const listener = document.querySelector("body");
-        var smooth = new Smooth({
-          native: false,
-          listener: listener,
-          vs: "mouseMultiplier",
-          section: section,
-          noscrollbar: true,
-          ease: 0.04
+        const listener = document.querySelector(".PageWrapper");
+        TweenLite.set(section, {
+          y: -window.pageYOffset
         });
-        smooth.init();
-  
+        var smooth = new Smooth({
+          noscrollbar: false,
+          section: section,
+          ease: 0.1,
+          timer: 1000
+        });
+        //smooth.init();
+        //smooth.on();
+
       return function cleanup() {
-        smooth.destroy();
+        //smooth.destroy();
       };
     });
     return <div className="PageWrapper">{props.children}</div>;
