@@ -16,10 +16,47 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>La Danza de las Fieras</title>
-    <style>html{background-color:black}</style>
+    <style>
+      html {
+        background-color:black
+      } 
+      #loader {
+        width: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        fill: none;
+        stroke-width: 10;
+        stroke-linecap: round;
+        stroke-linejoin: square;
+      }
+      #back{
+        stroke:#D83116;
+        opacity:0.2;
+      }
+      #front{
+        stroke: #D83116;
+        stroke-dasharray: 1748, 500;
+        stroke-dashoffset: 1748;
+        animation: dash 2s linear infinite;
+      }
+      @keyframes dash{
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>Necesitas habilitar javascript para entrar a este sitio</noscript>
-    <div id="root"></div>
+    <svg id="loader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 289 500" style="enable-background:new 0 0 289 500;" xml:space="preserve">
+   <path id="back" d="M18.9,482.4V17.1h251.7V87L96.1,85l-2.7,129.8h155.8v65.2H93.4l3.3,202.4H18.9z"/>
+   <path id="front" d="M18.9,482.4V17.1h251.7V87L96.1,85l-2.7,129.8h155.8v65.2H93.4l3.3,202.4H18.9z"/>
+ </svg>
+    <div id="root">
+    </div>
   </body>
 </html>

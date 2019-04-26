@@ -3,13 +3,16 @@ import ReactPlayer from "react-player";
 import styled from 'styled-components/macro';
 import { ReactComponent as Play } from "./../assets/img/layout/play.svg";
 
+//52.7 es el de todos menos, desechables tiene una línea negra a la derecha y el trailer está en 1080p
+
 const VideoWrapper = styled.div`
   div:nth-of-type(2) {
     height: auto !important;
   }
-  padding-bottom: 53.01%;
+  padding-bottom: ${props => props.ratio || "52.7%"}; 
   display: block;
   position: relative;
+  overflow: hidden;
   iframe {
     width: 100%;
     height: 100%;
@@ -52,7 +55,7 @@ function VideoPlayer(props) {
   }
 
   return (
-    <VideoWrapper>
+    <VideoWrapper ratio={props.ratio}>
       <OverStill
         style={{ backgroundImage: `url(${still})` }}
         onClick={playVideo}

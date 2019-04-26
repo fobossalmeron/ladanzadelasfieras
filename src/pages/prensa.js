@@ -163,10 +163,12 @@ export default function Prensa() {
   return (
     <div id="Prensa" className="Page">
       <PageTitle>
-        <PrensaTitle />
+        <Fade cascade>
+          <PrensaTitle />
+        </Fade>
       </PageTitle>
       <Section columnStart="3" columnEnd="7">
-        <Fade cascade>
+        <Fade bottom>
           <Descargables>
             <Descargable>
               <a

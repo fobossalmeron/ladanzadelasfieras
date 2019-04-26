@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components/macro";
+import createHoverMonitor from './shared/createHoverMonitor';
 import { ReactComponent as IMDBIcon } from "./../assets/img/layout/imdb.svg";
 import { ReactComponent as IGIcon } from "./../assets/img/layout/ig.svg";
 import { ReactComponent as MailIcon } from "./../assets/img/layout/mail.svg";
@@ -26,7 +27,6 @@ const InfoProducer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  cursor: pointer;
   transition: 0.3s ease all;
   width: 100%;
   svg {
@@ -51,6 +51,11 @@ const IconContainer = styled.div`
   svg {
     height: 22px;
     margin-right:10px;
+    transform:scale(1);
+    cursor:pointer;
+    :hover{
+      transform:scale(1.1);
+    }
     path {
       fill: white;
     }
@@ -62,13 +67,28 @@ function Productor(props) {
   const title = props.title;
   const name = props.name;
   const [isHovered, setHovered] = useState(false);
+  const hover = createHoverMonitor();
 
   function handleShow(bool = !isHovered) {
-    setHovered(bool);
+    if (!hover.isEnabled) {
+      setHovered(bool);
+    }
+  }
+
+  function handleMouseEnter(e) {
+    if (hover.isEnabled && !isHovered) {
+      setHovered(true);
+    }
+  }
+  
+  function handleMouseLeave(e) {
+    if (isHovered) {
+      setHovered(false);
+    }
   }
 
   return (
-    <Producer onClick={() => handleShow()}>
+    <Producer onClick={() => handleShow()} onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter}>
       <InfoProducer hovered={isHovered} double={props.double}>
         <img src={img} alt={name} />
         <b>{title}</b> {name}

@@ -13,7 +13,7 @@ import alayde from "./../assets/img/directores/alayde.jpg";
 import stacy from "./../assets/img/directores/stacy.jpg";
 import stillDesechables from "./../assets/img/videos/desechables.jpg";
 import miguel from "./../assets/img/directores/miguel.jpg";
-import stillVoces from "./../assets/img/videos/voces.jpg";
+import stillVoces from "./../assets/img/videos/vocesblancas.jpg";
 import ana from "./../assets/img/directores/ana.jpg";
 import stillTQD from "./../assets/img/videos/tqd.jpg";
 import patterson from "./../assets/img/directores/patterson.jpg";
@@ -59,7 +59,9 @@ export default function Cortometrajes() {
   return (
     <div id="Cortometrajes" className="Page">
       <PageTitle>
-        <CortometrajesTitle />
+        <Fade cascade>
+          <CortometrajesTitle />
+        </Fade>
       </PageTitle>
       <Section columnStart="2" columnEnd="6">
         <Fade bottom>
@@ -79,7 +81,7 @@ export default function Cortometrajes() {
       <Section columnStart="2" columnEnd="8">
         <Fade bottom>
           <VideoPlayer
-            url={"https://player.vimeo.com/video/236672459"}
+            url={"https://player.vimeo.com/video/236672379"}
             still={stillFollowback}
           />
         </Fade>

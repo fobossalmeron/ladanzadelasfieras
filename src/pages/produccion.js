@@ -51,11 +51,13 @@ export default function Produccion() {
   return (
     <div id="Produccion" className="Page">
       <PageTitle>
+        <Fade cascade>
         <ProduccionTitle />
+        </Fade>
       </PageTitle>
       <Section columnStart="3" columnEnd="7">
+      <Fade bottom>
         <h2>Productores</h2>
-        <Fade cascade>
           <Productores>
             <Productor
               img={silvia}

@@ -1,21 +1,40 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import { Section, Intro } from "./pagesStylesheet";
+import { Section } from "./pagesStylesheet";
+import styled from "styled-components/macro";
 import Footer from "./../components/footer";
 import VideoPlayer from "./../components/videoPlayer";
 import { ReactComponent as Logo } from "./../assets/img/layout/homeLogo.svg";
 import { ReactComponent as Laureles } from "./../assets/img/layout/homeLaureles.svg";
-import trailerstill from "./../assets/img/videos/trailer.png";
+import trailerstill from "./../assets/img/videos/trailer.jpg";
 
-export default function Inicio() {
+export const Intro = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  div{
+    width:100%;
+  }
+  svg{
+    width:100%;
+  }
+`;
+
+export default function Inicio(props) {
   document.title = "La Danza de las Fieras";
+  var delayTime = props.hasLoaded ? 0 : 1500;
   return (
     <div id="Inicio" className="Page">
       <h1 style={{ fontSize: 0, opacity: 0 }}>La Danza de las Fieras</h1>
       <Section columnStart="3" columnEnd="7">
         <Intro>
-          <Logo className="logoHome" />
-          <Laureles className="laurelesHome" />
+          <Fade bottom delay={delayTime}>
+            <Logo className="logoHome" />
+            <Laureles className="laurelesHome" />
+          </Fade>
         </Intro>
       </Section>
       <Section columnStart="3" columnEnd="7">
@@ -39,6 +58,7 @@ export default function Inicio() {
           <VideoPlayer
             url={"https://player.vimeo.com/video/226767311"}
             still={trailerstill}
+            ratio={"56.3%"}
           />
         </Fade>
       </Section>

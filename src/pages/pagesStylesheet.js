@@ -17,15 +17,6 @@ export const Section = styled.div`
   ${columnEndProps}
 `;
 
-export const Intro = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-`;
-
 export const PageTitle = styled.h1`
   grid-column-start: 1;
   grid-column-end: 9;
