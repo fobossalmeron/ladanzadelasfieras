@@ -43,7 +43,7 @@ function App(props) {
         setLoaded(true);
         setTimeout(() => {
           // remove from DOM
-          ele.remove()
+          ele.remove();
         }, 1000);
       }
     });
@@ -56,48 +56,48 @@ function App(props) {
 
   return (
     <AppContainer visible={hasLoaded}>
-        <Router>
-          <Nav />
-          <SocialNav />
-          <BackgroundVideo />
-          <Route
-            render={({ location }) => {
-              return (
-                <TransitionGroup component={ScrollWrapper}>
-                  <CSSTransition
-                    timeout={600}
-                    classNames="page"
-                    inProp={hasLoaded}
-                    key={location.key}
-                  >
-                    <Switch location={location}>
-                      <Route
-                        name="inicio"
-                        exact
-                        path="/"
-                        component={() => <Inicio hasLoaded={hasLoaded} />}
-                      />
-                      <Route
-                        name="inicio"
-                        exact
-                        path="/ladanzadelasfieras"
-                        component={() => <Inicio hasLoaded={hasLoaded} />}
-                      />
-                      <Route exact path="/produccion" component={Produccion} />
-                      <Route
-                        exact
-                        path="/cortometrajes"
-                        component={Cortometrajes}
-                      />
-                      <Route exact path="/prensa" component={Prensa} />
-                      <Route component={NoMatch} />
-                    </Switch>
-                  </CSSTransition>
-                </TransitionGroup>
-              );
-            }}
-          />
-        </Router>
+      <Router>
+        <Nav />
+        <SocialNav />
+        <BackgroundVideo />
+        <Route
+          render={({ location }) => {
+            return (
+              <TransitionGroup component={ScrollWrapper}>
+                <CSSTransition
+                  timeout={600}
+                  classNames="page"
+                  inProp={hasLoaded}
+                  key={location.key}
+                >
+                  <Switch location={location}>
+                    <Route
+                      name="inicio"
+                      exact
+                      path="/"
+                      component={() => <Inicio hasLoaded={hasLoaded} />}
+                    />
+                    <Route
+                      name="inicio"
+                      exact
+                      path="/ladanzadelasfieras"
+                      component={() => <Inicio hasLoaded={hasLoaded} />}
+                    />
+                    <Route exact path="/produccion" component={Produccion} />
+                    <Route
+                      exact
+                      path="/cortometrajes"
+                      component={Cortometrajes}
+                    />
+                    <Route exact path="/prensa" component={Prensa} />
+                    <Route component={NoMatch} />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            );
+          }}
+        />
+      </Router>
     </AppContainer>
   );
 }

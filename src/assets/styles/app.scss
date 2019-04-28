@@ -38,6 +38,13 @@ body {
     height:100%;
 }
 
+#scroller {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
 
 //Pages
 //Inicio

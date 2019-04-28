@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Smooth from "smooth-scrolling";
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const PageScroll = styled.div` 
   position: absolute;

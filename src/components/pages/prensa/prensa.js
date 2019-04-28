@@ -4,8 +4,6 @@ import Layout, {
   Section,
   PageTitle,
   Heading3,
-  columnStartProps,
-  columnEndProps,
   whiteColor
 } from "components/layout/pageLayout";
 import Fade from "react-reveal/Fade";
@@ -66,8 +64,6 @@ const Imagen = styled.div`
 `;
 
 const Noticia = styled.div`
-  ${columnStartProps}
-  ${columnEndProps}
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 40px;
@@ -141,21 +137,25 @@ export default function Prensa() {
       return { __html: x };
     }
     return (
-      <Noticia
-        key={article.id}
+      <Section
         columnStart={isEven(index) ? "2" : "3"}
         columnEnd={isEven(index) ? "7" : "8"}
+        key={article.id}
       >
-        <Publisher>
-          <Heading3>{article.publisher}</Heading3>
-          <span>{article.date}</span>
-        </Publisher>
-        <h4>{article.title}</h4>
-        <p
-          dangerouslySetInnerHTML={set(article.quote)}
-          style={{ marginBottom: "10%" }}
-        />
-      </Noticia>
+        <Fade bottom>
+          <Noticia>
+            <Publisher>
+              <Heading3>{article.publisher}</Heading3>
+              <span>{article.date}</span>
+            </Publisher>
+            <h4>{article.title}</h4>
+            <p
+              dangerouslySetInnerHTML={set(article.quote)}
+              style={{ marginBottom: "10%" }}
+            />
+          </Noticia>
+        </Fade>
+      </Section>
     );
   });
 
@@ -227,17 +227,23 @@ export default function Prensa() {
       <Section columnStart="2" columnEnd="8">
         <Fade bottom>
           <h2>Premios</h2>
+          </Fade>
+          <Fade delay={300}>
           <Premios style={{ marginBottom: "10%" }} />
         </Fade>
       </Section>
       <Section columnStart="3" columnEnd="8">
         <Fade bottom>
           <h2>Festivales</h2>
+        </Fade>
+        <Fade delay={300}>
           <Selecciones style={{ marginBottom: "10%" }} />
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <h2>Noticias</h2>
+        <Fade bottom>
+          <h2>Noticias</h2>
+        </Fade>
       </Section>
       {noticias}
       {noticias}

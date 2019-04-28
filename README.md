@@ -4,10 +4,8 @@ Block:
 Textos Arte
 
 Precise:
-Opacity on videos before play
-No scroll on top of iframes?
-Prensa página Fades
-404
+No scroll on top of iframes? Es un cagadero el pinche player
+Boolean throwing console error on SVGPlay trailerPlayer
 
 Responsive
 
