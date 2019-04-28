@@ -4,10 +4,12 @@ Block:
 Textos Arte
 
 Precise:
-Revisar scroll :test
+Opacity on videos before play
 No scroll on top of iframes?
-Responsive
 Prensa página Fades
+404
+
+Responsive
 
 Ext:
 Noticias Arte && Textos directores

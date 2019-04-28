@@ -26,7 +26,7 @@ body {
     font-family: inherit;
     display: block;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
     height: 100vh;
     width: 100vh;
     min-width:100%;
@@ -36,180 +36,11 @@ body {
 #root, .App, .app-fade-in{
     width:100%;
     height:100%;
-    overflow:hidden;
-    position:fixed;
 }
 
-nav {
-    display: block;
-    width: auto;
-    z-index: 2;
-    left: 0;
-    position: fixed;
-    margin-top: 40px;
-    margin-left: 40px;
-    font-size: .76em;
-
-    ul {
-        padding: 0;
-        margin: 0;
-    }
-
-    ul li {
-        list-style: none;
-        line-height: 3;
-
-        a {
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 1px;
-            color: $white;
-
-            &:after {
-                content: ' ';
-                display: inline-block;
-                width: 0px;
-                height: 1px;
-                background-color: white;
-                transition: ease-in all 200ms;
-            }
-
-            &:hover {
-                &:after {
-                    width: 10px;
-                }
-            }
-
-            &.is-active {
-                font-weight: bold;
-
-            }
-
-            &.animate {
-                transform-origin: 0% 50%;
-                display: block;
-            }
-
-            &:visited {
-                color: $white;
-            }
-        }
-    }
-}
-
-.video_container {
-    position: fixed;
-    z-index: -1;
-
-    video {
-        position: fixed;
-        min-height: 100%;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        min-width: 100%;
-        width: auto !important;
-        height: auto !important;
-        background-size: cover;
-        transition: 1s opacity;
-    }
-
-    .overlay {
-        background-image: url(./../img/layout/noise.png);
-        animation: rotation 200ms infinite steps(4);
-        position: fixed;
-        left: -100%;
-        right: -100%;
-        top: -100%;
-        bottom: -100%;
-        image-rendering: pixelated;
-        transform: translateZ(0.0000001);
-    }
-}
-
-.PageWrapper {
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    width: 100%;
-    max-width: 1280px;
-}
-
-.Page {
-    position: relative;
-    display: grid;
-    grid-column-gap: 40px;
-    grid-template-columns: repeat(8, 1fr);
-
-    h1 {
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0);
-        -webkit-text-stroke: 0.5px #f9f9f9;
-        width: 100%;
-        margin: 15% 0 10% 0;
-        text-align: center;
-
-        svg {
-            width: 100%;
-            max-height: 175px;
-
-            text {
-                fill: none;
-                stroke: $white;
-                stroke-width: 1.2px;
-                font-size:105px;
-                font-family: "Share", cursive;
-            }
-        }
-    }
-
-    h2 { 
-        font-weight: bold;
-        background-color: #f9f9f9;
-        color: #0A0A0A;
-        text-transform: uppercase;
-        padding: 5px 8px 2px 8px;
-        display: inline-block;
-        font-size: 1.74em;
-        margin-left: -8px;
-        margin-bottom: 25px;
-    }
-
-    p {
-        margin: 0 0 20% 0;
-        line-height: 1.2;
-    }
-
-    &.page-enter {
-        //animation: Slide-in 0.5s forwards ease-out;
-    }
-
-    &.page-exit {
-        //animation: Slide-out 0.2s forwards ease-in;
-    }
-}
 
 //Pages
 //Inicio
-
-#Inicio {
-    .tecnical {
-        margin-top:20%;
-        border: 1px solid $white;
-        padding: 6% 5%;
-    }
-}
-
-.logoHome {
-    width: 100%;
-    max-width: 620px;
-    margin-bottom: 5%;
-}
-
-.laurelesHome {
-    max-width: 620px;
-    margin-bottom: 10%;
-}
 
 //Cortometrajes
 

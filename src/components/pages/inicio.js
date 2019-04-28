@@ -1,12 +1,11 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import { Section } from "./pagesStylesheet";
 import styled from "styled-components/macro";
-import Footer from "./../components/footer";
-import VideoPlayer from "./../components/videoPlayer";
-import { ReactComponent as Logo } from "./../assets/img/layout/homeLogo.svg";
-import { ReactComponent as Laureles } from "./../assets/img/layout/homeLaureles.svg";
-import trailerstill from "./../assets/img/videos/trailer.jpg";
+import Layout, { Section, whiteColor } from "components/layout/pageLayout";
+import TrailerPlayer from "components/shared/trailerPlayer";
+import { ReactComponent as LogoSvg } from "assets/img/layout/homeLogo.svg";
+import { ReactComponent as LaurelesSvg } from "assets/img/layout/homeLaureles.svg";
+import trailerstill from "assets/img/videos/trailer.jpg";
 
 export const Intro = styled.div`
   width: 100%;
@@ -15,25 +14,41 @@ export const Intro = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  div{
-    width:100%;
+  div {
+    width: 100%;
   }
-  svg{
-    width:100%;
+  svg {
+    width: 100%;
   }
+`;
+
+const Logo = styled(LogoSvg)`
+  width: 100%;
+  max-width: 620px;
+  margin-bottom: 5%;
+`;
+
+const Laureles = styled(LaurelesSvg)`
+  max-width: 620px;
+  margin-bottom: 10%;
+`;
+
+const Technical = styled.p`
+  border: 1px solid ${whiteColor};
+  padding: 6% 5%;
 `;
 
 export default function Inicio(props) {
   document.title = "La Danza de las Fieras";
   var delayTime = props.hasLoaded ? 0 : 1500;
   return (
-    <div id="Inicio" className="Page">
+    <Layout id="Inicio">
       <h1 style={{ fontSize: 0, opacity: 0 }}>La Danza de las Fieras</h1>
       <Section columnStart="3" columnEnd="7">
         <Intro>
           <Fade bottom delay={delayTime}>
-            <Logo className="logoHome" />
-            <Laureles className="laurelesHome" />
+            <Logo />
+            <Laureles />
           </Fade>
         </Intro>
       </Section>
@@ -55,7 +70,7 @@ export default function Inicio(props) {
       </Section>
       <Section columnStart="2" columnEnd="8">
         <Fade bottom>
-          <VideoPlayer
+          <TrailerPlayer
             url={"https://player.vimeo.com/video/226767311"}
             still={trailerstill}
             ratio={"56.3%"}
@@ -64,11 +79,11 @@ export default function Inicio(props) {
       </Section>
       <Section columnStart="4" columnEnd="6">
         <Fade bottom>
-          <p className="tecnical">
+          <Technical style={{ marginTop: "20%" }}>
             <b>GÉNERO:</b> Mixto, ficción y documental
             <br />
             <b>DURACIÓN:</b> 1 hora 52 minutos
-          </p>
+          </Technical>
         </Fade>
       </Section>
       <Section columnStart="3" columnEnd="6">
@@ -111,7 +126,6 @@ export default function Inicio(props) {
           </p>
         </Fade>
       </Section>
-      <Footer />
-    </div>
+    </Layout>
   );
 }

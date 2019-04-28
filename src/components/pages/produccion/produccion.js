@@ -1,20 +1,19 @@
 import React from "react";
-import { Section, PageTitle } from "./pagesStylesheet";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Fade from "react-reveal/Fade";
-import Footer from "./../components/footer";
-import Productor from "./../components/productor";
+import Layout, { Section, PageTitle } from "components/layout/pageLayout";
+import Productor from "./productor";
 
-import { ReactComponent as ProduccionTitle } from "./../assets/img/layout/produccion.svg";
+import { ReactComponent as ProduccionTitle } from "assets/img/layout/produccion.svg";
 
-import silvia from "./../assets/img/productores/silvia.jpg";
-import martha from "./../assets/img/productores/martha.jpg";
-import german from "./../assets/img/productores/german.jpg";
-import bernardo from "./../assets/img/productores/bernardo.jpg";
-import { ReactComponent as ReflektoIcon } from "./../assets/img/casas/reflekto.svg";
-import { ReactComponent as AntitesisIcon } from "./../assets/img/casas/antitesis.svg";
-import { ReactComponent as BalaIcon } from "./../assets/img/casas/bala.svg";
-import { ReactComponent as EducadoresIcon } from "./../assets/img/casas/educadores.svg";
+import silvia from "assets/img/productores/silvia.jpg";
+import martha from "assets/img/productores/martha.jpg";
+import german from "assets/img/productores/german.jpg";
+import bernardo from "assets/img/productores/bernardo.jpg";
+import { ReactComponent as ReflektoIcon } from "assets/img/casas/reflekto.svg";
+import { ReactComponent as AntitesisIcon } from "assets/img/casas/antitesis.svg";
+import { ReactComponent as BalaIcon } from "assets/img/casas/bala.svg";
+import { ReactComponent as EducadoresIcon } from "assets/img/casas/educadores.svg";
 
 const Productores = styled.ul`
   display: grid;
@@ -49,15 +48,15 @@ const Educadores = styled(Productora)`
 export default function Produccion() {
   document.title = "La Danza de las Fieras | Producción";
   return (
-    <div id="Produccion" className="Page">
+    <Layout id="Produccion">
       <PageTitle>
         <Fade cascade>
-        <ProduccionTitle />
+          <ProduccionTitle />
         </Fade>
       </PageTitle>
       <Section columnStart="3" columnEnd="7">
-      <Fade bottom>
-        <h2>Productores</h2>
+        <Fade bottom>
+          <h2>Productores</h2>
           <Productores>
             <Productor
               img={silvia}
@@ -120,7 +119,6 @@ export default function Produccion() {
         <Fade bottom cascade>
           <Productora>
             <AntitesisIcon />
-
             <p>
               <b>ANTÍTESIS</b> nace de los deseos de un grupo de jóvenes
               cineastas que buscan generar proyectos relevantes. A través de la
@@ -135,7 +133,6 @@ export default function Produccion() {
         <Fade bottom cascade>
           <Productora>
             <BalaIcon />
-
             <p>
               <b>BALA FILMS</b> es una familia dedicada a la realización de
               obras cinematográficas y proyectos audiovisuales. Nuestras obras
@@ -158,7 +155,6 @@ export default function Produccion() {
         <Fade bottom cascade>
           <Educadores>
             <EducadoresIcon />
-
             <p>
               <b>EDUCADORES SIN FRONTERAS</b> es una organización no
               gubernamental, autónoma, sin fines de lucro, que desarrolla y
@@ -173,7 +169,6 @@ export default function Produccion() {
           </Educadores>
         </Fade>
       </Section>
-      <Footer />
-    </div>
+    </Layout>
   );
 }

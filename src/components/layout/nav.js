@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
 import Fade from "react-reveal/Fade";
-import { whiteColor } from "pages/pagesStylesheet";
+import { whiteColor } from "components/pages/pagesStylesheet";
 
 const NavMenu = styled.nav`
   display: block;

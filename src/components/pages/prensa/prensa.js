@@ -1,25 +1,24 @@
 import React from "react";
-import { ReactComponent as PrensaTitle } from "./../assets/img/layout/prensa.svg";
-import {
+import { ReactComponent as PrensaTitle } from "assets/img/layout/prensa.svg";
+import Layout, {
   Section,
   PageTitle,
   Heading3,
   columnStartProps,
   columnEndProps,
   whiteColor
-} from "./pagesStylesheet";
+} from "components/layout/pageLayout";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components/macro";
-import Footer from "./../components/footer";
-import news from "./../news/news";
+import news from "./newsdb";
 
-import englishPresskit from "./../assets/img/descargables/englishPresskit.png";
-import spanishPresskit from "./../assets/img/descargables/spanishPresskit.png";
-import poster from "./../assets/img/descargables/poster.png";
-import stickers from "./../assets/img/descargables/stickers.png";
+import englishPresskit from "assets/img/descargables/englishPresskit.png";
+import spanishPresskit from "assets/img/descargables/spanishPresskit.png";
+import poster from "assets/img/descargables/poster.png";
+import stickers from "assets/img/descargables/stickers.png";
 
-import { ReactComponent as Premios } from "./../assets/img/layout/premios.svg";
-import { ReactComponent as Selecciones } from "./../assets/img/layout/selecciones.svg";
+import { ReactComponent as Premios } from "assets/img/layout/premios.svg";
+import { ReactComponent as Selecciones } from "assets/img/layout/selecciones.svg";
 
 const Descargables = styled.ul`
   display: grid;
@@ -159,9 +158,9 @@ export default function Prensa() {
       </Noticia>
     );
   });
-  console.log(noticias);
+
   return (
-    <div id="Prensa" className="Page">
+    <Layout id="Prensa">
       <PageTitle>
         <Fade cascade>
           <PrensaTitle />
@@ -169,6 +168,7 @@ export default function Prensa() {
       </PageTitle>
       <Section columnStart="3" columnEnd="7">
         <Fade bottom>
+          <h2>Descargables</h2>
           <Descargables>
             <Descargable>
               <a
@@ -182,11 +182,7 @@ export default function Prensa() {
                   style={{ backgroundImage: `url(${englishPresskit})` }}
                   alt="English Presskit"
                 />
-                <p>
-                  Download
-                  <br />
-                  English Presskit
-                </p>
+                <p>English Presskit</p>
               </a>
             </Descargable>
             <Descargable>
@@ -201,11 +197,7 @@ export default function Prensa() {
                   style={{ backgroundImage: `url(${spanishPresskit})` }}
                   alt="Presskit en Español"
                 />
-                <p>
-                  Descargar
-                  <br />
-                  Presskit
-                </p>
+                <p>Presskit</p>
               </a>
             </Descargable>
             <Descargable>
@@ -217,11 +209,7 @@ export default function Prensa() {
                   style={{ backgroundImage: `url(${poster})` }}
                   alt="Poster"
                 />
-                <p>
-                  Descargar
-                  <br />
-                  Poster
-                </p>
+                <p>Poster</p>
               </a>
             </Descargable>
             <Descargable>
@@ -230,11 +218,7 @@ export default function Prensa() {
                   style={{ backgroundImage: `url(${stickers})` }}
                   alt="Stickers"
                 />
-                <p>
-                  Descargar
-                  <br />
-                  Stickers
-                </p>
+                <p>Stickers</p>
               </a>
             </Descargable>
           </Descargables>
@@ -256,7 +240,10 @@ export default function Prensa() {
         <h2>Noticias</h2>
       </Section>
       {noticias}
-      <Footer />
-    </div>
+      {noticias}
+      {noticias}
+      {noticias}
+      {noticias}
+    </Layout>
   );
 }

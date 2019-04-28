@@ -2,25 +2,24 @@ import React from "react";
 import styled from "styled-components/macro";
 import Fade from "react-reveal/Fade";
 
-import { Section, PageTitle } from "./pagesStylesheet";
-import Footer from "./../components/footer";
-import VideoPlayer from "./../components/videoPlayer";
-import DirectorCard from "./../components/directorCard";
-import { ReactComponent as CortometrajesTitle } from "./../assets/img/layout/cortometrajes.svg";
+import Layout, { Section, PageTitle } from "components/layout/pageLayout";
+import TrailerPlayer from "components/shared/trailerPlayer";
+import DirectorCard from "./directorCard";
+import { ReactComponent as CortometrajesTitle } from "assets/img/layout/cortometrajes.svg";
 
-import stillFollowback from "./../assets/img/videos/followback.jpg";
-import alayde from "./../assets/img/directores/alayde.jpg";
-import stacy from "./../assets/img/directores/stacy.jpg";
-import stillDesechables from "./../assets/img/videos/desechables.jpg";
-import miguel from "./../assets/img/directores/miguel.jpg";
-import stillVoces from "./../assets/img/videos/vocesblancas.jpg";
-import ana from "./../assets/img/directores/ana.jpg";
-import stillTQD from "./../assets/img/videos/tqd.jpg";
-import patterson from "./../assets/img/directores/patterson.jpg";
-import stillSBLP from "./../assets/img/videos/sblp.jpg";
-import angel from "./../assets/img/directores/angel.jpg";
-import stillQCLN from "./../assets/img/videos/qcln.jpg";
-import gina from "./../assets/img/directores/gina.jpg";
+import stillFollowback from "assets/img/videos/followback.jpg";
+import alayde from "assets/img/directores/alayde.jpg";
+import stacy from "assets/img/directores/stacy.jpg";
+import stillDesechables from "assets/img/videos/desechables.jpg";
+import miguel from "assets/img/directores/miguel.jpg";
+import stillVoces from "assets/img/videos/vocesblancas.jpg";
+import ana from "assets/img/directores/ana.jpg";
+import stillTQD from "assets/img/videos/tqd.jpg";
+import patterson from "assets/img/directores/patterson.jpg";
+import stillSBLP from "assets/img/videos/sblp.jpg";
+import angel from "assets/img/directores/angel.jpg";
+import stillQCLN from "assets/img/videos/qcln.jpg";
+import gina from "assets/img/directores/gina.jpg";
 
 const InfoSection = styled.div`
   padding-top: 5%;
@@ -57,9 +56,9 @@ const Credits = styled.p`
 export default function Cortometrajes() {
   document.title = "La Danza de las Fieras | Cortometrajes";
   return (
-    <div id="Cortometrajes" className="Page">
+    <Layout id="Cortometrajes">
       <PageTitle>
-        <Fade cascade>
+        <Fade>
           <CortometrajesTitle />
         </Fade>
       </PageTitle>
@@ -80,7 +79,7 @@ export default function Cortometrajes() {
       </Section>
       <Section columnStart="2" columnEnd="8">
         <Fade bottom>
-          <VideoPlayer
+          <TrailerPlayer
             url={"https://player.vimeo.com/video/236672379"}
             still={stillFollowback}
           />
@@ -94,7 +93,6 @@ export default function Cortometrajes() {
               title={"CO-DIRECTORA"}
               img={alayde}
               imdb={"https://www.imdb.com/name/nm7429166/"}
-              ig={"https://www.instagram.com/julesflorencia/"}
               mail={"alayde.castro@gmail.com"}
               bio={`Socia fundadora y Directora Creativa de la casa productora 
                 <b>Antítesis</b> que ha trabajado para clientes como la UNAM, 
@@ -145,7 +143,7 @@ export default function Cortometrajes() {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <VideoPlayer
+        <TrailerPlayer
           url={"https://player.vimeo.com/video/236672175"}
           still={stillDesechables}
         />
@@ -200,7 +198,7 @@ export default function Cortometrajes() {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <VideoPlayer
+        <TrailerPlayer
           url={"https://player.vimeo.com/video/236672641"}
           still={stillVoces}
         />
@@ -256,7 +254,7 @@ export default function Cortometrajes() {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <VideoPlayer
+        <TrailerPlayer
           url={"https://player.vimeo.com/video/236672575"}
           still={stillTQD}
         />
@@ -315,7 +313,7 @@ export default function Cortometrajes() {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <VideoPlayer
+        <TrailerPlayer
           url={"https://player.vimeo.com/video/236672332"}
           still={stillSBLP}
         />
@@ -365,7 +363,7 @@ export default function Cortometrajes() {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <VideoPlayer
+        <TrailerPlayer
           url={"https://player.vimeo.com/video/236672459"}
           still={stillQCLN}
         />
@@ -405,7 +403,6 @@ export default function Cortometrajes() {
           </Credits>
         </InfoSection>
       </Section>
-      <Footer />
-    </div>
+    </Layout>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import styled, {keyframes} from "styled-components/macro";
-import overlayImg from "./../assets/img/layout/noise.png";
-import video from "./../assets/video/video.mp4";
+import overlayImg from "assets/img/layout/noise.png";
+import video from "assets/video/video.mp4";
 
 
 const VideoContainer = styled.div`

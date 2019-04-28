@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from "styled-components/macro";
 
 export const whiteColor = "#f9f9f9";
 export const blackColor = "#0A0A0A";

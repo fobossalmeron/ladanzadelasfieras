@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import styled from 'styled-components/macro';
-import { ReactComponent as Play } from "./../assets/img/layout/play.svg";
+import { ReactComponent as Play } from "assets/img/layout/play.svg";
 
 //52.7 es el de todos menos, desechables tiene una línea negra a la derecha y el trailer está en 1080p
 
@@ -46,7 +46,7 @@ const PlayButton = styled(Play)`
   }
 `;
 
-function VideoPlayer(props) {
+function TrailerPlayer(props) {
   const still = props.still;
   const [isPlaying, setPlaying] = useState(false);
 
@@ -74,4 +74,4 @@ function VideoPlayer(props) {
   );
 }
 
-export default VideoPlayer;
+export default TrailerPlayer;

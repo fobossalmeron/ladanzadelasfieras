@@ -2,23 +2,21 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled, { css } from "styled-components/macro";
-import ReactPlayer from "react-player";
 
-import Nav from "./nav";
-import SocialNav from "./socialNav";
-import PageWrapper from "./pageWrapper";
+import Nav from "components/layout/nav";
+import SocialNav from "components/layout/socialNav";
+import ScrollWrapper from "components/container/scrollWrapper";
+import BackgroundVideo from "components/container/backgroundVideo";
 
-import Inicio from "../pages/inicio";
-import Cortometrajes from "../pages/cortometrajes";
-import Produccion from "../pages/produccion";
-import Prensa from "../pages/prensa";
-import NoMatch from "../pages/404";
+import Inicio from "components/pages/inicio";
+import Cortometrajes from "components/pages/cortometrajes/cortometrajes";
+import Produccion from "components/pages/produccion/produccion";
+import Prensa from "components/pages/prensa/prensa";
+import NoMatch from "components/pages/404";
 
-import video from "./../assets/video/video.mp4";
+import "assets/styles/app.scss";
 
-import "./../assets/styles/app.scss";
-
-const AppFadeIn = styled.div`
+const AppContainer = styled.div`
   overflow: hidden;
   position: fixed;
   width: 100vw;
@@ -34,27 +32,6 @@ const AppFadeIn = styled.div`
       opacity: 1;
     `}
 `;
-
-function VideoBackground(play, props) {
-  const [isPlaying, setPlaying] = useState(false);
-  useEffect(() => {
-    setPlaying(true);
-  });
-  return (
-    <div className="video_container">
-      <ReactPlayer
-        url={video}
-        playsinline
-        playing={isPlaying}
-        muted
-        loop
-        volume={0}
-        onLoad={props.passLoad}
-      />
-      <div className="overlay" />
-    </div>
-  );
-}
 
 function App(props) {
   const [hasLoaded, setLoaded] = useState(false);
@@ -78,15 +55,15 @@ function App(props) {
   }
 
   return (
-    <AppFadeIn visible={hasLoaded}>
+    <AppContainer visible={hasLoaded}>
         <Router>
           <Nav />
           <SocialNav />
-          <VideoBackground />
+          <BackgroundVideo />
           <Route
             render={({ location }) => {
               return (
-                <TransitionGroup component={PageWrapper}>
+                <TransitionGroup component={ScrollWrapper}>
                   <CSSTransition
                     timeout={600}
                     classNames="page"
@@ -121,7 +98,7 @@ function App(props) {
             }}
           />
         </Router>
-    </AppFadeIn>
+    </AppContainer>
   );
 }
 

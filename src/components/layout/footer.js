@@ -8,7 +8,7 @@ import {
   Heading3,
   blackColor,
   redColor
-} from "./../../pages/pagesStylesheet";
+} from "components/layout/pageLayout";
 
 import { ReactComponent as credit } from "./../../assets/img/layout/creditos.svg";
 import { ReactComponent as SuccessIcon } from "./../../assets/img/layout/success.svg";

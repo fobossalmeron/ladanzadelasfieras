@@ -3,7 +3,7 @@ import Fade from "react-reveal/Fade";
 import styled from "styled-components/macro";
 import {
   whiteColor
-} from "pages/pagesStylesheet";
+} from "components/layout/pageLayout";
 import { ReactComponent as IMDBIcon } from "assets/img/layout/imdb.svg";
 import { ReactComponent as FacebookIcon } from "assets/img/layout/facebook.svg";
 import { ReactComponent as MailIcon } from "assets/img/layout/mail.svg";
