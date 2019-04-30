@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import Smooth from "smooth-scrolling";
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
 
-const PageScroll = styled.div` 
+const PageScroll = styled.div`
   position: absolute;
-  overflow: hidden;
   top: 0;
   width: 100%;
   max-width: 1280px;
@@ -12,16 +11,22 @@ const PageScroll = styled.div`
 
 export default function ScrollWrapper(props) {
   const pageRef = useRef(null);
+  var height = "100px";
 
   useEffect(() => {
     const section = pageRef.current;
 
     var smooth = new Smooth({
-      noscrollbar: false,
+      noscrollbar: true,
       native: false,
       section: section,
       ease: 0.1,
-      vs: { mouseMultiplier: 0.3, touchMultiplier: 1, keyStep: 300 },
+      vs: {
+        mouseMultiplier: 0.3,
+        firefoxMultiplier: 20,
+        touchMultiplier: 1,
+        keyStep: 300
+      },
       timer: 1000
     });
     smooth.init();
@@ -30,5 +35,9 @@ export default function ScrollWrapper(props) {
       smooth.destroy();
     };
   });
-  return <PageScroll ref={pageRef}>{props.children}</PageScroll>;
+  return (
+    <PageScroll height={height} ref={pageRef}>
+      {props.children}
+    </PageScroll>
+  );
 }

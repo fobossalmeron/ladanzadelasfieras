@@ -55,16 +55,15 @@ export default function Inicio(props) {
       <Section columnStart="3" columnEnd="7">
         <Fade bottom>
           <p style={{ marginTop: "10%" }}>
-            <b>LA DANZA DE LAS FIERAS</b> es un largometraje cuyo propósito es
-            concientizar y generar reflexiones, debates y acciones para prevenir
-            la trata de personas. Para cumplir su objetivo, la película está
-            dividida en seis secciones, cada una de las cuales aborda un tema
-            específico relacionado con la trata de personas. Las seis historias
-            han sido construidas con arduo trabajo de investigación y desarrollo
-            creativo, en los cuales se han involucrado siete directores de cine
-            y más de veinte expertos en el tema: sociólogos, antropólogos,
-            psicólogos, criminalistas y otros especialistas en derechos humanos
-            y trata de personas.
+            <b>LA DANZA DE LAS FIERAS</b> es un largometraje que concientiza y
+            genera reflexiones, debates y acciones para prevenir la trata de
+            personas. Está dividido en seis secciones y cada una aborda un tema
+            relacionado al tráfico ilegal de humanos. Las historias fueron
+            construidas con arduo trabajo de investigación y desarrollo
+            creativo, en los cuales se involucraron siete directores de cine y
+            más de 20 expertos en el tema; estos incluyen sociólogos,
+            antropólogos, psicólogos, criminalistas y más especialistas en
+            derechos humanos y trata de personas.
           </p>
         </Fade>
       </Section>
@@ -90,10 +89,11 @@ export default function Inicio(props) {
         <Fade bottom>
           <h2>Sinópsis</h2>
           <p>
-            El internet como facilitador de víctimas para la esclavitud sexual,
-            niños sicarios, pequeños jornaleros en condiciones infrahumanas,
-            albergues disfuncionales, víctimas colaterales y familias
-            destruidas, son los temas que aborda <b>LA DANZA DE LAS FIERAS</b>.
+            El internet como facilitador de víctimas para la esclavitud sexual,
+            niños sicarios, jornaleros infantes en condiciones infrahumanas,
+            albergues disfuncionales, víctimas colaterales y familias
+            destruídas, son los temas que aborda <b>LA DANZA DE LAS FIERAS</b>{" "}
+            alrededor de la trata de personas.
           </p>
         </Fade>
       </Section>
@@ -101,28 +101,25 @@ export default function Inicio(props) {
         <Fade bottom>
           <h2>La trata de personas</h2>
           <p>
-            La trata de personas es un fenómeno global. En el 2017 existen más
-            esclavos que en cualquier otro momento de la historia de la
-            humanidad. Según un reporte de la Casa Blanca, a nivel mundial hay
-            más de 27 millones de personas sufriendo condiciones similares a la
-            esclavitud. La esclavitud o el tráfico de personas es definido en la
-            actualidad como:
+            Fenómeno global que reporta, más de 27 millones de personas que
+            sufren condiciones similares a la esclavitud (Casa Blanca, 2017). La
+            trata o tráfico de personas puede entenderse como:
             <br />
             <br />
-            1. Tráfico sexual en el cual se comercia el acto sexual por medio de
-            la fuerza, fraude o coerción, o en el que la persona inducida a
-            cometer el acto no ha cumplido 18 años de edad.
+            1. Tráfico en el cual se comercia el acto sexual por medio de la
+            fuerza, fraude o coerción, o en el que la persona inducida a cometer
+            el acto no ha cumplido 18 años de edad.
             <br />
             <br />
-            2. El reclutamiento, almacenamiento, transportación,
-            aprovisionamiento u obtención de una persona para realizar trabajos
-            o servicios por medio del uso de la fuerza, fraude o coerción con el
-            propósito de subyugación a servitud, peonaje o esclavitud.
+            2. El reclutamiento, almacenamiento, transportación,
+            aprovisionamiento u obtención de una persona para realizar trabajos
+            o servicios por medio del uso de la fuerza, fraude o coerción con el
+            propósito de subyugación a servitud, peonaje o esclavitud.
             <br />
             <br />
-            En México, la trata de personas es el segundo delito de más
-            importancia económica y se estima que al año al menos 20,000 niñas
-            sufren explotación sexual.
+            En México la trata de personas es el segundo delito de más
+            importancia económica y se estima que, al año, al menos 20,000 niñas
+            sufren explotación sexual.
           </p>
         </Fade>
       </Section>

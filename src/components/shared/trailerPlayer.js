@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import styled, { css } from "styled-components/macro";
+import { whiteColor } from "components/layout/pageLayout";
+import styled, { css, keyframes } from "styled-components/macro";
 import { ReactComponent as Play } from "assets/img/layout/play.svg";
+import { ReactComponent as Pause } from "assets/img/layout/pause.svg";
 
 //52.7 es el de todos menos, desechables tiene una línea negra a la derecha y el trailer está en 1080p
 
 const VideoWrapper = styled.div`
-  div:nth-of-type(3) {
+  div:last-of-type {
     height: auto !important;
   }
   padding-bottom: ${props => props.ratio || "52.7%"};
@@ -21,22 +23,70 @@ const VideoWrapper = styled.div`
   }
 `;
 
+const hidePause = keyframes`
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+`;
+
+const Clicker = styled.div`
+  width: 100%;
+  height: calc(100% - 50px);
+  position: absolute;
+  pointer-events: auto;
+  z-index: 3;
+  cursor: pointer;
+  ${props =>
+    props.hideSvg &&
+    css`
+      svg {
+        opacity: 0;
+      }
+      :hover {
+        svg {
+          opacity: 1;
+          animation-delay: 2s;
+          animation-fill-mode: forwards;
+          animation: ${hidePause} 0.4s;
+        }
+      }
+    `}
+  svg {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: calc(50% - 17.5px);
+    top: calc(50% + 17.5px);
+    transition: opacity 0.4s ease;
+    z-index: 3;
+    polygon,
+    rect {
+      stroke: ${whiteColor};
+      stroke-width: 26px;
+      fill: none;
+      stroke: rgb(255, 255, 255);
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+    }
+  }
+`;
+
 const Fader = styled.div`
   width: 100%;
   height: 100%;
-  top: 0;
   position: absolute;
   z-index: 2;
-  pointer-events: none;
   background-color: rgba(0, 0, 0, 0.2);
   transition: 0.4s ease opacity;
+  margin-bottom: 50px;
+  pointer-events: none;
   ${props =>
     props.hide &&
     css`
       opacity: 0;
-      pointer-events: auto;
-      height: calc(100% - 50px);
-      margin-bottom: 50px;
     `}
 `;
 
@@ -62,54 +112,69 @@ const PlayButton = styled(Play)`
   cursor: pointer;
   polygon {
     stroke-width: 26px;
+    fill: none;
+  }
+  opacity: ${props => (props.hide ? "0" : "1")};
+`;
+
+const PauseButton = styled(Pause)`
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: calc(50% - 17.5px);
+  top: calc(50% - 17.5px);
+  z-index: 3;
+  cursor: pointer;
+  polygon,
+  rect {
+    stroke: ${whiteColor};
+    stroke-width: 26px;
+    fill: none;
+    stroke: rgb(255, 255, 255);
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
   }
   opacity: ${props => (props.hide ? "0" : "1")};
 `;
 
 function TrailerPlayer(props) {
-  const still = props.still;
   const [isPlaying, setPlaying] = useState(false);
-  const [showIcon, setIcon] = useState(true);
-  const [showStill, setStill] = useState(true);
+  const [isInitial, setInitial] = useState(true);
 
-  function playVideo() {
-    setPlaying(true);
-    setStill(false);
-    hidePlay();
-  }
-  function restoreVideo(){
-    setPlaying(false);
-    setStill(true);
-    showPlay();
+  function handlePlay(bool = !isPlaying, bool2 = null) {
+    setPlaying(bool);
+    setInitial(false);
   }
 
-  function showPlay(){
-    setIcon(true);
+  function pauseVideo() {
     setPlaying(false);
   }
 
-  function hidePlay(){
-    setIcon(false);
-    setPlaying(true);
+  function restoreVideo() {
+    setPlaying(false);
+    setInitial(true);
   }
 
   return (
     <VideoWrapper ratio={props.ratio}>
-      <PlayButton onClick={playVideo} hide={!showIcon} />
-      <Fader onClick={playVideo} hide={!showIcon} />
+      <Clicker onClick={() => handlePlay()} hideSvg={isPlaying}>
+        {isPlaying ? <PauseButton id="paused" /> : <PlayButton />}
+      </Clicker>
+      <Fader hide={isPlaying} />
       <OverStill
-        style={{ backgroundImage: `url(${still})` }}
-        hide={!showStill}
+        style={{ backgroundImage: `url(${props.still})` }}
+        hide={!isInitial}
+        onClick={() => handlePlay(true)}
       />
       <ReactPlayer
         playing={isPlaying}
         url={props.url}
-        controls={true}
+        controls={false}
         style={{ height: "auto !important" }}
         width="100%"
-        onEnded={restoreVideo}
-        onPause={showPlay}
-        onPlay={hidePlay}
+        onEnded={() => restoreVideo()}
+        onPause={() => pauseVideo()}
+        onPlay={() => handlePlay(true)}
       />
     </VideoWrapper>
   );

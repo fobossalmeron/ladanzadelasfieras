@@ -66,21 +66,20 @@ export default function Cortometrajes() {
         <Fade bottom>
           <h2>Followback</h2>
           <p style={{ marginBottom: "5%" }}>
-            <b>FOLLOWBACK</b> es un cortometraje con un formato innovador, pues
-            toda la historia se cuenta a través de pantallas de celulares. El
-            cortometraje se divide en 3 partes: la primera está contada desde el
-            celular de Lorena, una chica de 16 años que viaja a la ciudad de
-            México con la promesa de un trabajo de modelo; la segunda es
-            observada en el celular de un tratante, y la tercera desde el
-            teléfono de un joven consumidor de pornografía aparentemente
-            amateur.
+            Cortometraje con un formato innovador que cuenta su historia a
+            través de pantallas de celulares. El corto se divide en 3 partes: la
+            primera es contada desde el celular de Lorena, una chica de 16 años
+            que viaja a Ciudad de México con la promesa de un trabajo de modelo;
+            la segunda es observada en el celular de un tratante y la tercera
+            desde el teléfono de un joven consumidor de pornografía,
+            aparentemente, amateur.
           </p>
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
         <Fade bottom>
           <TrailerPlayer
-            url={"https://player.vimeo.com/video/236672379"}
+            url={"https://vimeo.com/236672379"}
             still={stillFollowback}
           />
         </Fade>
@@ -134,11 +133,11 @@ export default function Cortometrajes() {
         <Fade bottom>
           <h2>Desechables</h2>
           <p style={{ marginBottom: "5%" }}>
-            <b>DESECHABLES</b> sigue la historia de Martín, un joven de 15 años
-            que es engañado y amenazado por un cartel de narcotraficantes que
-            quiere convertirlo en sicario. Inesperadamente Martín se reencuentra
-            con alguien que interviene para ayudarle, desatando la furia de los
-            delincuentes y una serie de repercusiones mortales.
+            La historia de Martín, un joven de 15 años que es engañado y
+            amenazado por un cartel de narcotraficantes que quiere convertirlo
+            en sicario. Inesperadamente, Martín se reencuentra con alguien que
+            interviene para ayudarle, lo que desata la furia de los delincuentes
+            y una serie de repercusiones mortales.
           </p>
         </Fade>
       </Section>
@@ -191,9 +190,11 @@ export default function Cortometrajes() {
         <Fade bottom>
           <h2>Voces Blancas</h2>
           <p style={{ marginBottom: "5%" }}>
-            <b>VOCES BLANCAS</b> reúne a treinta niñas y niños de entre 12 y 17
-            años para profundizar en su visión sobre la sexualidad, el sexismo,
-            la trata de personas, entre otros temas.
+            30 niñas y niños de entre 12 y 17 años son reunidos para profundizar
+            en su visión sobre la sexualidad, el sexismo, la trata de personas,
+            entre otros temas. Mediante entrevistas y herramientas documentales,
+            asoman los contrastes y reflexiones respecto a estos temas en sus
+            jóvenes mentes.
           </p>
         </Fade>
       </Section>
@@ -244,12 +245,11 @@ export default function Cortometrajes() {
         <Fade bottom>
           <h2>Todos Queremos Dormir</h2>
           <p style={{ marginBottom: "5%" }}>
-            <b>TODOS QUEREMOS DORMIR</b> cuenta la odisea de Araceli, una
-            empleada doméstica, la tarde que descubre que su hija Sonia ha
-            desaparecido. Después de encontrar muchas trabas por parte del
-            sistema judicial, decide buscarla ella misma. Araceli tendrá que
-            insertarse en el mundo de la corrupción y hacer hasta lo impensable
-            si pretende recuperarla.
+            Esta es la odisea de Araceli, una empleada doméstica, la tarde que
+            descubre que su hija Sonia desapareció. Después de encontrar muchas
+            trabas en el sistema judicial, decide buscarla ella misma. Araceli
+            tendrá que infiltrarse en el mundo de la corrupción y hacer hasta lo
+            impensable si pretende recuperar a su hija.
           </p>
         </Fade>
       </Section>
@@ -304,11 +304,11 @@ export default function Cortometrajes() {
         <Fade bottom>
           <h2>El Sol Bajo Los Pies</h2>
           <p style={{ marginBottom: "5%" }}>
-            <b>EL SOL BAJO LOS PIES</b> es un cortometraje que se introduce en
-            la realidad de los niños que involuntariamente se convierten en
-            jornaleros en México. Este documental evidencia las condiciones en
-            que se ven obligados a trabajar con sus padres, y las mentiras y
-            abusos de quienes los contratan.
+            Cortometraje que se introduce en la realidad de los niños que
+            involuntariamente se convierten en jornaleros en México. Este
+            documental evidencia las condiciones en que se ven obligados a
+            trabajar con sus padres y las mentiras y abusos de quienes los
+            contratan.
           </p>
         </Fade>
       </Section>
@@ -353,12 +353,12 @@ export default function Cortometrajes() {
         <Fade bottom>
           <h2>Que Canten Los Niños</h2>
           <p style={{ marginBottom: "5%" }}>
-            <b>QUE CANTEN LOS NIÑOS</b> sigue los esfuerzos de Xochi y Ceci, dos
-            niñas de 12 y 10 años, que intentan escapar de su existencia llena
-            de abusos físicos, emocionales y sexuales dentro de un albergue
-            disfuncional. ¿Cuántos niños desamparados y olvidados sobreviven en
-            esas condiciones? Es la historia del abuso de poder que sometió a
-            niños durante décadas para fundar una fábrica de esclavos ignorados.
+            Esta historia sigue los esfuerzos de Xochi y Ceci, dos niñas de 12 y
+            10 años, que intentan escapar de su existencia llena de abusos
+            físicos, emocionales y sexuales dentro de un albergue disfuncional.
+            ¿Cuántos niños desamparados y olvidados sobreviven en esas
+            condiciones? Esta es la historia del abuso de poder que sometió a
+            niños durante décadas para fundar una fábrica de esclavos ignorados.
           </p>
         </Fade>
       </Section>

@@ -4,7 +4,8 @@ import Layout, {
   Section,
   PageTitle,
   Heading3,
-  whiteColor
+  whiteColor,
+  redColor
 } from "components/layout/pageLayout";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components/macro";
@@ -64,18 +65,34 @@ const Imagen = styled.div`
 `;
 
 const Noticia = styled.div`
+  color: ${whiteColor};
+  :hover {
+    h3 {
+      color: ${redColor};
+    }
+  }
+`;
+
+const TitleQuote = styled.a`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 40px;
+  text-decoration: none;
+  color: ${whiteColor};
+  margin-top: 20px;
+  margin-bottom: 10%;
   h4 {
     grid-column: 1 / span 5;
     text-transform: uppercase;
     margin-bottom: 10px;
+    text-decoration: none;
+    margin-top: 0;
   }
   p {
     grid-column: 1 / span 4;
     quotes: "“" "”" "‘" "’";
     position: relative;
+    text-decoration: none;
     b {
       text-transform: uppercase;
     }
@@ -108,9 +125,14 @@ const Publisher = styled.div`
   grid-column: 1 / span 5;
   display: flex;
   flex-direction: row-gap;
+  a {
+    display: flex;
+    text-decoration: none;
+  }
   h3 {
     margin-bottom: 0;
     margin-top: 0;
+    transition: 0.3s ease all;
   }
   span {
     color: white;
@@ -140,19 +162,27 @@ export default function Prensa() {
       <Section
         columnStart={isEven(index) ? "2" : "3"}
         columnEnd={isEven(index) ? "7" : "8"}
-        key={article.id}
+        key={index + "not"}
       >
         <Fade bottom>
           <Noticia>
             <Publisher>
-              <Heading3>{article.publisher}</Heading3>
-              <span>{article.date}</span>
+              <a target="_blank" rel="noopener noreferrer" href={article.link}>
+                <Heading3>{article.publisher}</Heading3>
+                <span>{article.date}</span>
+              </a>
             </Publisher>
-            <h4>{article.title}</h4>
-            <p
-              dangerouslySetInnerHTML={set(article.quote)}
-              style={{ marginBottom: "10%" }}
-            />
+            <TitleQuote
+              target="_blank"
+              rel="noopener noreferrer"
+              href={article.link}
+            >
+              <h4>{article.title}</h4>
+              <p
+                dangerouslySetInnerHTML={set(article.quote)}
+                style={{ marginBottom: "0" }}
+              />
+            </TitleQuote>
           </Noticia>
         </Fade>
       </Section>
@@ -227,8 +257,8 @@ export default function Prensa() {
       <Section columnStart="2" columnEnd="8">
         <Fade bottom>
           <h2>Premios</h2>
-          </Fade>
-          <Fade delay={300}>
+        </Fade>
+        <Fade delay={300}>
           <Premios style={{ marginBottom: "10%" }} />
         </Fade>
       </Section>
@@ -245,10 +275,6 @@ export default function Prensa() {
           <h2>Noticias</h2>
         </Fade>
       </Section>
-      {noticias}
-      {noticias}
-      {noticias}
-      {noticias}
       {noticias}
     </Layout>
   );

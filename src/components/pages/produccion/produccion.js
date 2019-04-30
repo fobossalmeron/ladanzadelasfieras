@@ -102,15 +102,15 @@ export default function Produccion() {
             <ReflektoIcon />
             <p>
               <b>REFLEKTO KREATIVO</b> es una generadora de productos
-              culturales. Somos una empresa de jóvenes, lo que ofrece una gran
-              flexibilidad de cara a la vertiginosa aparición de novedosas
-              plataformas, aplicaciones, formatos y opciones educativas y de
-              entretenimiento. Aglutinamos varias empresas que llevan a cabo
-              proyectos de investigación, gestión cultural, producción
-              audiovisual, producción de espectáculos y creación de conceptos
-              didácticos, lo cual nos permite elaborar propuestas llenas de
-              creatividad, pero sólidamente sustentadas, acordes a las
-              características y necesidades de cada proyecto.
+              culturales, una empresa de jóvenes que ofrece gran flexibilidad a
+              la vertiginosa aparición de novedosas plataformas, aplicaciones,
+              formatos y opciones educativas y de entretenimiento. Aglutinan un
+              grupo de empresas que desarrollan proyectos de investigación,
+              gestión cultural, producción audiovisual, producción de
+              espectáculos y creación de conceptos didácticos, lo cual les
+              permite elaborar elaborar propuestas llenas de creatividad,
+              sólidamente sustentadas, acordes a las características y
+              necesidades de cada proyecto.
             </p>
           </Productora>
         </Fade>
@@ -120,11 +120,12 @@ export default function Produccion() {
           <Productora>
             <AntitesisIcon />
             <p>
-              <b>ANTÍTESIS</b> nace de los deseos de un grupo de jóvenes
-              cineastas que buscan generar proyectos relevantes. A través de la
-              confianza depositada en jóvenes artistas para el desarrollo de los
-              proyectos, escuchando las necesidades de los nuevos creativos para
-              dar resultados frescos, innovadores y actualizados.
+              <b>ANTÍTESIS</b> es una productora que nace del deseo de un grupo
+              de jóvenes cineastas que busca generar proyectos relevantes. A
+              través de la confianza depositada en jóvenes artistas para el
+              desarrollo de los proyectos, escucha las necesidades de las nuevas
+              mentes creativas para dar resultados frescos, innovadores y
+              actualizados.
             </p>
           </Productora>
         </Fade>
@@ -134,19 +135,15 @@ export default function Produccion() {
           <Productora>
             <BalaIcon />
             <p>
-              <b>BALA FILMS</b> es una familia dedicada a la realización de
-              obras cinematográficas y proyectos audiovisuales. Nuestras obras
-              han sido seleccionadas en los siguientes festivales nacionales e
-              internacionales: FICM (Festival Internacional de Cine de Morelia),
-              FICG (Festival Internacional de Cine de Guadalajara), FICUNAM
-              (Festival Internacional de Cine UNAM), GIFF (Guanajuato
-              International Film Festival), FIC MONTERREY (Festival
-              Internacional de Cine de Monterrey), Short Shorts Film Festival,
-              Festival de Cine Iquique Chile, New York Independent Film
-              Festival, 12 Months Film Festival Rumania, Lakino Film Festival
-              Berlin, FESAALP (Festival de Cine Latinoamericano de la Plata),
-              FICA (Festival Internacional de Cine de Acapulco), FICAGS
-              (Festival Internacional de Cine de Aguascalientes)
+              <b>BALA FILMS</b> es una familia dedicada a la realización de
+              obras cinematográficas y proyectos audiovisuales. Su trabajo ha
+              sido seleccionado en festivales nacionales e internacionales como
+              FICM (Festival Internacional de Cine de Morelia), FICG (Festival
+              Internacional de Cine de Guadalajara), FICUNAM (Festival
+              Internacional de Cine UNAM), GIFF (Guanajuato International Film
+              Festival), FIC MONTERREY (Festival Internacional de Cine de
+              Monterrey), Short Shorts Film Festival, New York Independent Film
+              Festival, entre otros.
             </p>
           </Productora>
         </Fade>
@@ -156,14 +153,14 @@ export default function Produccion() {
           <Educadores>
             <EducadoresIcon />
             <p>
-              <b>EDUCADORES SIN FRONTERAS</b> es una organización no
-              gubernamental, autónoma, sin fines de lucro, que desarrolla y
-              fomenta programas académicos y culturales, así como publicaciones
-              e investigaciones con el objetivo de mejorar la educación en
-              México. Las temáticas de nuestros programas son: prevención de la
-              violencia, ética, cívica, lectura, cultura de la legalidad,
-              equidad de género, participación social, didáctica, psicología,
-              gestión de conflictos, mediación, inteligencia emocional y
+              <b>EDUCADORES SIN FRONTERAS</b> es una organización no
+              gubernamental, autónoma y sin fines de lucro que desarrolla y
+              fomenta programas académicos y culturales, así como publicaciones
+              e investigaciones con el objetivo de mejorar la educación en
+              México. Las temáticas de los programas son: prevención de la
+              violencia, ética, cívica, lectura, cultura de la legalidad,
+              equidad de género, participación social, didáctica, psicología,
+              gestión de conflictos, mediación, inteligencia emocional y
               justicia.
             </p>
           </Educadores>
