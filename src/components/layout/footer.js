@@ -18,6 +18,9 @@ const StyledForm = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
   margin-bottom: 30px;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Capture = styled.div`

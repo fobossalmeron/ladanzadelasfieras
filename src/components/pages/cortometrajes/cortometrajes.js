@@ -22,21 +22,25 @@ import stillQCLN from "assets/img/videos/qcln.jpg";
 import gina from "assets/img/directores/gina.jpg";
 
 const InfoSection = styled.div`
-  padding-top: 5%;
+  padding-top: 30px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 40px;
+  grid-column-gap: 40px;
   position: relative;
-  margin-bottom: 15%;
+  padding-bottom: 15%;
 `;
 
 const Directors = styled.div`
   grid-column: 1 / span 2;
-  display: flex;
-  flex-direction: column;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    grid-column: 1 / span 6;
+  }
   img {
     border-radius: 100%;
     max-width: 80px;
@@ -51,6 +55,11 @@ const Credits = styled.p`
   height: 100px;
   column-gap: 40px;
   margin: 0;
+  @media (max-width: 900px) {
+    grid-column: 1 / span 6;
+    height: auto;
+    width: 100%;
+  }
 `;
 
 export default function Cortometrajes() {
@@ -62,17 +71,17 @@ export default function Cortometrajes() {
           <CortometrajesTitle />
         </Fade>
       </PageTitle>
-      <Section columnStart="2" columnEnd="6">
+      <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
           <h2>Followback</h2>
           <p style={{ marginBottom: "5%" }}>
             Cortometraje con un formato innovador que cuenta su historia a
-            través de pantallas de celulares. El corto se divide en 3 partes: la
-            primera es contada desde el celular de Lorena, una chica de 16 años
-            que viaja a Ciudad de México con la promesa de un trabajo de modelo;
-            la segunda es observada en el celular de un tratante y la tercera
-            desde el teléfono de un joven consumidor de pornografía,
-            aparentemente, amateur.
+            través de pantallas de celulares. El corto se divide en tres partes:
+            la primera es contada desde el celular de Lorena, una chica de 16
+            años que viaja a Ciudad de México con la promesa de un trabajo de
+            modelo; la segunda es observada en el celular de un tratante y la
+            tercera desde el teléfono de un joven consumidor de pornografía
+            aparentemente amateur.
           </p>
         </Fade>
       </Section>
@@ -89,7 +98,7 @@ export default function Cortometrajes() {
           <Directors>
             <DirectorCard
               name={"Alayde Castro"}
-              title={"CO-DIRECTORA"}
+              title={"CODIRECTORA"}
               img={alayde}
               imdb={"https://www.imdb.com/name/nm7429166/"}
               mail={"alayde.castro@gmail.com"}
@@ -101,7 +110,7 @@ export default function Cortometrajes() {
             <DirectorCard
               double={true}
               name={"Stacy Perskie"}
-              title={"CO-DIRECTOR"}
+              title={"CODIRECTOR"}
               img={stacy}
               imdb={"https://www.imdb.com/name/nm1142384/"}
               mail={"stacy@redrum.com.mx"}
@@ -129,15 +138,15 @@ export default function Cortometrajes() {
           </Credits>
         </InfoSection>
       </Section>
-      <Section columnStart="2" columnEnd="6">
+      <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
           <h2>Desechables</h2>
           <p style={{ marginBottom: "5%" }}>
-            La historia de Martín, un joven de 15 años que es engañado y
-            amenazado por un cartel de narcotraficantes que quiere convertirlo
-            en sicario. Inesperadamente, Martín se reencuentra con alguien que
-            interviene para ayudarle, lo que desata la furia de los delincuentes
-            y una serie de repercusiones mortales.
+            La historia de Martín; un joven de 15 años que es engañado y
+            amenazado por un cartel de narcotraficantes que pretende convertirlo
+            en sicario. Inesperadamente, Martín se reencuentra con alguien que,
+            interviniendo en su ayuda, desata la furia de los delincuentes y una
+            serie de repercusiones mortales.
           </p>
         </Fade>
       </Section>
@@ -157,8 +166,8 @@ export default function Cortometrajes() {
               imdb={"https://www.imdb.com/name/nm5699678/"}
               mail={"fernandezgmiguel@gmail.com"}
               bio={`Guionista, director y editor del cortometraje <b>
-              <a href="https://vimeo.com/127000861" target="_blank">Chalma</a>
-              </b>, adaptación del cuento <em>Talpa</em> de Juan Rulfo, que fue 
+              <a href="https://vimeo.com/127000861" target="_blank">Chalma</a>,
+              </b> adaptación del cuento <em>Talpa</em> de Juan Rulfo, que fue 
               parte de la selección oficial del FICG (2016) y del Latino Film Festival 
               de Berlín (2016). Su otro cortometraje, <b>
               <a href="https://vimeo.com/154378481" target="_blank">Pasajeros</a></b>, 
@@ -186,7 +195,7 @@ export default function Cortometrajes() {
           </Credits>
         </InfoSection>
       </Section>
-      <Section columnStart="2" columnEnd="6">
+      <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
           <h2>Voces Blancas</h2>
           <p style={{ marginBottom: "5%" }}>
@@ -241,15 +250,15 @@ export default function Cortometrajes() {
           </Credits>
         </InfoSection>
       </Section>
-      <Section columnStart="2" columnEnd="6">
+      <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
           <h2>Todos Queremos Dormir</h2>
           <p style={{ marginBottom: "5%" }}>
-            Esta es la odisea de Araceli, una empleada doméstica, la tarde que
-            descubre que su hija Sonia desapareció. Después de encontrar muchas
-            trabas en el sistema judicial, decide buscarla ella misma. Araceli
-            tendrá que infiltrarse en el mundo de la corrupción y hacer hasta lo
-            impensable si pretende recuperar a su hija.
+            Esta es la odisea de Araceli, una empleada doméstica, la tarde que
+            descubre que su hija Sonia ha desaparecido. Después de encontrarse
+            con muchas trabas en del sistema judicial, decide buscarla ella
+            misma. Araceli tendrá que adentrarse en un mundo de corrupción y
+            hacer hasta lo impensable si pretende recuperarla.
           </p>
         </Fade>
       </Section>
@@ -300,7 +309,7 @@ export default function Cortometrajes() {
           </Credits>
         </InfoSection>
       </Section>
-      <Section columnStart="2" columnEnd="6">
+      <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
           <h2>El Sol Bajo Los Pies</h2>
           <p style={{ marginBottom: "5%" }}>
@@ -349,7 +358,7 @@ export default function Cortometrajes() {
           </Credits>
         </InfoSection>
       </Section>
-      <Section columnStart="2" columnEnd="6">
+      <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
           <h2>Que Canten Los Niños</h2>
           <p style={{ marginBottom: "5%" }}>

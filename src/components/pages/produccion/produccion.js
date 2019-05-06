@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import Fade from "react-reveal/Fade";
 import Layout, { Section, PageTitle } from "components/layout/pageLayout";
-import Productor from "./productor";
+import Productor, { ProducerContainer } from "./productor";
 
 import { ReactComponent as ProduccionTitle } from "assets/img/layout/produccion.svg";
 
@@ -20,6 +20,15 @@ const Productores = styled.ul`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   margin-bottom: 10%;
+  padding: 0;
+  max-width:620px;
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width:290px;
+    ${ProducerContainer} {
+      height: 200px;
+    }
+  }
 `;
 
 const Productora = styled.div`
@@ -33,6 +42,14 @@ const Productora = styled.div`
   p {
     grid-column: 2 / span 3;
   }
+  @media (max-width: 900px) {
+    svg {
+      grid-column: 1 / span 4;
+    }
+    p {
+      grid-column: 1 / span 4;
+    }
+  }
 `;
 
 const Educadores = styled(Productora)`
@@ -42,6 +59,14 @@ const Educadores = styled(Productora)`
   }
   p {
     grid-column: 3 / span 3;
+  }
+  @media (max-width: 900px) {
+    svg {
+      grid-column: 1 / span 5;
+    }
+    p {
+      grid-column: 1 / span 5;
+    }
   }
 `;
 
@@ -54,7 +79,12 @@ export default function Produccion() {
           <ProduccionTitle />
         </Fade>
       </PageTitle>
-      <Section columnStart="3" columnEnd="7">
+      <Section
+        columnStart="3"
+        columnEnd="7"
+        columnStartMedium="2"
+        columnEndMedium="8"
+      >
         <Fade bottom>
           <h2>Productores</h2>
           <Productores>
@@ -95,42 +125,60 @@ export default function Produccion() {
           </Productores>
         </Fade>
       </Section>
-      <Section columnStart="2" columnEnd="6">
+      <Section
+        columnStart="2"
+        columnEnd="6"
+        columnEndMedium="7"
+        columnStartSmall="2"
+        columnEndSmall="8"
+      >
         <h2 style={{ marginBottom: "40px" }}>Casas Productoras</h2>
         <Fade bottom cascade>
           <Productora>
             <ReflektoIcon />
             <p>
               <b>REFLEKTO KREATIVO</b> es una generadora de productos
-              culturales, una empresa de jóvenes que ofrece gran flexibilidad a
+              culturales. Una empresa de jóvenes que ofrece gran flexibilidad a
               la vertiginosa aparición de novedosas plataformas, aplicaciones,
-              formatos y opciones educativas y de entretenimiento. Aglutinan un
-              grupo de empresas que desarrollan proyectos de investigación,
-              gestión cultural, producción audiovisual, producción de
-              espectáculos y creación de conceptos didácticos, lo cual les
-              permite elaborar elaborar propuestas llenas de creatividad,
-              sólidamente sustentadas, acordes a las características y
-              necesidades de cada proyecto.
+              formatos y opciones educativas y de entretenimiento. El proyecto
+              aglutina un grupo de empresas que desarrollan proyectos de
+              investigación, gestión cultural, producción audiovisual,
+              producción de espectáculos y creación de conceptos didácticos; lo
+              cual les permite elaborar propuestas sólidas, sustentadas y llenas
+              de creatividad acorde a las características y necesidades de cada
+              proyecto.
             </p>
           </Productora>
         </Fade>
       </Section>
-      <Section columnStart="4" columnEnd="8">
+      <Section
+        columnStart="4"
+        columnEnd="8"
+        columnStartMedium="3"
+        columnEndMedium="8"
+        columnStartSmall="2"
+      >
         <Fade bottom cascade>
           <Productora>
             <AntitesisIcon />
             <p>
               <b>ANTÍTESIS</b> es una productora que nace del deseo de un grupo
               de jóvenes cineastas que busca generar proyectos relevantes. A
-              través de la confianza depositada en jóvenes artistas para el
-              desarrollo de los proyectos, escucha las necesidades de las nuevas
-              mentes creativas para dar resultados frescos, innovadores y
+              través de la confianza depositada en artistas para el desarrollo
+              de los proyectos, el colectivo escucha las necesidades de las
+              nuevas mentes creativas para dar resultados frescos, innovadores y
               actualizados.
             </p>
           </Productora>
         </Fade>
       </Section>
-      <Section columnStart="2" columnEnd="6">
+      <Section
+        columnStart="2"
+        columnEnd="6"
+        columnEndMedium="7"
+        columnStartSmall="2"
+        columnEndSmall="8"
+      >
         <Fade bottom cascade>
           <Productora>
             <BalaIcon />
@@ -138,8 +186,8 @@ export default function Produccion() {
               <b>BALA FILMS</b> es una familia dedicada a la realización de
               obras cinematográficas y proyectos audiovisuales. Su trabajo ha
               sido seleccionado en festivales nacionales e internacionales como
-              FICM (Festival Internacional de Cine de Morelia), FICG (Festival
-              Internacional de Cine de Guadalajara), FICUNAM (Festival
+              el FICM (Festival Internacional de Cine de Morelia), FICG
+              (Festival Internacional de Cine de Guadalajara), FICUNAM (Festival
               Internacional de Cine UNAM), GIFF (Guanajuato International Film
               Festival), FIC MONTERREY (Festival Internacional de Cine de
               Monterrey), Short Shorts Film Festival, New York Independent Film
@@ -148,7 +196,13 @@ export default function Produccion() {
           </Productora>
         </Fade>
       </Section>
-      <Section columnStart="3" columnEnd="8">
+      <Section
+        columnStart="3"
+        columnEnd="8"
+        columnStartMedium="2"
+        columnEndMedium="8"
+        columnStartSmall="2"
+      >
         <Fade bottom cascade>
           <Educadores>
             <EducadoresIcon />

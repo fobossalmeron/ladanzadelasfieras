@@ -44,7 +44,12 @@ export default function Inicio(props) {
   return (
     <Layout id="Inicio">
       <h1 style={{ fontSize: 0, opacity: 0 }}>La Danza de las Fieras</h1>
-      <Section columnStart="3" columnEnd="7">
+      <Section
+        columnStart="3"
+        columnEnd="7"
+        columnStartSmall="2"
+        columnEndSmall="8"
+      >
         <Intro>
           <Fade bottom delay={delayTime}>
             <Logo />
@@ -52,18 +57,23 @@ export default function Inicio(props) {
           </Fade>
         </Intro>
       </Section>
-      <Section columnStart="3" columnEnd="7">
+      <Section
+        columnStart="3"
+        columnEnd="7"
+        columnStartSmall="2"
+        columnEndSmall="8"
+      >
         <Fade bottom>
           <p style={{ marginTop: "10%" }}>
             <b>LA DANZA DE LAS FIERAS</b> es un largometraje que concientiza y
             genera reflexiones, debates y acciones para prevenir la trata de
-            personas. Está dividido en seis secciones y cada una aborda un tema
-            relacionado al tráfico ilegal de humanos. Las historias fueron
-            construidas con arduo trabajo de investigación y desarrollo
-            creativo, en los cuales se involucraron siete directores de cine y
-            más de 20 expertos en el tema; estos incluyen sociólogos,
-            antropólogos, psicólogos, criminalistas y más especialistas en
-            derechos humanos y trata de personas.
+            personas. Está dividido en seis historias y cada una aborda un tema
+            relacionado a dicha cuestión. Los relatos fueron construidos gracias
+            a un arduo trabajo de investigación y desarrollo creativo, en los
+            cuales se involucraron siete directores de cine y más de 20 expertos
+            en el tema; incluyendo sociólogos, antropólogos, psicólogos,
+            criminalistas y más especialistas en derechos humanos y trata de
+            personas.
           </p>
         </Fade>
       </Section>
@@ -76,7 +86,12 @@ export default function Inicio(props) {
           />
         </Fade>
       </Section>
-      <Section columnStart="4" columnEnd="6">
+      <Section
+        columnStart="4"
+        columnEnd="6"
+        columnStartSmall="3"
+        columnEndSmall="7"
+      >
         <Fade bottom>
           <Technical style={{ marginTop: "20%" }}>
             <b>GÉNERO:</b> Mixto, ficción y documental
@@ -85,39 +100,52 @@ export default function Inicio(props) {
           </Technical>
         </Fade>
       </Section>
-      <Section columnStart="3" columnEnd="6">
+      <Section
+        columnStart="3"
+        columnEnd="6"
+        columnStartMedium="2"
+        columnEndMedium="7"
+        columnStartSmall="2"
+        columnEndSmall="8"
+      >
         <Fade bottom>
           <h2>Sinópsis</h2>
           <p>
             El internet como facilitador de víctimas para la esclavitud sexual,
             niños sicarios, jornaleros infantes en condiciones infrahumanas,
             albergues disfuncionales, víctimas colaterales y familias
-            destruídas, son los temas que aborda <b>LA DANZA DE LAS FIERAS</b>{" "}
-            alrededor de la trata de personas.
+            destruídas; estos son los temas que aborda{" "}
+            <b>LA DANZA DE LAS FIERAS</b> alrededor de la trata de personas.
           </p>
         </Fade>
       </Section>
-      <Section columnStart="4" columnEnd="8">
+      <Section
+        columnStart="4"
+        columnEnd="8"
+        columnStartMedium="3"
+        columnStartSmall="2"
+        columnEndSmall="8"
+      >
         <Fade bottom>
           <h2>La trata de personas</h2>
-          <p>
-            Fenómeno global que reporta, más de 27 millones de personas que
-            sufren condiciones similares a la esclavitud (Casa Blanca, 2017). La
-            trata o tráfico de personas puede entenderse como:
-            <br />
-            <br />
+          <p style={{marginBottom: "20px"}}>
+            Fenómeno global que reporta a más de 27 millones de personas
+            sufriendo condiciones similares a la esclavitud (Casa Blanca, 2017).
+            La trata o tráfico de personas puede entenderse como:
+          </p>
+          <p style={{marginBottom: "20px"}}>
             1. Tráfico en el cual se comercia el acto sexual por medio de la
             fuerza, fraude o coerción, o en el que la persona inducida a cometer
             el acto no ha cumplido 18 años de edad.
-            <br />
-            <br />
+          </p>
+          <p style={{marginBottom: "20px"}}>
             2. El reclutamiento, almacenamiento, transportación,
             aprovisionamiento u obtención de una persona para realizar trabajos
             o servicios por medio del uso de la fuerza, fraude o coerción con el
             propósito de subyugación a servitud, peonaje o esclavitud.
-            <br />
-            <br />
-            En México la trata de personas es el segundo delito de más
+          </p>
+          <p>
+            En México, la trata de personas es el segundo delito de más
             importancia económica y se estima que, al año, al menos 20,000 niñas
             sufren explotación sexual.
           </p>

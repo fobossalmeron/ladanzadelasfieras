@@ -1,97 +1,78 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components/macro";
-import Fade from "react-reveal/Fade";
-import { whiteColor } from "components/pages/pagesStylesheet";
+import React, { useState } from "react";
+import styled, { css } from "styled-components/macro";
+import {
+  whiteColor,
+  navMargin,
+  navMarginMobile
+} from "components/layout/pageLayout";
+import NavList from "./navList";
+import { ReactComponent as HamburgerIcon } from "assets/img/layout/hamburger.svg";
 
-const NavMenu = styled.nav`
+const Menu = styled.nav`
   display: block;
   width: auto;
-  z-index: 2;
+  z-index: 3;
   left: 0;
   position: fixed;
-  margin-top: 40px;
+  margin: ${navMargin} 0 0 ${navMargin};
   margin-left: 40px;
   font-size: 0.76em;
-
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  ul li {
-    list-style: none;
-    line-height: 3;
-
-    a {
-      text-transform: uppercase;
-      text-decoration: none;
-      letter-spacing: 1px;
-      color: ${whiteColor};
-
-      :after {
-        content: " ";
-        display: inline-block;
-        width: 0px;
-        height: 1px;
-        background-color: ${whiteColor};
-        transition: ease-in all 200ms;
-      }
-
-      :hover {
-        :after {
-          width: 10px;
-        }
-      }
-
-      &.is-active {
-        font-weight: bold;
-      }
-
-      .animate {
-        transform-origin: 0% 50%;
-        display: block;
-      }
-
-      :visited {
-        color: ${whiteColor};
-      }
-    }
+  @media (max-width: 800px) {
+    margin: ${navMarginMobile} 0 0 ${navMarginMobile};
   }
 `;
 
+const HamburgerMenu = styled.div`
+  svg {
+    width: 35px;
+    height: auto;
+    display: none;
+    z-index: 4;
+    cursor: pointer;
+    line {
+      fill: none;
+      stroke-width: 25;
+      stroke: ${whiteColor};
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+    }
+  }
+  @media (max-width: 1100px) {
+    svg {
+      display: block;
+      line {
+        transition: transform 0.4s cubic-bezier(1, -0.5, 0.5, 1);
+      }
+    }
+  }
+  ${props =>
+    props.active &&
+    css`
+      svg {
+        #hamb_top {
+          transform: rotate(-45deg) translateY(205px) translateX(-160px);
+        }
+        #hamb_bottom {
+          transform: rotate(45deg) translateY(-190px) translateX(40px);
+        }
+      }
+    `}
+`;
+
 function Nav() {
+  const [isActive, setActive] = useState(false);
+
+  function handleActive(bool = !isActive) {
+    setActive(bool);
+  }
+
   return (
-    <NavMenu>
-      <ul>
-        <Fade left delay={1300}>
-          <li>
-            <NavLink exact={true} activeClassName="is-active" to="/">
-              Inicio
-            </NavLink>
-          </li>
-          <li>
-            <NavLink exact={true} activeClassName="is-active" to="/produccion">
-              Producción
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              exact={true}
-              activeClassName="is-active"
-              to="/cortometrajes"
-            >
-              Cortometrajes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink exact={true} activeClassName="is-active" to="/prensa">
-              Prensa
-            </NavLink>
-          </li>
-        </Fade>
-      </ul>
-    </NavMenu>
+    <Menu>
+      <HamburgerMenu onClick={() => handleActive()} active={isActive}>
+        <HamburgerIcon />
+      </HamburgerMenu>
+      <NavList visible={isActive} handleActive={handleActive} />
+    </Menu>
   );
 }
 

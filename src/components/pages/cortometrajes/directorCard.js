@@ -9,6 +9,9 @@ const DirectorContainer = styled.div`
   grid-column-end: span 1;
   align-items: center;
   text-align: center;
+  @media (max-width: 800px) {
+    grid-column-end: span 9;
+  }
 `;
 
 const InfoDirector = styled.div`
@@ -89,7 +92,10 @@ function DirectorCard(props) {
   }
 
   return (
-    <DirectorContainer onClick={() => handleShow()} onMouseLeave={handleMouseLeave}>
+    <DirectorContainer
+      onClick={() => handleShow()}
+      onMouseLeave={handleMouseLeave}
+    >
       <InfoDirector double={props.double} onMouseEnter={handleMouseEnter}>
         <Person {...props} hovered={isHovered} />
       </InfoDirector>

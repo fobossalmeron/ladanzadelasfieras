@@ -24,10 +24,16 @@ const VideoWrapper = styled.div`
 `;
 
 const hidePause = keyframes`
-  from {
+  0% {
+    opacity:0;
+  }
+  5% {
     opacity:1;
   }
-  to {
+  90% {
+    opacity:1;
+  }
+  100% {
     opacity:0;
   }
 `;
@@ -47,10 +53,8 @@ const Clicker = styled.div`
       }
       :hover {
         svg {
-          opacity: 1;
-          animation-delay: 2s;
+          animation: ${hidePause} 2.4s;
           animation-fill-mode: forwards;
-          animation: ${hidePause} 0.4s;
         }
       }
     `}
@@ -79,7 +83,6 @@ const Fader = styled.div`
   height: 100%;
   position: absolute;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.2);
   transition: 0.4s ease opacity;
   margin-bottom: 50px;
   pointer-events: none;

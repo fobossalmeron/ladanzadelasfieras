@@ -19,14 +19,6 @@ import stickers from "assets/img/descargables/stickers.png";
 import { ReactComponent as Premios } from "assets/img/layout/premios.svg";
 import { ReactComponent as Selecciones } from "assets/img/layout/selecciones.svg";
 
-const Descargables = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 40px;
-  margin-bottom: 10%;
-  padding: 0;
-`;
-
 const Descargable = styled.li`
   display: flex;
   flex-direction: column;
@@ -53,8 +45,20 @@ const Descargable = styled.li`
   }
 `;
 
+const Descargables = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  margin-bottom: 10%;
+  padding: 0;
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
 const Imagen = styled.div`
-  height: 185px;
+  height: 0;
+  padding-bottom: 148%;
   background-size: 100%;
   background-position: 50% 50%;
   margin-bottom: 18px;
@@ -93,6 +97,9 @@ const TitleQuote = styled.a`
     quotes: "“" "”" "‘" "’";
     position: relative;
     text-decoration: none;
+    @media (max-width: 900px) {
+      grid-column: 1 / span 5;
+    }
     b {
       text-transform: uppercase;
     }
@@ -162,6 +169,8 @@ export default function Prensa() {
       <Section
         columnStart={isEven(index) ? "2" : "3"}
         columnEnd={isEven(index) ? "7" : "8"}
+        columnEndSmall={"8"}
+        columnStartSmall={"2"}
         key={index + "not"}
       >
         <Fade bottom>
@@ -196,7 +205,7 @@ export default function Prensa() {
           <PrensaTitle />
         </Fade>
       </PageTitle>
-      <Section columnStart="3" columnEnd="7">
+      <Section columnStart="3" columnEnd="7" columnStartMedium="2" columnEndMedium="8">
         <Fade bottom>
           <h2>Descargables</h2>
           <Descargables>
@@ -262,7 +271,7 @@ export default function Prensa() {
           <Premios style={{ marginBottom: "10%" }} />
         </Fade>
       </Section>
-      <Section columnStart="3" columnEnd="8">
+      <Section columnStart="3" columnEnd="8" columnStartSmall="2">
         <Fade bottom>
           <h2>Festivales</h2>
         </Fade>

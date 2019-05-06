@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import createHoverMonitor from 'components/shared/createHoverMonitor';
 import Person from 'components/shared/person';
 
-const ProducerContainer = styled.div`
+export const ProducerContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
