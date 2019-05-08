@@ -1,5 +1,6 @@
 @import "~normalize.css/normalize.css";
-@import url('https://fonts.googleapis.com/css?family=Share:400,700');
+@import url('https://fonts.googleapis.com/css?family=Share:400,700&subset=latin-ext');
+
 $white: #f9f9f9;
 $black: #0A0A0A;
 $red: #C64028;
@@ -27,6 +28,9 @@ body {
     display: block;
     font-size: 17px;
     overflow: hidden;
+    &.is-native-scroll{
+        overflow-y:scroll;
+    }
 }
 
 //Pages

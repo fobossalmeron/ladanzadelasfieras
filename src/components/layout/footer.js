@@ -89,7 +89,7 @@ const FinalCredit = styled.div`
   text-align: center;
   a {
     font-size: 18.5px;
-    background-color: black;
+    background-color: ${blackColor};
     color: #c64028;
     text-decoration: none;
     padding: 2px 3px 1px 2px;

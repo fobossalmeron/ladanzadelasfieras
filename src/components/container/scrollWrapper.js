@@ -12,13 +12,14 @@ const PageScroll = styled.div`
 export default function ScrollWrapper(props) {
   const pageRef = useRef(null);
   var height = "100px";
+  var useNative = props.mobile? true : false;
 
   useEffect(() => {
     const section = pageRef.current;
 
     var smooth = new Smooth({
       noscrollbar: true,
-      native: false,
+      native: useNative,
       section: section,
       ease: 0.1,
       vs: {

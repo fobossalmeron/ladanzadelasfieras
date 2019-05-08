@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 import Fade from "react-reveal/Fade";
 
 import Layout, { Section, PageTitle } from "components/layout/pageLayout";
@@ -27,7 +27,11 @@ const InfoSection = styled.div`
   grid-template-columns: repeat(6, 1fr);
   grid-column-gap: 40px;
   position: relative;
-  padding-bottom: 15%;
+  margin-bottom: 15%;
+  @media (max-width: 800px) {
+    padding-bottom: 15%;
+    margin-bottom: 0;
+  }
 `;
 
 const Directors = styled.div`
@@ -35,6 +39,12 @@ const Directors = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
+  @media (max-width: 1100px) {
+    grid-gap: 30px;
+  }
+  @media (max-width: 1000px) {
+    grid-gap: 20px;
+  }
   @media (max-width: 800px) {
     display: flex;
     flex-direction: row;
@@ -55,14 +65,31 @@ const Credits = styled.p`
   height: 100px;
   column-gap: 40px;
   margin: 0;
+  @media (max-width: 1150px) {
+    height: 120px;
+  }
+  @media (max-width: 930px) {
+    column-gap: 30px;
+  }
   @media (max-width: 900px) {
     grid-column: 1 / span 6;
     height: auto;
     width: 100%;
   }
+  ${props =>
+    props.followback &&
+    css`
+      height: 120px;
+      @media (max-width: 1150px) {
+        height: 150px;
+      }
+      @media (max-width: 900px) {
+        height: auto;
+      }
+    `}
 `;
 
-export default function Cortometrajes() {
+export default function Cortometrajes(props) {
   document.title = "La Danza de las Fieras | Cortometrajes";
   return (
     <Layout id="Cortometrajes">
@@ -106,6 +133,7 @@ export default function Cortometrajes() {
                 <b>Antítesis</b> que ha trabajado para clientes como la UNAM, 
                 el STC Metro y la Secretaría de Turismo del Estado de Puebla.`}
               double={false}
+              mobile={props.mobile}
             />
             <DirectorCard
               double={true}
@@ -119,9 +147,10 @@ export default function Cortometrajes() {
               <em>Get The Gringo</em> (2012) y co-producido, entre muchas otras, 
               películas como <em>007 Spectre</em> (2015), <em>Elysium</em> (2013) y 
               la serie <em>Mozart in the Jungle</em> (2014).`}
+              mobile={props.mobile}
             />
           </Directors>
-          <Credits style={{ height: "120px" }}>
+          <Credits followback>
             <b>GÉNERO:</b> Ficción
             <br />
             <b>DURACIÓN:</b> 15:00 minutos
@@ -172,6 +201,7 @@ export default function Cortometrajes() {
               de Berlín (2016). Su otro cortometraje, <b>
               <a href="https://vimeo.com/154378481" target="_blank">Pasajeros</a></b>, 
               fue selección oficial del FICM y el FICIQQ de Chile.`}
+              mobile={props.mobile}
             />
           </Directors>
           <Credits>
@@ -228,6 +258,7 @@ export default function Cortometrajes() {
               <em>Todo está Oscuro</em> (1997) y <em>Elvira Luz Cruz: Pena Máxima</em> 
               (1985). Es Socia Co-Fundadora de CIMA (Asociación de Mujeres Cineastas 
                 y de Medios Audiovisuales).`}
+              mobile={props.mobile}
             />
           </Directors>
           <Credits>
@@ -280,13 +311,14 @@ export default function Cortometrajes() {
               mail={"ruizpattersonrodrigo@gmail.com"}
               bio={`Graduado <em>Cum Laude</em> del CCC con la tesis ficción <b>
               <a href="https://www.youtube.com/watch?v=IpPrRqnBSXU&t=3s" target="_blank">
-              Australia</a></b> por la cual fue nominado al <em>Ariel</em> en 2017 y ganó 
-              el premio de <em>Mejor Cortometraje Latinoamericano de Ficción</em> en el 
-              Festival Internacional de Cine del Desierto. Además dirigió los 
+              Australia</a></b> (nominada al <em>Ariel 2017</em> y ganadora
+              del <em>Mejor Cortometraje Latinoamericano de Ficción</em> en el 
+              <em>FICD</em>. Además dirigió los 
               cortometrajes <em>En el Camino, Vendetta, Berrettas y Pop, Chicklick</em> 
-              y <em>Paradisio</em>; este último fue selección oficial de más de 10 
+              y <em>Paradisio</em>. Ha sido seleccionado en más de 10 
               festivales de cine internacionales, entre ellos <em>Cannes</em>, 
-              <em>Raindance</em>, <em>La Habana</em> y <em>Morelia</em>`}
+              <em>Raindance</em>, <em>La Habana</em> y el <em>FICM</em>`}
+              mobile={props.mobile}
             />
           </Directors>
           <Credits>
@@ -337,6 +369,7 @@ export default function Cortometrajes() {
               imdb={"http://www.imdb.com/name/nm9094476/"}
               mail={"arlinco13@gmail.com"}
               bio={`Documentalista que ha sido nominado al <em>Ariel</em> y galardonado en el FICM, DOCSMX y el Festival Internacional de Cine de Caracas. Sus documentales se han presentado en <em>La Semaine de la Critique</em> de Cannes, en el Festival de Cine de Sarajevo y en <em>La Habana</em>. Su documental más premiado ha sido <em>Las Montañas Invisibles</em> (2012).`}
+              mobile={props.mobile}
             />
           </Directors>
           <Credits>
@@ -388,6 +421,7 @@ export default function Cortometrajes() {
               imdb={"http://www.imdb.com/name/nm6163973/"}
               mail={"ginaherrerapascal@gmail.com"}
               bio={`Egresada de Centro de Estudios Cinematográficos, INDIe. Fue nombrada una de <em>Las 5 Cineastas a Seguir</em> por su tesis de ficción <em><a href="https://vimeo.com/156661095" target="_blank">Ni Aquí Ni Allá</a></em>, cortometraje seleccionado en distintos festivales de cine, como el Festival Internacional de Cine de Morelia (FICM), FICUNAM, New York Independent Films Festival, 12 Months (Rumania), Short Short Films Festival, entre otros.`}
+              mobile={props.mobile}
             />
           </Directors>
           <Credits>

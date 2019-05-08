@@ -5,7 +5,8 @@ import Layout, {
   PageTitle,
   Heading3,
   whiteColor,
-  redColor
+  redColor,
+  blackColor
 } from "components/layout/pageLayout";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components/macro";
@@ -24,6 +25,7 @@ const Descargable = styled.li`
   flex-direction: column;
   cursor: pointer;
   align-items: center;
+  max-width: 150px;
   a {
     color: ${whiteColor};
     text-decoration: none;
@@ -143,7 +145,7 @@ const Publisher = styled.div`
   }
   span {
     color: white;
-    background-color: black;
+    background-color: ${blackColor};
     margin-bottom: 0;
     margin-top: 0;
     display: flex;
@@ -205,7 +207,12 @@ export default function Prensa() {
           <PrensaTitle />
         </Fade>
       </PageTitle>
-      <Section columnStart="3" columnEnd="7" columnStartMedium="2" columnEndMedium="8">
+      <Section
+        columnStart="3"
+        columnEnd="7"
+        columnStartMedium="2"
+        columnEndMedium="8"
+      >
         <Fade bottom>
           <h2>Descargables</h2>
           <Descargables>

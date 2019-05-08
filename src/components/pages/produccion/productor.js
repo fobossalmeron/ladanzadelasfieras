@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
-import createHoverMonitor from 'components/shared/createHoverMonitor';
 import Person from 'components/shared/person';
 
 export const ProducerContainer = styled.div`
@@ -19,16 +18,15 @@ const InfoProducer = styled.div`
 
 function Productor(props) {
   const [isHovered, setHovered] = useState(false);
-  const hover = createHoverMonitor();
 
   function handleShow(bool = !isHovered) {
-    if (!hover.isEnabled) {
+    if (props.mobile) {
       setHovered(bool);
     }
   }
 
   function handleMouseEnter(e) {
-    if (hover.isEnabled && !isHovered) {
+    if (!props.mobile && !isHovered) {
       setHovered(true);
     }
   }

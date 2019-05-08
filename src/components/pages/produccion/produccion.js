@@ -70,7 +70,7 @@ const Educadores = styled(Productora)`
   }
 `;
 
-export default function Produccion() {
+export default function Produccion(props) {
   document.title = "La Danza de las Fieras | Producción";
   return (
     <Layout id="Produccion">
@@ -94,6 +94,7 @@ export default function Produccion() {
               name={"Silvia Garza"}
               web={"http://www.educadoressinfronteras.mx/"}
               mail={"silvia@educadoresainfronteras.mx"}
+              mobile={props.mobile}
             />
             <Productor
               img={martha}
@@ -104,6 +105,7 @@ export default function Produccion() {
               }
               web={"http://ojosdepapelvolando.com/"}
               mail={"marthahernandez@ojosdepapelvolando.com"}
+              mobile={props.mobile}
             />
             <Productor
               img={german}
@@ -112,6 +114,7 @@ export default function Produccion() {
               ig={"https://www.instagram.com/germancastillag/"}
               imdb={"http://m.imdb.com/name/nm5720839/"}
               mail={"castilla.german@gmail.com"}
+              mobile={props.mobile}
             />
             <Productor
               img={bernardo}
@@ -121,6 +124,7 @@ export default function Produccion() {
                 "https://www.linkedin.com/in/bernardo-de-urquidi-6b3b8a15/"
               }
               imdb={"http://www.imdb.com/name/nm5153681/"}
+              mobile={props.mobile}
             />
           </Productores>
         </Fade>

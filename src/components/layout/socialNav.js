@@ -4,7 +4,6 @@ import styled from "styled-components/macro";
 import {
   whiteColor,
   navMargin,
-  navMarginMobile
 } from "components/layout/pageLayout";
 import { ReactComponent as IMDBIcon } from "assets/img/layout/imdb.svg";
 import { ReactComponent as FacebookIcon } from "assets/img/layout/facebook.svg";

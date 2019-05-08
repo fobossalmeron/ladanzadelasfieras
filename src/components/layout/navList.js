@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { whiteColor, redColor, blackColor } from "components/layout/pageLayout";
+import { whiteColor, blackColor } from "components/layout/pageLayout";
 import styled, { css } from "styled-components/macro";
 import Fade from "react-reveal/Fade";
 import { ReactComponent as IMDBIcon } from "assets/img/layout/imdb.svg";
@@ -61,29 +61,26 @@ const SocialMobile = styled.ul`
 const List = styled.ul`
   padding: 0;
   margin: 0;
-  @media (max-width:1101){
-    transition: opacity 0.5s cubic-bezier(1, -0.5, 0.5, 1);
-  }
-  @media (max-width: 1100px) {
+  @media (max-width: 1101px) {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: ${redColor};
+    background-color: ${blackColor};
     text-align: center;
-    color: black;
+    color: ${blackColor};
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 20% 0;
     z-index: -1;
     opacity: 0;
     pointer-events: none;
     &::before {
       content: " ";
-      background-color: ${blackColor};
-      margin: 10px;
+      margin: 15% 0%;
       position: absolute;
       top: 0;
       left: 0;
@@ -91,11 +88,10 @@ const List = styled.ul`
       bottom: 0;
     }
     ${LinkWrapper} {
-      margin: 5%;
-      color: black;
+      margin: 0 0 4rem 0;
+      color: ${blackColor};
       font-size: 2rem;
       line-height: 1;
-      margin-bottom: 15%;
       a {
         &:hover :after {
           width: 0;
@@ -110,6 +106,14 @@ const List = styled.ul`
         transition: opacity 0.5s cubic-bezier(1, -0.5, 0.5, 1);
       `}
   }
+  @media (max-width: 1099px) {
+    transition: opacity 0.5s cubic-bezier(1, -0.5, 0.5, 1);
+  }
+  @media (max-width: 500px) {
+    ${LinkWrapper} {
+      font-size: 1.7rem;
+    }
+  }
 `;
 
 const Contactanos = styled.p`
@@ -119,7 +123,6 @@ const Contactanos = styled.p`
   font-weight: 100;
   letter-spacing: 1px;
   margin: 0 0 20px 0;
-  padding-top: 15%;
   display: none;
   @media (max-width: 1100px) {
     display: flex;
@@ -149,32 +152,34 @@ const NavList = props => (
           Prensa
         </NavLink>
       </LinkWrapper>
-      <Contactanos>Contáctanos</Contactanos>
-      <SocialMobile>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.imdb.com/title/tt7072396/"
-          >
-            <IMDBIcon />
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.facebook.com/ladanzadelasfieras/"
-          >
-            <FacebookIcon />
-          </a>
-        </li>
-        <li>
-          <a href="mailto:alayde.castro@gmail.com">
-            <MailIcon />
-          </a>
-        </li>
-      </SocialMobile>
+      <div>
+        <Contactanos>Contáctanos</Contactanos>
+        <SocialMobile>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.imdb.com/title/tt7072396/"
+            >
+              <IMDBIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/ladanzadelasfieras/"
+            >
+              <FacebookIcon />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:alayde.castro@gmail.com">
+              <MailIcon />
+            </a>
+          </li>
+        </SocialMobile>
+      </div>
     </Fade>
   </List>
 );

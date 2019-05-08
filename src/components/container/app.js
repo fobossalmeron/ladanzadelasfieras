@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled, { css } from "styled-components/macro";
+import mobileAndTabletCheck from "components/shared/mobileAndTabletCheck";
 
 import Nav from "components/layout/nav";
 import SocialNav from "components/layout/socialNav";
@@ -37,15 +38,16 @@ const AppContainer = styled.div`
 
 function App(props) {
   const [hasLoaded, setLoaded] = useState(false);
+  const mobile = mobileAndTabletCheck();
 
   useEffect(() => {
     authenticate().then(() => {
-      const ele = document.getElementById("loader");
-      if (ele) {
+      const loader = document.getElementById("loader");
+      if (loader) {
         setLoaded(true);
         setTimeout(() => {
           // remove from DOM
-          ele.remove();
+          loader.remove();
         }, 1000);
       }
     });
@@ -65,7 +67,7 @@ function App(props) {
         <Route
           render={({ location }) => {
             return (
-              <TransitionGroup component={ScrollWrapper}>
+              <TransitionGroup mobile={mobile} component={ScrollWrapper}>
                 <CSSTransition
                   timeout={600}
                   classNames="page"
@@ -85,11 +87,11 @@ function App(props) {
                       path="/ladanzadelasfieras"
                       component={() => <Inicio hasLoaded={hasLoaded} />}
                     />
-                    <Route exact path="/produccion" component={Produccion} />
+                    <Route exact path="/produccion" component={() => <Produccion mobile={mobile}/>} />
                     <Route
                       exact
                       path="/cortometrajes"
-                      component={Cortometrajes}
+                      component={() => <Cortometrajes mobile={mobile}/>}
                     />
                     <Route exact path="/prensa" component={Prensa} />
                     <Route component={NoMatch} />

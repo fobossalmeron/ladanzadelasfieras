@@ -12,8 +12,7 @@ const PersonContainer = styled.div`
   text-align: ${props => (props.alignLeft ? "left" : "center")};
   align-items: ${props => (props.alignLeft ? "flex-start" : "center")};
   transition: 0.3s ease all;
-  width: 100%;
-  max-width: 110px;
+  width: 110px;
   img {
     border-radius: 100%;
     max-width: 80px;

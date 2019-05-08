@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components/macro";
 import Person from "components/shared/person";
-import createHoverMonitor from "components/shared/createHoverMonitor";
+import { blackColor } from "components/layout/pageLayout";
 
 const DirectorContainer = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ const InfoDirector = styled.div`
 
 const HoverDirector = styled.div`
   opacity: 0;
-  background-color: black;
+  background-color: ${blackColor};
   width: 100%;
   position: absolute;
   grid-column-start: ${props => (props.double ? "2" : "1")};
@@ -46,6 +46,10 @@ const HoverDirector = styled.div`
   p {
     grid-column: ${props => (props.double ? "2 / span 4" : "3 / span 4")};
     padding-right: 40px;
+    @media (max-width: 420px) {
+      padding: 5%;
+      box-sizing: border-box;
+    }
     a {
       color: #c64028;
       font-weight: normal;
@@ -62,15 +66,23 @@ const HoverDirector = styled.div`
       z-index: ${props => (props.double ? "1" : "3")};
       transition: opacity 0.4s ease, z-index 0ms ease;
     `}
+  @media (max-width: 800px) {
+    ${props =>
+      props.double &&
+      css`
+        left: 0;
+        grid-column-start: 1;
+        align-items: flex-end;
+        padding: 0 5% 15% 0;
+      `}
+  }
 `;
-
-const hover = createHoverMonitor();
 
 function DirectorCard(props) {
   const [isHovered, setHovered] = useState(false);
 
   function handleShow(bool = !isHovered) {
-    if (!hover.isEnabled) {
+    if (props.mobile) {
       setHovered(bool);
     }
   }
@@ -80,7 +92,7 @@ function DirectorCard(props) {
   }
 
   function handleMouseEnter(e) {
-    if (hover.isEnabled && !isHovered) {
+    if (!props.mobile && !isHovered) {
       setHovered(true);
     }
   }

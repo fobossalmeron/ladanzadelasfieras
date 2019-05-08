@@ -50,7 +50,7 @@ export const PageTitle = styled.h1`
   svg {
     width: 100%;
     max-height: 175px;
-    overflow:visible;
+    overflow: visible;
     text {
       fill: none;
       stroke: ${whiteColor};
@@ -96,7 +96,10 @@ const Page = styled.div`
   grid-template-columns: repeat(8, 1fr);
   @media (max-width: 900px) {
     grid-template-columns: 0px 1fr 1fr 1fr 1fr 1fr 1fr 0px;
-    }
+  }
+  @media (max-width: 420px) {
+    grid-column-gap: 20px;
+  }
 
   h2 {
     font-weight: bold;

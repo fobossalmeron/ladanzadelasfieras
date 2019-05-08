@@ -17,7 +17,7 @@
     "react-scripts": "2.1.8",
     "react-transition-group": "^2.7.0",
     "smooth-scrolling": "^2.3.11",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0"  
   },
   "scripts": {
     "predeploy": "yarn run build",

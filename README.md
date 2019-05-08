@@ -1,8 +1,7 @@
 ## Notes
 
 Block:
-Responsive testing? 
-Cortometrajes details
+Responsive testing
 
 Ext:
 Alayde cuenta en (https://formcarry.com/register)
