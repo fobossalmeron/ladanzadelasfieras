@@ -103,11 +103,11 @@ export default function Cortometrajes(props) {
           <h2>Followback</h2>
           <p style={{ marginBottom: "5%" }}>
             Cortometraje con un formato innovador que cuenta su historia a
-            través de pantallas de celulares. El corto se divide en tres partes:
+            través de pantallas de celulares. El corto se divide en tres partes:
             la primera es contada desde el celular de Lorena, una chica de 16
-            años que viaja a Ciudad de México con la promesa de un trabajo de
+            años que viaja a Ciudad de México con la promesa de un trabajo de
             modelo; la segunda es observada en el celular de un tratante y la
-            tercera desde el teléfono de un joven consumidor de pornografía
+            tercera desde el teléfono de un joven consumidor de pornografía
             aparentemente amateur.
           </p>
         </Fade>
@@ -346,7 +346,7 @@ export default function Cortometrajes(props) {
           <h2>El Sol Bajo Los Pies</h2>
           <p style={{ marginBottom: "5%" }}>
             Cortometraje que se introduce en la realidad de los niños que
-            involuntariamente se convierten en jornaleros en México. Este
+            involuntariamente se convierten en jornaleros en México. Este
             documental evidencia las condiciones en que se ven obligados a
             trabajar con sus padres y las mentiras y abusos de quienes los
             contratan.
@@ -395,12 +395,12 @@ export default function Cortometrajes(props) {
         <Fade bottom>
           <h2>Que Canten Los Niños</h2>
           <p style={{ marginBottom: "5%" }}>
-            Esta historia sigue los esfuerzos de Xochi y Ceci, dos niñas de 12 y
-            10 años, que intentan escapar de su existencia llena de abusos
-            físicos, emocionales y sexuales dentro de un albergue disfuncional.
-            ¿Cuántos niños desamparados y olvidados sobreviven en esas
-            condiciones? Esta es la historia del abuso de poder que sometió a
-            niños durante décadas para fundar una fábrica de esclavos ignorados.
+            Esta historia sigue los esfuerzos de Xochi y Ceci, dos niñas de 12 y
+            10 años, que intentan escapar de su existencia llena de abusos
+            físicos, emocionales y sexuales dentro de un albergue disfuncional.
+            ¿Cuántos niños desamparados y olvidados sobreviven en esas
+            condiciones? Esta es la historia del abuso de poder que sometió a
+            niños durante décadas para fundar una fábrica de esclavos ignorados.
           </p>
         </Fade>
       </Section>

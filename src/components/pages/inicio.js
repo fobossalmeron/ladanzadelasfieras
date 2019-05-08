@@ -67,11 +67,11 @@ export default function Inicio(props) {
           <p style={{ marginTop: "10%" }}>
             <b>LA DANZA DE LAS FIERAS</b> es un largometraje que concientiza y
             genera reflexiones, debates y acciones para prevenir la trata de
-            personas. Está dividido en seis historias y cada una aborda un tema
+            personas. Está dividido en seis historias y cada una aborda un tema
             relacionado a dicha cuestión. Los relatos fueron construidos gracias
-            a un arduo trabajo de investigación y desarrollo creativo, en los
-            cuales se involucraron siete directores de cine y más de 20 expertos
-            en el tema; incluyendo sociólogos, antropólogos, psicólogos,
+            a un arduo trabajo de investigación y desarrollo creativo, en los
+            cuales se involucraron siete directores de cine y más de 20 expertos
+            en el tema; incluyendo sociólogos, antropólogos, psicólogos,
             criminalistas y más especialistas en derechos humanos y trata de
             personas.
           </p>
@@ -111,9 +111,9 @@ export default function Inicio(props) {
         <Fade bottom>
           <h2>Sinópsis</h2>
           <p>
-            El internet como facilitador de víctimas para la esclavitud sexual,
-            niños sicarios, jornaleros infantes en condiciones infrahumanas,
-            albergues disfuncionales, víctimas colaterales y familias
+            El internet como facilitador de víctimas para la esclavitud sexual,
+            niños sicarios, jornaleros infantes en condiciones infrahumanas,
+            albergues disfuncionales, víctimas colaterales y familias
             destruídas; estos son los temas que aborda{" "}
             <b>LA DANZA DE LAS FIERAS</b> alrededor de la trata de personas.
           </p>
@@ -134,20 +134,20 @@ export default function Inicio(props) {
             La trata o tráfico de personas puede entenderse como:
           </p>
           <p style={{marginBottom: "20px"}}>
-            1. Tráfico en el cual se comercia el acto sexual por medio de la
-            fuerza, fraude o coerción, o en el que la persona inducida a cometer
-            el acto no ha cumplido 18 años de edad.
+            1. Tráfico en el cual se comercia el acto sexual por medio de la
+            fuerza, fraude o coerción, o en el que la persona inducida a cometer
+            el acto no ha cumplido 18 años de edad.
           </p>
           <p style={{marginBottom: "20px"}}>
-            2. El reclutamiento, almacenamiento, transportación,
-            aprovisionamiento u obtención de una persona para realizar trabajos
-            o servicios por medio del uso de la fuerza, fraude o coerción con el
-            propósito de subyugación a servitud, peonaje o esclavitud.
+            2. El reclutamiento, almacenamiento, transportación,
+            aprovisionamiento u obtención de una persona para realizar trabajos
+            o servicios por medio del uso de la fuerza, fraude o coerción con el
+            propósito de subyugación a servitud, peonaje o esclavitud.
           </p>
           <p>
             En México, la trata de personas es el segundo delito de más
-            importancia económica y se estima que, al año, al menos 20,000 niñas
-            sufren explotación sexual.
+            importancia económica y se estima que, al año, al menos 20,000 niñas
+            sufren explotación sexual.
           </p>
         </Fade>
       </Section>
