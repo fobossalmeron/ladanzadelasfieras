@@ -4,8 +4,10 @@ import styled from "styled-components/macro";
 import Layout, { Section, whiteColor } from "components/layout/pageLayout";
 import TrailerPlayer from "components/shared/trailerPlayer";
 import { ReactComponent as LogoSvg } from "assets/img/layout/homeLogo.svg";
-import { ReactComponent as LaurelesSvg } from "assets/img/layout/homeLaureles.svg";
+import laureles from "assets/img/layout/homeLaureles.png";
+import laureleswebp from "assets/img/layout/homeLaureles.webp";
 import trailerstill from "assets/img/videos/trailer.jpg";
+import trailerstillwebp from "assets/img/videos/trailer.webp";
 
 export const Intro = styled.div`
   width: 100%;
@@ -26,11 +28,21 @@ const Logo = styled(LogoSvg)`
   width: 100%;
   max-width: 620px;
   margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
 `;
 
-const Laureles = styled(LaurelesSvg)`
+const Laureles = styled.img`
   max-width: 620px;
-  margin-bottom: 10%;
+  margin-bottom: 60px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  @media (max-width:500px){
+    margin-bottom: 100px;
+  }
 `;
 
 const Technical = styled.p`
@@ -47,13 +59,18 @@ export default function Inicio(props) {
       <Section
         columnStart="3"
         columnEnd="7"
+        columnStartMedium="3"
+        columnEndMedium="7"
         columnStartSmall="2"
         columnEndSmall="8"
       >
         <Intro>
           <Fade bottom delay={delayTime}>
             <Logo />
-            <Laureles />
+            <Laureles
+              src={props.webp ? laureleswebp : laureles}
+              alt="laureles"
+            />
           </Fade>
         </Intro>
       </Section>
@@ -81,7 +98,7 @@ export default function Inicio(props) {
         <Fade bottom>
           <TrailerPlayer
             url={"https://player.vimeo.com/video/226767311"}
-            still={trailerstill}
+            still={props.webp ? trailerstillwebp : trailerstill}
             ratio={"56.3%"}
           />
         </Fade>
@@ -128,24 +145,24 @@ export default function Inicio(props) {
       >
         <Fade bottom>
           <h2>La trata de personas</h2>
-          <p style={{marginBottom: "20px"}}>
+          <p style={{ marginBottom: "20px" }}>
             Fenómeno global que reporta a más de 27 millones de personas
             sufriendo condiciones similares a la esclavitud (Casa Blanca, 2017).
             La trata o tráfico de personas puede entenderse como:
           </p>
-          <p style={{marginBottom: "20px"}}>
+          <p style={{ marginBottom: "20px" }}>
             1. Tráfico en el cual se comercia el acto sexual por medio de la
             fuerza, fraude o coerción, o en el que la persona inducida a cometer
             el acto no ha cumplido 18 años de edad.
           </p>
-          <p style={{marginBottom: "20px"}}>
+          <p style={{ marginBottom: "20px" }}>
             2. El reclutamiento, almacenamiento, transportación,
             aprovisionamiento u obtención de una persona para realizar trabajos
             o servicios por medio del uso de la fuerza, fraude o coerción con el
             propósito de subyugación a servitud, peonaje o esclavitud.
           </p>
           <p>
-            En México, la trata de personas es el segundo delito de más
+            En México, la trata de personas es el segundo delito de más
             importancia económica y se estima que, al año, al menos 20,000 niñas
             sufren explotación sexual.
           </p>

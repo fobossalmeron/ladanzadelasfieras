@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import { whiteColor } from "components/layout/pageLayout";
+import { whiteColor, blackColor } from "components/layout/pageLayout";
 import styled, { css, keyframes } from "styled-components/macro";
 import { ReactComponent as Play } from "assets/img/layout/play.svg";
 import { ReactComponent as Pause } from "assets/img/layout/pause.svg";
@@ -15,11 +15,11 @@ const VideoWrapper = styled.div`
   display: block;
   position: relative;
   overflow: hidden;
+  background-color: ${blackColor};
   iframe {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: black;
   }
 `;
 

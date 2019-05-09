@@ -1,10 +1,6 @@
 @import "~normalize.css/normalize.css";
 @import url('https://fonts.googleapis.com/css?family=Share:400,700&subset=latin-ext');
 
-$white: #f9f9f9;
-$black: #0A0A0A;
-$red: #C64028;
-
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -28,60 +24,4 @@ body {
     display: block;
     font-size: 17px;
     overflow: hidden;
-    &.is-native-scroll{
-        overflow-y:scroll;
-    }
-}
-
-//Pages
-//Inicio
-
-//Cortometrajes
-
-#Cortometrajes p {
-    margin:0;
-}
-
-//Animations
-.titleSlide-enter {
-    opacity: 0;
-    transition: all 800ms ease-out;
-    transform: translateY(-121px);
-}
-
-.titleSlide-enter-active {
-    transition: all 800ms ease-out;
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-@keyframes Slide-in {
-    0% {
-        transform: translate3d(0, 21px, 0);
-        opacity: 0;
-    }
-
-    30% {
-        transform: translate3d(0, 21px, 0);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@keyframes Slide-out {
-    0% {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-    }
-
-    100% {
-        visibility: hidden;
-        opacity: 0;
-        transform: translate3d(0, 21px, 0);
-    }
 }

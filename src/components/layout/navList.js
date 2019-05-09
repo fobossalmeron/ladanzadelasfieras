@@ -129,59 +129,67 @@ const Contactanos = styled.p`
   }
 `;
 
-const NavList = props => (
-  <List visible={props.visible}>
-    <Fade left delay={1300}>
-      <LinkWrapper onClick={() => props.handleActive(false)}>
-        <NavLink exact={true} activeClassName="is-active" to="/">
-          Inicio
-        </NavLink>
-      </LinkWrapper>
-      <LinkWrapper onClick={() => props.handleActive(false)}>
-        <NavLink exact={true} activeClassName="is-active" to="/produccion">
-          Producción
-        </NavLink>
-      </LinkWrapper>
-      <LinkWrapper onClick={() => props.handleActive(false)}>
-        <NavLink exact={true} activeClassName="is-active" to="/cortometrajes">
-          Cortometrajes
-        </NavLink>
-      </LinkWrapper>
-      <LinkWrapper onClick={() => props.handleActive(false)}>
-        <NavLink exact={true} activeClassName="is-active" to="/prensa">
-          Prensa
-        </NavLink>
-      </LinkWrapper>
-      <div>
-        <Contactanos>Contáctanos</Contactanos>
-        <SocialMobile>
-          <li>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.imdb.com/title/tt7072396/"
-            >
-              <IMDBIcon />
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.facebook.com/ladanzadelasfieras/"
-            >
-              <FacebookIcon />
-            </a>
-          </li>
-          <li>
-            <a href="mailto:alayde.castro@gmail.com">
-              <MailIcon />
-            </a>
-          </li>
-        </SocialMobile>
-      </div>
-    </Fade>
-  </List>
-);
+function NavList(props) {
+  function scroll() {
+    if (props.visible) {
+      let page = document.getElementById("pageScroller");
+      page.scrollTop = 0;
+    }
+  }
+  return (
+    <List visible={props.visible} onClick={() => scroll()}>
+      <Fade left delay={1300}>
+        <LinkWrapper onClick={() => props.handleActive(false)}>
+          <NavLink exact={true} activeClassName="is-active" to="/">
+            Inicio
+          </NavLink>
+        </LinkWrapper>
+        <LinkWrapper onClick={() => props.handleActive(false)}>
+          <NavLink exact={true} activeClassName="is-active" to="/produccion">
+            Producción
+          </NavLink>
+        </LinkWrapper>
+        <LinkWrapper onClick={() => props.handleActive(false)}>
+          <NavLink exact={true} activeClassName="is-active" to="/cortometrajes">
+            Cortometrajes
+          </NavLink>
+        </LinkWrapper>
+        <LinkWrapper onClick={() => props.handleActive(false)}>
+          <NavLink exact={true} activeClassName="is-active" to="/prensa">
+            Prensa
+          </NavLink>
+        </LinkWrapper>
+        <div>
+          <Contactanos>Contáctanos</Contactanos>
+          <SocialMobile>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.imdb.com/title/tt7072396/"
+              >
+                <IMDBIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/ladanzadelasfieras/"
+              >
+                <FacebookIcon />
+              </a>
+            </li>
+            <li>
+              <a href="mailto:alayde.castro@gmail.com">
+                <MailIcon />
+              </a>
+            </li>
+          </SocialMobile>
+        </div>
+      </Fade>
+    </List>
+  );
+}
 
 export default NavList;

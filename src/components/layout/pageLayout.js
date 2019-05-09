@@ -117,6 +117,11 @@ const Page = styled.div`
     margin: 0 0 20% 0;
     line-height: 1.2;
   }
+
+  img{
+    width:100%;
+    height:auto;
+  }
 `;
 
 function Layout(props) {

@@ -3,23 +3,22 @@ import Smooth from "smooth-scrolling";
 import styled from "styled-components/macro";
 
 const PageScroll = styled.div`
-  position: absolute;
   top: 0;
   width: 100%;
   max-width: 1280px;
+  -webkit-overflow-scrolling: touch;
 `;
 
 export default function ScrollWrapper(props) {
   const pageRef = useRef(null);
   var height = "100px";
-  var useNative = props.mobile? true : false;
 
   useEffect(() => {
     const section = pageRef.current;
 
     var smooth = new Smooth({
       noscrollbar: true,
-      native: useNative,
+      native: false,
       section: section,
       ease: 0.1,
       vs: {
@@ -30,14 +29,26 @@ export default function ScrollWrapper(props) {
       },
       timer: 1000
     });
-    smooth.init();
+    if (!props.mobile) {
+      smooth.init();
+    }
 
     return function cleanup() {
       smooth.destroy();
     };
   });
+  var overflow = props.mobile ? "scroll" : " ";
+  var position = props.mobile ? "relative" : "absolute";
   return (
-    <PageScroll height={height} ref={pageRef}>
+    <PageScroll
+      height={height}
+      ref={pageRef}
+      style={{
+        overflowY: overflow,
+        position: position
+      }}
+      id={"pageScroller"}
+    >
       {props.children}
     </PageScroll>
   );

@@ -11,7 +11,7 @@ import { ReactComponent as HamburgerIcon } from "assets/img/layout/hamburger.svg
 const Menu = styled.nav`
   display: block;
   width: auto;
-  z-index: 3;
+  z-index: 5;
   left: 0;
   position: fixed;
   margin: ${navMargin} 0 0 ${navMargin};

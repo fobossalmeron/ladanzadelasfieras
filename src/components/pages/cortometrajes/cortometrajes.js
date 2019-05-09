@@ -8,17 +8,23 @@ import DirectorCard from "./directorCard";
 import { ReactComponent as CortometrajesTitle } from "assets/img/layout/cortometrajes.svg";
 
 import stillFollowback from "assets/img/videos/followback.jpg";
+import stillFollowbackwebp from "assets/img/videos/followback.webp";
 import alayde from "assets/img/directores/alayde.jpg";
 import stacy from "assets/img/directores/stacy.jpg";
 import stillDesechables from "assets/img/videos/desechables.jpg";
+import stillDesechableswebp from "assets/img/videos/desechables.webp";
 import miguel from "assets/img/directores/miguel.jpg";
 import stillVoces from "assets/img/videos/vocesblancas.jpg";
+import stillVoceswebp from "assets/img/videos/vocesblancas.webp";
 import ana from "assets/img/directores/ana.jpg";
 import stillTQD from "assets/img/videos/tqd.jpg";
+import stillTQDwebp from "assets/img/videos/tqd.webp";
 import patterson from "assets/img/directores/patterson.jpg";
 import stillSBLP from "assets/img/videos/sblp.jpg";
+import stillSBLPwebp from "assets/img/videos/sblp.webp";
 import angel from "assets/img/directores/angel.jpg";
 import stillQCLN from "assets/img/videos/qcln.jpg";
+import stillQCLNwebp from "assets/img/videos/qcln.webp";
 import gina from "assets/img/directores/gina.jpg";
 
 const InfoSection = styled.div`
@@ -116,56 +122,58 @@ export default function Cortometrajes(props) {
         <Fade bottom>
           <TrailerPlayer
             url={"https://vimeo.com/236672379"}
-            still={stillFollowback}
+            still={props.webp ? stillFollowbackwebp : stillFollowback}
           />
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <InfoSection>
-          <Directors>
-            <DirectorCard
-              name={"Alayde Castro"}
-              title={"CODIRECTORA"}
-              img={alayde}
-              imdb={"https://www.imdb.com/name/nm7429166/"}
-              mail={"alayde.castro@gmail.com"}
-              bio={`Socia fundadora y Directora Creativa de la casa productora 
+        <Fade bottom distance={"40px"}>
+          <InfoSection>
+            <Directors>
+              <DirectorCard
+                name={"Alayde Castro"}
+                title={"CODIRECTORA"}
+                img={alayde}
+                imdb={"https://www.imdb.com/name/nm7429166/"}
+                mail={"alayde.castro@gmail.com"}
+                bio={`Socia fundadora y Directora Creativa de la casa productora 
                 <b>Antítesis</b> que ha trabajado para clientes como la UNAM, 
                 el STC Metro y la Secretaría de Turismo del Estado de Puebla.`}
-              double={false}
-              mobile={props.mobile}
-            />
-            <DirectorCard
-              double={true}
-              name={"Stacy Perskie"}
-              title={"CODIRECTOR"}
-              img={stacy}
-              imdb={"https://www.imdb.com/name/nm1142384/"}
-              mail={"stacy@redrum.com.mx"}
-              bio={`Co-Fundador de la casa productora <a href="http://redrum.com.mx/" 
+                double={false}
+                mobile={props.mobile}
+              />
+              <DirectorCard
+                double={true}
+                name={"Stacy Perskie"}
+                title={"CODIRECTOR"}
+                img={stacy}
+                imdb={"https://www.imdb.com/name/nm1142384/"}
+                mail={"stacy@redrum.com.mx"}
+                bio={`Co-Fundador de la casa productora <a href="http://redrum.com.mx/" 
               target="_blank">Redrum</a>, con la cual ha producido películas como 
               <em>Get The Gringo</em> (2012) y co-producido, entre muchas otras, 
               películas como <em>007 Spectre</em> (2015), <em>Elysium</em> (2013) y 
               la serie <em>Mozart in the Jungle</em> (2014).`}
-              mobile={props.mobile}
-            />
-          </Directors>
-          <Credits followback>
-            <b>GÉNERO:</b> Ficción
-            <br />
-            <b>DURACIÓN:</b> 15:00 minutos
-            <br />
-            <b>GUIÓN:</b> Gina Herrera, Alayde Castro Hernández
-            <br />
-            <b>ANIMACIÓN:</b> Rodrigo Salmerón, Marco Antonio del Toro
-            <br />
-            <b>CAST:</b> Paulina Matos, Ariana Nicole Sucar, Lorena del
-            Castillo, Julio Hernández, Luis Genaro Peñalosa, Violeta Robles
-            Vivas, Sayra Rendón Ibarra, Sebastián Mauthe
-            <br />
-            <b>MÚSICA:</b> Dapuntobeat
-          </Credits>
-        </InfoSection>
+                mobile={props.mobile}
+              />
+            </Directors>
+            <Credits followback>
+              <b>GÉNERO:</b> Ficción
+              <br />
+              <b>DURACIÓN:</b> 15:00 minutos
+              <br />
+              <b>GUIÓN:</b> Gina Herrera, Alayde Castro Hernández
+              <br />
+              <b>ANIMACIÓN:</b> Rodrigo Salmerón, Marco Antonio del Toro
+              <br />
+              <b>CAST:</b> Paulina Matos, Ariana Nicole Sucar, Lorena del
+              Castillo, Julio Hernández, Luis Genaro Peñalosa, Violeta Robles
+              Vivas, Sayra Rendón Ibarra, Sebastián Mauthe
+              <br />
+              <b>MÚSICA:</b> Dapuntobeat
+            </Credits>
+          </InfoSection>
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
@@ -180,50 +188,54 @@ export default function Cortometrajes(props) {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <TrailerPlayer
-          url={"https://player.vimeo.com/video/236672175"}
-          still={stillDesechables}
-        />
+        <Fade bottom>
+          <TrailerPlayer
+            url={"https://player.vimeo.com/video/236672175"}
+            still={props.webp ? stillDesechableswebp : stillDesechables}
+          />
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <InfoSection>
-          <Directors>
-            <DirectorCard
-              name={"Miguel Ángel Fernández"}
-              title={"DIRECTOR"}
-              img={miguel}
-              imdb={"https://www.imdb.com/name/nm5699678/"}
-              mail={"fernandezgmiguel@gmail.com"}
-              bio={`Guionista, director y editor del cortometraje <b>
+      <Fade bottom distance={"40px"}>
+          <InfoSection>
+            <Directors>
+              <DirectorCard
+                name={"Miguel Ángel Fernández"}
+                title={"DIRECTOR"}
+                img={miguel}
+                imdb={"https://www.imdb.com/name/nm5699678/"}
+                mail={"fernandezgmiguel@gmail.com"}
+                bio={`Guionista, director y editor del cortometraje <b>
               <a href="https://vimeo.com/127000861" target="_blank">Chalma</a>,
               </b> adaptación del cuento <em>Talpa</em> de Juan Rulfo, que fue 
               parte de la selección oficial del FICG (2016) y del Latino Film Festival 
               de Berlín (2016). Su otro cortometraje, <b>
               <a href="https://vimeo.com/154378481" target="_blank">Pasajeros</a></b>, 
               fue selección oficial del FICM y el FICIQQ de Chile.`}
-              mobile={props.mobile}
-            />
-          </Directors>
-          <Credits>
-            <b>GÉNERO:</b> Ficción
-            <br />
-            <b>DURACIÓN:</b> 19:53 min
-            <br />
-            <b>GUIÓN:</b> Miguel Ángel Fernández
-            <br />
-            <b>
-              DIRECTOR DE
+                mobile={props.mobile}
+              />
+            </Directors>
+            <Credits>
+              <b>GÉNERO:</b> Ficción
               <br />
-              FOTOGRAFÍA:{" "}
-            </b>{" "}
-            Alejandro Chávez
-            <br />
-            <b>CAST:</b> Rodolfo Calderón, Ángel Noe Alvarado, Francisco Pita,
-            Ángel Copado, Eduardo Rodríguez
-            <br />
-            <b>MÚSICA:</b> Ruben Cruz Martínez
-          </Credits>
-        </InfoSection>
+              <b>DURACIÓN:</b> 19:53 min
+              <br />
+              <b>GUIÓN:</b> Miguel Ángel Fernández
+              <br />
+              <b>
+                DIRECTOR DE
+                <br />
+                FOTOGRAFÍA:{" "}
+              </b>{" "}
+              Alejandro Chávez
+              <br />
+              <b>CAST:</b> Rodolfo Calderón, Ángel Noe Alvarado, Francisco Pita,
+              Ángel Copado, Eduardo Rodríguez
+              <br />
+              <b>MÚSICA:</b> Ruben Cruz Martínez
+            </Credits>
+          </InfoSection>
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
@@ -238,48 +250,52 @@ export default function Cortometrajes(props) {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <TrailerPlayer
-          url={"https://player.vimeo.com/video/236672641"}
-          still={stillVoces}
-        />
+        <Fade bottom>
+          <TrailerPlayer
+            url={"https://player.vimeo.com/video/236672641"}
+            still={props.webp ? stillVoceswebp : stillVoces}
+          />
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <InfoSection>
-          <Directors>
-            <DirectorCard
-              name={"Ana Díez"}
-              title={"DIRECTORA"}
-              img={ana}
-              imdb={"https://www.imdb.com/name/nm0246781/"}
-              mail={"anadd@telefonica.net"}
-              bio={`Directora española que ha ganado una <em>Diosa de Plata</em>, 
+      <Fade bottom distance={"40px"}>
+          <InfoSection>
+            <Directors>
+              <DirectorCard
+                name={"Ana Díez"}
+                title={"DIRECTORA"}
+                img={ana}
+                imdb={"https://www.imdb.com/name/nm0246781/"}
+                mail={"anadd@telefonica.net"}
+                bio={`Directora española que ha ganado una <em>Diosa de Plata</em>, 
               un <em>Ariel</em> y un <em>Goya</em>. Ha dirigido 3 documentales y 5 
               largometrajes ficción, entre ellos: <em>Ander Eta Yul</em> (1988), 
               <em>Todo está Oscuro</em> (1997) y <em>Elvira Luz Cruz: Pena Máxima</em> 
               (1985). Es Socia Co-Fundadora de CIMA (Asociación de Mujeres Cineastas 
                 y de Medios Audiovisuales).`}
-              mobile={props.mobile}
-            />
-          </Directors>
-          <Credits>
-            <b>GÉNERO:</b> Documental
-            <br />
-            <b>DURACIÓN:</b> 18:23 min
-            <br />
-            <b>GUIÓN:</b> Ana Díez
-            <br />
-            <b>
-              DIRECTOR DE
+                mobile={props.mobile}
+              />
+            </Directors>
+            <Credits>
+              <b>GÉNERO:</b> Documental
               <br />
-              FOTOGRAFÍA:{" "}
-            </b>
-            Alejandro Chávez
-            <br />
-            <b>CAST:</b> 30 Niños y niñas de 12 a 18 años
-            <br />
-            <b>MÚSICA:</b> Ricardo García
-          </Credits>
-        </InfoSection>
+              <b>DURACIÓN:</b> 18:23 min
+              <br />
+              <b>GUIÓN:</b> Ana Díez
+              <br />
+              <b>
+                DIRECTOR DE
+                <br />
+                FOTOGRAFÍA:{" "}
+              </b>
+              Alejandro Chávez
+              <br />
+              <b>CAST:</b> 30 Niños y niñas de 12 a 18 años
+              <br />
+              <b>MÚSICA:</b> Ricardo García
+            </Credits>
+          </InfoSection>
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
@@ -294,22 +310,25 @@ export default function Cortometrajes(props) {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <TrailerPlayer
-          url={"https://player.vimeo.com/video/236672575"}
-          still={stillTQD}
-        />
+        <Fade bottom>
+          <TrailerPlayer
+            url={"https://player.vimeo.com/video/236672575"}
+            still={props.webp ? stillTQDwebp : stillTQD}
+          />
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <InfoSection>
-          <Directors>
-            <DirectorCard
-              name={"Rodrigo Ruiz Patterson"}
-              title={"DIRECTOR"}
-              img={patterson}
-              imdb={"http://www.imdb.com/name/nm2559532/"}
-              ig={"http://instagram.com/eltonayon"}
-              mail={"ruizpattersonrodrigo@gmail.com"}
-              bio={`Graduado <em>Cum Laude</em> del CCC con la tesis ficción <b>
+      <Fade bottom distance={"40px"}>
+          <InfoSection>
+            <Directors>
+              <DirectorCard
+                name={"Rodrigo Ruiz Patterson"}
+                title={"DIRECTOR"}
+                img={patterson}
+                imdb={"http://www.imdb.com/name/nm2559532/"}
+                ig={"http://instagram.com/eltonayon"}
+                mail={"ruizpattersonrodrigo@gmail.com"}
+                bio={`Graduado <em>Cum Laude</em> del CCC con la tesis ficción <b>
               <a href="https://www.youtube.com/watch?v=IpPrRqnBSXU&t=3s" target="_blank">
               Australia</a></b> (nominada al <em>Ariel 2017</em> y ganadora
               del <em>Mejor Cortometraje Latinoamericano de Ficción</em> en el 
@@ -318,28 +337,29 @@ export default function Cortometrajes(props) {
               y <em>Paradisio</em>. Ha sido seleccionado en más de 10 
               festivales de cine internacionales, entre ellos <em>Cannes</em>, 
               <em>Raindance</em>, <em>La Habana</em> y el <em>FICM</em>`}
-              mobile={props.mobile}
-            />
-          </Directors>
-          <Credits>
-            <b>GÉNERO:</b> Ficción
-            <br />
-            <b>DURACIÓN:</b> 19:58 min
-            <br />
-            <b>GUIÓN:</b> Rodrigo Ruíz Patterson
-            <br />
-            <b>
-              DIRECTOR DE
+                mobile={props.mobile}
+              />
+            </Directors>
+            <Credits>
+              <b>GÉNERO:</b> Ficción
               <br />
-              FOTOGRAFÍA:{" "}
-            </b>
-            Argel Ahumada
-            <br />
-            <b>CAST:</b> Asur Zagada, Francisco Barreiro, Carmen Ramos
-            <br />
-            <b>MÚSICA:</b> Mateo Gonzalez Bufi
-          </Credits>
-        </InfoSection>
+              <b>DURACIÓN:</b> 19:58 min
+              <br />
+              <b>GUIÓN:</b> Rodrigo Ruíz Patterson
+              <br />
+              <b>
+                DIRECTOR DE
+                <br />
+                FOTOGRAFÍA:{" "}
+              </b>
+              Argel Ahumada
+              <br />
+              <b>CAST:</b> Asur Zagada, Francisco Barreiro, Carmen Ramos
+              <br />
+              <b>MÚSICA:</b> Mateo Gonzalez Bufi
+            </Credits>
+          </InfoSection>
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
@@ -354,10 +374,12 @@ export default function Cortometrajes(props) {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <TrailerPlayer
-          url={"https://player.vimeo.com/video/236672332"}
-          still={stillSBLP}
-        />
+        <Fade bottom>
+          <TrailerPlayer
+            url={"https://player.vimeo.com/video/236672332"}
+            still={props.webp ? stillSBLPwebp : stillSBLP}
+          />
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
         <InfoSection>
@@ -398,53 +420,57 @@ export default function Cortometrajes(props) {
             Esta historia sigue los esfuerzos de Xochi y Ceci, dos niñas de 12 y
             10 años, que intentan escapar de su existencia llena de abusos
             físicos, emocionales y sexuales dentro de un albergue disfuncional.
-            ¿Cuántos niños desamparados y olvidados sobreviven en esas
+            ¿Cuántos niños desamparados y olvidados sobreviven en esas
             condiciones? Esta es la historia del abuso de poder que sometió a
             niños durante décadas para fundar una fábrica de esclavos ignorados.
           </p>
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <TrailerPlayer
-          url={"https://player.vimeo.com/video/236672459"}
-          still={stillQCLN}
-        />
+        <Fade bottom>
+          <TrailerPlayer
+            url={"https://player.vimeo.com/video/236672459"}
+            still={props.webp ? stillQCLNwebp : stillQCLN}
+          />
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <InfoSection>
-          <Directors>
-            <DirectorCard
-              name={"Gina Herrera"}
-              title={"DIRECTORA"}
-              img={gina}
-              ig={"http://instagram.com/ginaherrerapascal"}
-              imdb={"http://www.imdb.com/name/nm6163973/"}
-              mail={"ginaherrerapascal@gmail.com"}
-              bio={`Egresada de Centro de Estudios Cinematográficos, INDIe. Fue nombrada una de <em>Las 5 Cineastas a Seguir</em> por su tesis de ficción <em><a href="https://vimeo.com/156661095" target="_blank">Ni Aquí Ni Allá</a></em>, cortometraje seleccionado en distintos festivales de cine, como el Festival Internacional de Cine de Morelia (FICM), FICUNAM, New York Independent Films Festival, 12 Months (Rumania), Short Short Films Festival, entre otros.`}
-              mobile={props.mobile}
-            />
-          </Directors>
-          <Credits>
-            <b>GÉNERO:</b> Ficción
-            <br />
-            <b>DURACIÓN:</b> 20:56 min
-            <br />
-            <b>GUIÓN:</b> Gina Herrera, Genaro Peñalosa
-            <br />
-            <b>
-              DIRECTORA DE
+      <Fade bottom distance={"40px"}>
+          <InfoSection>
+            <Directors>
+              <DirectorCard
+                name={"Gina Herrera"}
+                title={"DIRECTORA"}
+                img={gina}
+                ig={"http://instagram.com/ginaherrerapascal"}
+                imdb={"http://www.imdb.com/name/nm6163973/"}
+                mail={"ginaherrerapascal@gmail.com"}
+                bio={`Egresada de Centro de Estudios Cinematográficos, INDIe. Fue nombrada una de <em>Las 5 Cineastas a Seguir</em> por su tesis de ficción <em><a href="https://vimeo.com/156661095" target="_blank">Ni Aquí Ni Allá</a></em>, cortometraje seleccionado en distintos festivales de cine, como el Festival Internacional de Cine de Morelia (FICM), FICUNAM, New York Independent Films Festival, 12 Months (Rumania), Short Short Films Festival, entre otros.`}
+                mobile={props.mobile}
+              />
+            </Directors>
+            <Credits>
+              <b>GÉNERO:</b> Ficción
               <br />
-              FOTOGRAFÍA:{" "}
-            </b>
-            Flavia Martínez
-            <br />
-            <b>CAST:</b> Nicole Reyes, Matilde Luna, María Lourdes Pérez,
-            Catalina López
-            <br />
-            <b>Música:</b> Compuesta por Jose Luis Perales, interpretado por el
-            cast
-          </Credits>
-        </InfoSection>
+              <b>DURACIÓN:</b> 20:56 min
+              <br />
+              <b>GUIÓN:</b> Gina Herrera, Genaro Peñalosa
+              <br />
+              <b>
+                DIRECTORA DE
+                <br />
+                FOTOGRAFÍA:{" "}
+              </b>
+              Flavia Martínez
+              <br />
+              <b>CAST:</b> Nicole Reyes, Matilde Luna, María Lourdes Pérez,
+              Catalina López
+              <br />
+              <b>Música:</b> Compuesta por Jose Luis Perales, interpretado por
+              el cast
+            </Credits>
+          </InfoSection>
+        </Fade>
       </Section>
     </Layout>
   );

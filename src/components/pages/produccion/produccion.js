@@ -143,13 +143,13 @@ export default function Produccion(props) {
             <p>
               <b>REFLEKTO KREATIVO</b> es una generadora de productos
               culturales. Una empresa de jóvenes que ofrece gran flexibilidad a
-              la vertiginosa aparición de novedosas plataformas, aplicaciones,
+              la vertiginosa aparición de novedosas plataformas, aplicaciones,
               formatos y opciones educativas y de entretenimiento. El proyecto
               aglutina un grupo de empresas que desarrollan proyectos de
               investigación, gestión cultural, producción audiovisual,
-              producción de espectáculos y creación de conceptos didácticos; lo
+              producción de espectáculos y creación de conceptos didácticos; lo
               cual les permite elaborar propuestas sólidas, sustentadas y llenas
-              de creatividad acorde a las características y necesidades de cada
+              de creatividad acorde a las características y necesidades de cada
               proyecto.
             </p>
           </Productora>
@@ -167,7 +167,7 @@ export default function Produccion(props) {
             <AntitesisIcon />
             <p>
               <b>ANTÍTESIS</b> es una productora que nace del deseo de un grupo
-              de jóvenes cineastas que busca generar proyectos relevantes. A
+              de jóvenes cineastas que busca generar proyectos relevantes. A
               través de la confianza depositada en artistas para el desarrollo
               de los proyectos, el colectivo escucha las necesidades de las
               nuevas mentes creativas para dar resultados frescos, innovadores y
@@ -187,8 +187,8 @@ export default function Produccion(props) {
           <Productora>
             <BalaIcon />
             <p>
-              <b>BALA FILMS</b> es una familia dedicada a la realización de
-              obras cinematográficas y proyectos audiovisuales. Su trabajo ha
+              <b>BALA FILMS</b> es una familia dedicada a la realización de
+              obras cinematográficas y proyectos audiovisuales. Su trabajo ha
               sido seleccionado en festivales nacionales e internacionales como
               el FICM (Festival Internacional de Cine de Morelia), FICG
               (Festival Internacional de Cine de Guadalajara), FICUNAM (Festival
@@ -211,14 +211,14 @@ export default function Produccion(props) {
           <Educadores>
             <EducadoresIcon />
             <p>
-              <b>EDUCADORES SIN FRONTERAS</b> es una organización no
-              gubernamental, autónoma y sin fines de lucro que desarrolla y
-              fomenta programas académicos y culturales, así como publicaciones
-              e investigaciones con el objetivo de mejorar la educación en
-              México. Las temáticas de los programas son: prevención de la
-              violencia, ética, cívica, lectura, cultura de la legalidad,
-              equidad de género, participación social, didáctica, psicología,
-              gestión de conflictos, mediación, inteligencia emocional y
+              <b>EDUCADORES SIN FRONTERAS</b> es una organización no
+              gubernamental, autónoma y sin fines de lucro que desarrolla y
+              fomenta programas académicos y culturales, así como publicaciones
+              e investigaciones con el objetivo de mejorar la educación en
+              México. Las temáticas de los programas son: prevención de la
+              violencia, ética, cívica, lectura, cultura de la legalidad,
+              equidad de género, participación social, didáctica, psicología,
+              gestión de conflictos, mediación, inteligencia emocional y
               justicia.
             </p>
           </Educadores>

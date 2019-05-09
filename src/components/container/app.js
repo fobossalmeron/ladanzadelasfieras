@@ -36,9 +36,18 @@ const AppContainer = styled.div`
     `}
 `;
 
+function webpCheck() {
+  if (window.Modernizr.webp) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function App(props) {
   const [hasLoaded, setLoaded] = useState(false);
   const mobile = mobileAndTabletCheck();
+  const webp = webpCheck();
 
   useEffect(() => {
     authenticate().then(() => {
@@ -46,58 +55,58 @@ function App(props) {
       if (loader) {
         setLoaded(true);
         setTimeout(() => {
-          // remove from DOM
-          loader.remove();
-        }, 1000);
+          // transition out
+          loader.style.opacity = "0";
+          setTimeout(() => {
+            // remove from DOM
+            loader.remove();
+          }, 500);
+        }, 500);
       }
     });
   });
 
   // fake authentication Promise
   function authenticate() {
-    return new Promise(resolve => setTimeout(resolve, 1000));
+    return new Promise(resolve => setTimeout(resolve, 1500));
   }
-
   return (
     <AppContainer visible={hasLoaded}>
       <Router>
         <Nav />
         <SocialNav />
-        <BackgroundVideo />
+        <BackgroundVideo webp={webp}/>
         <Route
           render={({ location }) => {
             return (
-              <TransitionGroup mobile={mobile} component={ScrollWrapper}>
-                <CSSTransition
-                  timeout={600}
-                  classNames="page"
-                  inProp={hasLoaded}
-                  key={location.key}
-                >
+              <ScrollWrapper mobile={mobile}>
                   <Switch location={location}>
                     <Route
                       name="inicio"
                       exact
                       path="/"
-                      component={() => <Inicio hasLoaded={hasLoaded} />}
+                      component={() => <Inicio hasLoaded={hasLoaded} webp={webp} />}
                     />
                     <Route
                       name="inicio"
                       exact
                       path="/ladanzadelasfieras"
-                      component={() => <Inicio hasLoaded={hasLoaded} />}
+                      component={() => <Inicio hasLoaded={hasLoaded} webp={webp} />}
                     />
-                    <Route exact path="/produccion" component={() => <Produccion mobile={mobile}/>} />
+                    <Route
+                      exact
+                      path="/produccion"
+                      component={() => <Produccion mobile={mobile} />}
+                    />
                     <Route
                       exact
                       path="/cortometrajes"
-                      component={() => <Cortometrajes mobile={mobile}/>}
+                      component={() => <Cortometrajes mobile={mobile} webp={webp}/>}
                     />
-                    <Route exact path="/prensa" component={Prensa} />
+                    <Route exact path="/prensa" component={() => <Prensa mobile={mobile} />} />
                     <Route component={NoMatch} />
                   </Switch>
-                </CSSTransition>
-              </TransitionGroup>
+                </ScrollWrapper>
             );
           }}
         />

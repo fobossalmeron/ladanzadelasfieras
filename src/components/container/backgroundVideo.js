@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
-import styled, {keyframes} from "styled-components/macro";
-import overlayImg from "assets/img/layout/noise.png";
+import styled, { keyframes } from "styled-components/macro";
+import overlayImg from "assets/img/layout/noise2.png";
+import overlayImgWebP from "assets/img/layout/noise2.webp";
 import video from "assets/video/video.mp4";
-
 
 const VideoContainer = styled.div`
   position: fixed;
@@ -36,7 +36,6 @@ const rotate = keyframes`
 `;
 
 const Overlay = styled.div`
-  background-image: url("${overlayImg}");
   animation: ${rotate} 200ms infinite steps(4);
   position: fixed;
   left: -100%;
@@ -47,11 +46,13 @@ const Overlay = styled.div`
   transform: translateZ(0.0000001);
 `;
 
-function BackgroundVideo(play, props) {
+function BackgroundVideo(props) {
   const [isPlaying, setPlaying] = useState(false);
   useEffect(() => {
     setPlaying(true);
   });
+
+  var background = props.webp ? overlayImgWebP : overlayImg 
   return (
     <VideoContainer>
       <ReactPlayer
@@ -61,9 +62,13 @@ function BackgroundVideo(play, props) {
         muted
         loop
         volume={0}
-        onLoad={props.passLoad}
       />
-      <Overlay/>
+      <Overlay
+        style={{
+          backgroundImage:
+            "url(" + background + ")"
+        }}
+      />
     </VideoContainer>
   );
 }
