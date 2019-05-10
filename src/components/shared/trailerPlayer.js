@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import ReactPlayer from "react-player";
+import VimeoPlayer from "react-player";
 import { whiteColor, blackColor } from "components/layout/pageLayout";
 import styled, { css, keyframes } from "styled-components/macro";
 import { ReactComponent as Play } from "assets/img/layout/play.svg";
 import { ReactComponent as Pause } from "assets/img/layout/pause.svg";
+import Loadable from "react-loadable";
 
 //52.7 es el de todos menos, desechables tiene una línea negra a la derecha y el trailer está en 1080p
 
@@ -63,11 +64,10 @@ const Clicker = styled.div`
     height: 35px;
     position: absolute;
     left: calc(50% - 17.5px);
-    top: calc(50% + 17.5px);
+    top: calc(50% + 10px);
     transition: opacity 0.4s ease;
     z-index: 3;
-    polygon,
-    rect {
+    path {
       stroke: ${whiteColor};
       stroke-width: 26px;
       fill: none;
@@ -106,37 +106,10 @@ const OverStill = styled.div`
 `;
 
 const PlayButton = styled(Play)`
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  left: calc(50% - 17.5px);
-  top: calc(50% - 17.5px);
-  z-index: 3;
-  cursor: pointer;
-  polygon {
-    stroke-width: 26px;
-    fill: none;
-  }
   opacity: ${props => (props.hide ? "0" : "1")};
 `;
 
 const PauseButton = styled(Pause)`
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  left: calc(50% - 17.5px);
-  top: calc(50% - 17.5px);
-  z-index: 3;
-  cursor: pointer;
-  polygon,
-  rect {
-    stroke: ${whiteColor};
-    stroke-width: 26px;
-    fill: none;
-    stroke: rgb(255, 255, 255);
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
-  }
   opacity: ${props => (props.hide ? "0" : "1")};
 `;
 
@@ -158,6 +131,11 @@ function TrailerPlayer(props) {
     setInitial(true);
   }
 
+  const ThePlayer = Loadable({
+    loader: () => import("components/pages/inicio"),
+    loading: () => <p>loading...</p>
+  });
+
   return (
     <VideoWrapper ratio={props.ratio}>
       <Clicker onClick={() => handlePlay()} hideSvg={isPlaying}>
@@ -169,7 +147,7 @@ function TrailerPlayer(props) {
         hide={!isInitial}
         onClick={() => handlePlay(true)}
       />
-      <ReactPlayer
+      <VimeoPlayer
         playing={isPlaying}
         url={props.url}
         controls={false}

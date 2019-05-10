@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ReactPlayer from "react-player";
+import FilePlayer from "react-player";
 import styled, { keyframes } from "styled-components/macro";
 import overlayImg from "assets/img/layout/noise2.png";
 import overlayImgWebP from "assets/img/layout/noise2.webp";
@@ -55,7 +55,7 @@ function BackgroundVideo(props) {
   var background = props.webp ? overlayImgWebP : overlayImg 
   return (
     <VideoContainer>
-      <ReactPlayer
+      <FilePlayer
         url={video}
         playsinline
         playing={isPlaying}

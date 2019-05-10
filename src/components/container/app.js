@@ -2,21 +2,40 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled, { css, createGlobalStyle } from "styled-components/macro";
 import mobileAndTabletCheck from "components/shared/mobileAndTabletCheck";
+import Loadable from "react-loadable";
 
 import Nav from "components/layout/nav";
 import SocialNav from "components/layout/socialNav";
 import ScrollWrapper from "components/container/scrollWrapper";
 import BackgroundVideo from "components/container/backgroundVideo";
+import Loader from "components/shared/loader";
 
-import Inicio from "components/pages/inicio";
-import Cortometrajes from "components/pages/cortometrajes/cortometrajes";
-import Produccion from "components/pages/produccion/produccion";
-import Prensa from "components/pages/prensa/prensa";
-import NoMatch from "components/pages/404";
+const Inicio = Loadable({
+  loader: () => import("components/pages/inicio"),
+  loading: Loader
+});
+
+const Cortometrajes = Loadable({
+  loader: () => import("components/pages/cortometrajes/cortometrajes"),
+  loading: Loader
+});
+
+const Produccion = Loadable({
+  loader: () => import("components/pages/produccion/produccion"),
+  loading: Loader
+});
+
+const Prensa = Loadable({
+  loader: () => import("components/pages/prensa/prensa"),
+  loading: Loader
+});
+
+const NoMatch = Loadable({
+  loader: () => import("components/pages/404"),
+  loading: Loader
+});
 
 const Styles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Share:400,700');
-
   html {
       background-color: #000000;
       color: #fff;
@@ -79,7 +98,7 @@ function App(props) {
 
   useEffect(() => {
     authenticate().then(() => {
-      const loader = document.getElementById("loader");
+      const loader = document.getElementById("outsideLoader");
       if (loader) {
         setLoaded(true);
         setTimeout(() => {
@@ -114,14 +133,6 @@ function App(props) {
                     name="inicio"
                     exact
                     path="/"
-                    component={() => (
-                      <Inicio hasLoaded={hasLoaded} webp={webp} />
-                    )}
-                  />
-                  <Route
-                    name="inicio"
-                    exact
-                    path="/ladanzadelasfieras"
                     component={() => (
                       <Inicio hasLoaded={hasLoaded} webp={webp} />
                     )}
