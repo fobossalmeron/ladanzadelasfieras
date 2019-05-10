@@ -101,6 +101,12 @@ function App(props) {
       const loader = document.getElementById("outsideLoader");
       if (loader) {
         setLoaded(true);
+        
+        Inicio.preload();
+        Produccion.preload();
+        Cortometrajes.preload();
+        Prensa.preload();
+
         setTimeout(() => {
           // transition out
           loader.style.opacity = "0";
@@ -117,11 +123,12 @@ function App(props) {
   function authenticate() {
     return new Promise(resolve => setTimeout(resolve, 1500));
   }
+
   return (
     <AppContainer visible={hasLoaded}>
       <Styles />
       <Router>
-        <Nav />
+        <Nav/>
         <SocialNav />
         <BackgroundVideo webp={webp} />
         <Route
