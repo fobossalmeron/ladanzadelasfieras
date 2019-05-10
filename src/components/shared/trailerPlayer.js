@@ -103,6 +103,7 @@ const OverStill = styled.div`
   opacity: ${props => (props.hide ? "0" : "1")};
   pointer-events: ${props => (props.hide ? "none" : "auto")};
   background-size: cover;
+  padding-bottom: ${props => props.ratio || "52.7%"};
 `;
 
 const PlayButton = styled(Play)`
@@ -112,6 +113,15 @@ const PlayButton = styled(Play)`
 const PauseButton = styled(Pause)`
   opacity: ${props => (props.hide ? "0" : "1")};
 `;
+
+const ThePlayer = Loadable({
+  loader: () => import("react-player"),
+  loading: () => <p>loading...</p>,
+  render(loaded, props) {
+    let Component = VimeoPlayer;
+    return <Component {...props} style={{ backgroundColor: "red" }} />;
+  }
+});
 
 function TrailerPlayer(props) {
   const [isPlaying, setPlaying] = useState(false);
@@ -131,10 +141,9 @@ function TrailerPlayer(props) {
     setInitial(true);
   }
 
-  const ThePlayer = Loadable({
-    loader: () => import("components/pages/inicio"),
-    loading: () => <p>loading...</p>
-  });
+  function preloadVideoPlayer() {
+    ThePlayer.preload();
+  }
 
   return (
     <VideoWrapper ratio={props.ratio}>
@@ -146,17 +155,20 @@ function TrailerPlayer(props) {
         style={{ backgroundImage: `url(${props.still})` }}
         hide={!isInitial}
         onClick={() => handlePlay(true)}
+        onMouseOver={preloadVideoPlayer}
       />
-      <VimeoPlayer
-        playing={isPlaying}
-        url={props.url}
-        controls={false}
-        style={{ height: "auto !important" }}
-        width="100%"
-        onEnded={() => restoreVideo()}
-        onPause={() => pauseVideo()}
-        onPlay={() => handlePlay(true)}
-      />
+      {!isInitial && (
+        <ThePlayer
+          playing={isPlaying}
+          url={props.url}
+          controls={false}
+          style={{ height: "auto !important" }}
+          width="100%"
+          onEnded={() => restoreVideo()}
+          onPause={() => pauseVideo()}
+          onPlay={() => handlePlay(true)}
+        />
+      )}
     </VideoWrapper>
   );
 }

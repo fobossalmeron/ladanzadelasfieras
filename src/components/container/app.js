@@ -57,7 +57,7 @@ const Styles = createGlobalStyle`
       font-size: 17px;
       overflow: hidden;
       margin:0;
-      font-family: 'Share', cursive;
+      font-family: 'Share', Arial, Helvetica, sans-serif;
   }
 
   /* normalize */
