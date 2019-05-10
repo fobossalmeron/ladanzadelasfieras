@@ -1,33 +1,88 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1001.8 94.7" style="enable-background:new 0 0 1001.8 94.7;" xml:space="preserve">
-<g>
-	<text transform="matrix(1 0 0 1 136.2607 65.8167)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">PRODUCCIÓN EJECUTIVA</text>
-	<text transform="matrix(1 0 0 1 229.6607 65.8167)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">SILVIA GARZA</text>
-	<text transform="matrix(1 0 0 1 329.3607 65.8167)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">Y</text>
-	<text transform="matrix(1 0 0 1 339.1607 65.8167)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">MARTHA HERNÁNDEZ</text>
-	<text transform="matrix(1 0 0 1 490.2607 65.8167)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">DIRECCIÓN CREATIVA</text>
-	<text transform="matrix(1 0 0 1 572.1607 65.8167)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">ALAYDE CASTRO</text>
-	<text transform="matrix(1 0 0 1 687.4607 65.8167)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">PRODUCCIÓN</text>
-	<text transform="matrix(1 0 0 1 742.5607 65.8167)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">GERMÁN CASTILLA</text>
-</g>
-<text transform="matrix(1 0 0 1 480.401 18.9894)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">ANTÍTESIS</text>
-<text transform="matrix(1 0 0 1 557.2914 18.9894)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">Y</text>
-<text transform="matrix(1 0 0 1 566.9914 18.9894)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">BALA FILMS</text>
-<text transform="matrix(1 0 0 1 655.2914 18.9894)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">PRESENTAN</text>
-<text transform="matrix(1 0 0 1 700.8914 18.9894)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">“LA DANZA DE LAS FIERAS”</text>
-<text transform="matrix(1 0 0 1 -7.279968e-02 42.0823)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">UNA PELÍCULA DE</text>
-<text transform="matrix(1 0 0 1 696.5221 42.0823)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">RODRIGO RUIZ PATTERSON</text>
-<text transform="matrix(1 0 0 1 886.5272 42.0823)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">Y</text>
-<text transform="matrix(1 0 0 1 896.3272 42.0823)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">STACY PERSKIE</text>
-<text transform="matrix(1 0 0 1 389.4565 87.9768)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-weight:bold; font-size:11.5815px;">©</text>
-<text transform="matrix(1 0 0 1 401.8373 90.0828)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">LA DANZA DE LAS FIERAS</text>
-<text transform="matrix(1 0 0 1 578.7363 90.0828)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:15.7929px;"> </text>
-<text transform="matrix(1 0 0 1 582.8422 90.0828)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:9.6486px;">TODOS LOS DERECHOS RESERVADOS, 2019</text>
-<text transform="matrix(1 0 0 1 327.3607 19.0801)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">REFLEKTO KREATIVO</text>
-<text transform="matrix(1 0 0 1 111.9912 19.0114)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">EDUCADORES SIN FRONTERAS</text>
-<text transform="matrix(1 0 0 1 69.2435 42.0823)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">ALAYDE CASTRO</text>
-<text transform="matrix(1 0 0 1 189.2271 42.0823)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">ANA DÍEZ</text>
-<text transform="matrix(1 0 0 1 265.0783 42.0107)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">ÁNGEL LINARES</text>
-<text transform="matrix(1 0 0 1 382.6198 42.0823)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">GINA HERRERA</text>
-<text transform="matrix(1 0 0 1 496.8904 42.0823)" style="fill:#FFFFFF; font-family: 'Share', cursive; font-size:18.4346px;">MIGUEL ÁNGEL FERNÁNDEZ</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1001.8 94.7">
+  <g fill="#fff" font-family="'Share',cursive">
+    <text font-size="9.6" transform="translate(136.3 65.8)">
+      PRODUCCIÓN EJECUTIVA
+    </text>
+    <text font-size="18.4" transform="translate(229.7 65.8)">
+      SILVIA GARZA
+    </text>
+    <text font-size="9.6" transform="translate(329.4 65.8)">
+      Y
+    </text>
+    <text font-size="18.4" transform="translate(339.2 65.8)">
+      MARTHA HERNÁNDEZ
+    </text>
+    <text font-size="9.6" transform="translate(490.3 65.8)">
+      DIRECCIÓN CREATIVA
+    </text>
+    <text font-size="18.4" transform="translate(572.2 65.8)">
+      ALAYDE CASTRO
+    </text>
+    <text font-size="9.6" transform="translate(687.5 65.8)">
+      PRODUCCIÓN
+    </text>
+    <text font-size="18.4" transform="translate(742.6 65.8)">
+      GERMÁN CASTILLA
+    </text>
+  </g>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(480.4 19)">
+    ANTÍTESIS
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="9.6" transform="translate(557.3 19)">
+    Y
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(567 19)">
+    BALA FILMS
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="9.6" transform="translate(655.3 19)">
+    PRESENTAN
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(700.9 19)">
+    “LA DANZA DE LAS FIERAS”
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="9.6" transform="translate(0 42)">
+    UNA PELÍCULA DE
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(696.5 42)">
+    RODRIGO RUIZ PATTERSON
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="9.6" transform="translate(886.5 42)">
+    Y
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(896.3 42)">
+    STACY PERSKIE
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="11.6" font-weight="700" transform="translate(389.5 88)">
+    ©
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(401.8 90)">
+    LA DANZA DE LAS FIERAS
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="15.8" transform="translate(578.7 90)">
+    
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="9.6" transform="translate(582.8 90)">
+    TODOS LOS DERECHOS RESERVADOS, 2019
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(327.4 19)">
+    REFLEKTO KREATIVO
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(112 19)">
+    EDUCADORES SIN FRONTERAS
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(69.2 42)">
+    ALAYDE CASTRO
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(189.2 42)">
+    ANA DÍEZ
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(265 42)">
+    ÁNGEL LINARES
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(382.6 42)">
+    GINA HERRERA
+  </text>
+  <text fill="#fff" font-family="'Share',cursive" font-size="18.4" transform="translate(496.9 42)">
+    MIGUEL ÁNGEL FERNÁNDEZ
+  </text>
 </svg>

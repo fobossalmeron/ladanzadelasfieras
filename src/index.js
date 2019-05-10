@@ -2,6 +2,20 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import App from 'components/container/app';
 //import * as serviceWorker from './serviceWorker';
+import * as firebase from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDJgDu32_cbJgIX21BdRkaJrJxS0bvjjK8",
+  authDomain: "ladanzadelasfieras-pelicula.firebaseapp.com",
+  databaseURL: "https://ladanzadelasfieras-pelicula.firebaseio.com",
+  projectId: "ladanzadelasfieras-pelicula",
+  storageBucket: "ladanzadelasfieras-pelicula.appspot.com",
+  messagingSenderId: "362167050272",
+  appId: "1:362167050272:web:5c7ad7a2caa3c665"
+};
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
