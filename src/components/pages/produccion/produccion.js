@@ -73,7 +73,7 @@ const Educadores = styled(Productora)`
 export default function Produccion(props) {
   document.title = "La Danza de las Fieras | Producción";
   return (
-    <Layout id="Produccion">
+    <Layout id="Produccion" mobile={props.mobile}>
       <PageTitle>
         <Fade cascade>
           <ProduccionTitle />

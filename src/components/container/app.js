@@ -6,7 +6,6 @@ import Loadable from "react-loadable";
 
 import Nav from "components/layout/nav";
 import SocialNav from "components/layout/socialNav";
-import ScrollWrapper from "components/container/scrollWrapper";
 import BackgroundVideo from "components/container/backgroundVideo";
 import Loader from "components/shared/loader";
 
@@ -93,6 +92,7 @@ function webpCheck() {
 
 function App(props) {
   const [hasLoaded, setLoaded] = useState(false);
+
   const mobile = mobileAndTabletCheck();
   const webp = webpCheck();
 
@@ -101,12 +101,6 @@ function App(props) {
       const loader = document.getElementById("outsideLoader");
       if (loader) {
         setLoaded(true);
-        
-        Inicio.preload();
-        Produccion.preload();
-        Cortometrajes.preload();
-        Prensa.preload();
-
         setTimeout(() => {
           // transition out
           loader.style.opacity = "0";
@@ -124,46 +118,67 @@ function App(props) {
     return new Promise(resolve => setTimeout(resolve, 1500));
   }
 
+  // preload all lazy components but the current one
+  var preloadPages = (function() {
+    var pagesLoaded = false;
+    var path = window.location.pathname.toString();
+    return function() {
+      if (!pagesLoaded) {
+        if (path.localeCompare("/") !== 0) {
+          Inicio.preload();
+        }
+        if (path.localeCompare("/produccion") !== 0) {
+          Produccion.preload();
+        }
+        if (path.localeCompare("/prensa") !== 0) {
+          Prensa.preload();
+        }
+        if (path.localeCompare("/cortometrajes") !== 0) {
+          Cortometrajes.preload();
+        }
+        pagesLoaded = true;
+      }
+    };
+  })();
+  
   return (
     <AppContainer visible={hasLoaded}>
       <Styles />
       <Router>
-        <Nav/>
+        <Nav preloadPages={preloadPages} />
         <SocialNav />
         <BackgroundVideo webp={webp} />
         <Route
           render={({ location }) => {
             return (
-              <ScrollWrapper mobile={mobile}>
-                <Switch location={location}>
-                  <Route
-                    name="inicio"
-                    exact
-                    path="/"
-                    component={() => (
-                      <Inicio hasLoaded={hasLoaded} webp={webp} />
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/produccion"
-                    component={() => <Produccion mobile={mobile} />}
-                  />
-                  <Route
-                    exact
-                    path="/cortometrajes"
-                    component={() => (
-                      <Cortometrajes mobile={mobile} webp={webp} />
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/prensa"
-                    component={() => <Prensa mobile={mobile} />}
-                  />
-                  <Route component={NoMatch} />
-                </Switch>
-              </ScrollWrapper>
+              <Switch location={location}>
+                <Route
+                  name="inicio"
+                  exact
+                  path="/"
+                  component={() => (
+                    <Inicio hasLoaded={hasLoaded} mobile={mobile} webp={webp} />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/produccion"
+                  component={() => <Produccion mobile={mobile} />}
+                />
+                <Route
+                  exact
+                  path="/cortometrajes"
+                  component={() => (
+                    <Cortometrajes mobile={mobile} webp={webp} />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/prensa"
+                  component={() => <Prensa mobile={mobile} />}
+                />
+                <Route component={() => <NoMatch mobile={mobile} />} />
+              </Switch>
             );
           }}
         />

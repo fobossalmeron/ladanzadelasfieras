@@ -54,7 +54,7 @@ export default function Inicio(props) {
   document.title = "La Danza de las Fieras";
   var delayTime = props.hasLoaded ? 0 : 1500;
   return (
-    <Layout id="Inicio">
+    <Layout id="Inicio" mobile={props.mobile}>
       <h1 style={{ fontSize: 0, opacity: 0 }}>La Danza de las Fieras</h1>
       <Section
         columnStart="3"

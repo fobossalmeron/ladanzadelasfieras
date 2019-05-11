@@ -59,19 +59,26 @@ const HamburgerMenu = styled.div`
     `}
 `;
 
-function Nav() {
+function Nav(props) {
   const [isActive, setActive] = useState(false);
 
   function handleActive(bool = !isActive) {
     setActive(bool);
+    if (bool === true){
+      hoverPreload();
+    }
+  }
+
+  function hoverPreload(){
+    props.preloadPages();
   }
 
   return (
-    <Menu>
+    <Menu onMouseEnter={hoverPreload}>
       <HamburgerMenu onClick={() => handleActive()} active={isActive}>
         <HamburgerIcon />
       </HamburgerMenu>
-      <NavList visible={isActive} handleActive={handleActive} />
+      <NavList visible={isActive} handleActive={handleActive}/>
     </Menu>
   );
 }

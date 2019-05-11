@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from 'components/container/app';
 //import * as serviceWorker from './serviceWorker';
 import * as firebase from "firebase/app";
+import "firebase/performance";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJgDu32_cbJgIX21BdRkaJrJxS0bvjjK8",
@@ -14,8 +15,11 @@ const firebaseConfig = {
   appId: "1:362167050272:web:5c7ad7a2caa3c665"
 };
   
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Initialize Performance Monitoring and get a reference to the service
+const perf = firebase.performance();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

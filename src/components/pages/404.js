@@ -8,7 +8,7 @@ import { Section, PageTitle } from "components/layout/pageLayout";
 export default function NoMatch(props) {
   document.title = "La Danza de las Fieras | 404";
   return (
-    <Layout id="404">
+    <Layout id="404" mobile={props.mobile}>
       <PageTitle>
         <Fade>
           <NotFoundTitle />

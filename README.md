@@ -4,13 +4,10 @@ Visual:
 Hoverdirector double not working, single is faulty
 Form inputs on mobile
 Firefox three columns on directors
-backgroundcolor black a las imagenes de prensa para redes lentas
+imagenes de prensa poner loader en negro
 
-Block:
-Might fail to know the  body height on slow connections because of lazy load
-
-Optim:
-Bundle sizes !Importante, 61 en mobile para PageSpeed
+Productoras logos en safari
+change inner loader to blick or sm
 
 Ext:
 Alayde cuenta en (https://formcarry.com/register)

@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components/macro";
+import ScrollWrapper from "components/container/scrollWrapper";
 import Footer from "components/layout/footer";
 
 export const whiteColor = "#f9f9f9";
@@ -126,10 +127,12 @@ const Page = styled.div`
 
 function Layout(props) {
   return (
+    <ScrollWrapper mobile={props.mobile}>
     <Page id={props.id}>
       {props.children}
       <Footer />
     </Page>
+    </ScrollWrapper>
   );
 }
 

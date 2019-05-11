@@ -98,7 +98,7 @@ const Credits = styled.p`
 export default function Cortometrajes(props) {
   document.title = "La Danza de las Fieras | Cortometrajes";
   return (
-    <Layout id="Cortometrajes">
+    <Layout id="Cortometrajes" mobile={props.mobile}>
       <PageTitle>
         <Fade>
           <CortometrajesTitle />
