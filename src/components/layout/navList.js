@@ -29,7 +29,7 @@ const LinkWrapper = styled.li`
       }
     }
     &.is-active {
-      font-weight: bold;
+      font-weight: 700;
     }
     :visited {
       color: ${whiteColor};
@@ -120,7 +120,7 @@ const Contactanos = styled.p`
   color: white;
   text-transform: uppercase;
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 400;
   letter-spacing: 1px;
   margin: 0 0 20px 0;
   display: none;

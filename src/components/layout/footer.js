@@ -22,7 +22,7 @@ const StyledForm = styled.div`
 const Capture = styled.div`
   label {
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
   }
   input,
   textarea {
@@ -58,7 +58,8 @@ const FooterWrapper = styled.footer`
 `;
 
 const SendButton = styled.button`
-  font-weight: bold;
+  font-weight: 700
+  ;
   background-color: #000000;
   color: #ffffff;
   text-transform: uppercase;

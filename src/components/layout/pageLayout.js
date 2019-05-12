@@ -57,7 +57,7 @@ export const PageTitle = styled.h1`
       stroke: ${whiteColor};
       stroke-width: 1.2px;
       font-size: 105px;
-      font-weight: normal;
+      font-weight: 400;
       font-family: inherit;
     }
   }
@@ -79,7 +79,7 @@ export const PageTitle = styled.h1`
 `;
 
 export const Heading3 = styled.h3`
-  font-weight: bold;
+  font-weight: 700;
   background-color: ${props => props.backgroundColor || blackColor};
   color: ${props => props.color || whiteColor};
   text-transform: uppercase;
@@ -103,7 +103,7 @@ const Page = styled.div`
   }
 
   h2 {
-    font-weight: bold;
+    font-weight: 700;
     background-color: ${whiteColor};
     color: ${blackColor};
     text-transform: uppercase;

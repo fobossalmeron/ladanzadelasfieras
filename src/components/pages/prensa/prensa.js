@@ -120,7 +120,7 @@ const TitleQuote = styled.a`
     }
     :before {
       font-size: 2rem;
-      font-weight: bold;
+      font-weight: 700;
       content: open-quote;
       position: absolute;
       left: -18px;
@@ -128,7 +128,7 @@ const TitleQuote = styled.a`
     }
     :after {
       font-size: 2rem;
-      font-weight: bold;
+      font-weight: 700;
       content: close-quote;
       right: -16px;
       bottom: -4px;

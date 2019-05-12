@@ -70,7 +70,7 @@ const HoverDirector = styled.div`
     margin: 0;
     a {
       color: #c64028;
-      font-weight: normal;
+      font-weight: 400;
       text-decoration: none;
       :hover {
         text-decoration: underline;
