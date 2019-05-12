@@ -137,7 +137,7 @@ function NavList(props) {
     }
   }
   return (
-    <List visible={props.visible} onClick={() => scroll()}>
+    <List visible={props.visible} onClick={scroll}>
       <Fade left delay={1300}>
         <LinkWrapper onClick={() => props.handleActive(false)}>
           <NavLink exact={true} activeClassName="is-active" to="/">

@@ -1,7 +1,15 @@
 import React from "react";
-import { ReactComponent as LoaderSvg } from "assets/img/layout/loaderLogo.svg";
-import { redColor } from "components/layout/pageLayout";
+import { blackColor, redColor } from "components/layout/pageLayout";
 import styled from "styled-components";
+
+const SquareFiller = styled.div`
+  height: 0;
+  padding-bottom: 148%;
+  margin-bottom: 18px;
+  display: flex;
+  width: 100%;
+  background-color: ${blackColor};
+`;
 
 const LoaderMessage = styled.div`
   position: absolute;
@@ -13,40 +21,10 @@ const LoaderMessage = styled.div`
   flex-direction: column;
   button {
     background-color: ${redColor};
-    border:none;
+    border: none;
     cursor: pointer;
     padding: 5px 20px;
-    margin-top:20px;
-  }
-`;
-
-const LoaderLogo = styled(LoaderSvg)`
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 50vh;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  fill: none;
-  stroke-width: 10;
-  stroke-linecap: round;
-  stroke-linejoin: square;
-  z-index: 2;
-  transition: opacity 0.4s ease-out;
-  #back {
-    stroke: #ffffff;
-    opacity: 0.2;
-  }
-  #front {
-    stroke: #ffffff;
-    stroke-dasharray: 1748, 500;
-    stroke-dashoffset: 1748;
-    animation: dash 2s linear infinite;
-  }
-  @keyframes dash {
-    to {
-      stroke-dashoffset: 0;
-    }
+    margin-top: 20px;
   }
 `;
 
@@ -69,7 +47,7 @@ function Loader(props) {
     );
   } else if (props.pastDelay) {
     // When the loader has taken longer than the delay
-    return <LoaderLogo />;
+    return <SquareFiller />;
   } else {
     // When the loader has just started
     return null;

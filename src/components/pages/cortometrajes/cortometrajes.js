@@ -10,22 +10,34 @@ import { ReactComponent as CortometrajesTitle } from "assets/img/layout/cortomet
 import stillFollowback from "assets/img/videos/followback.jpg";
 import stillFollowbackwebp from "assets/img/videos/followback.webp";
 import alayde from "assets/img/directores/alayde.jpg";
+import alaydewebp from "assets/img/directores/alayde.webp";
 import stacy from "assets/img/directores/stacy.jpg";
+import stacywebp from "assets/img/directores/stacy.webp";
+
 import stillDesechables from "assets/img/videos/desechables.jpg";
 import stillDesechableswebp from "assets/img/videos/desechables.webp";
 import miguel from "assets/img/directores/miguel.jpg";
+import miguelwebp from "assets/img/directores/miguel.webp";
+
 import stillVoces from "assets/img/videos/vocesblancas.jpg";
 import stillVoceswebp from "assets/img/videos/vocesblancas.webp";
 import ana from "assets/img/directores/ana.jpg";
+import anawebp from "assets/img/directores/ana.webp";
+
 import stillTQD from "assets/img/videos/tqd.jpg";
 import stillTQDwebp from "assets/img/videos/tqd.webp";
 import patterson from "assets/img/directores/patterson.jpg";
+import pattersonwebp from "assets/img/directores/patterson.webp";
+
 import stillSBLP from "assets/img/videos/sblp.jpg";
 import stillSBLPwebp from "assets/img/videos/sblp.webp";
 import angel from "assets/img/directores/angel.jpg";
+import angelwebp from "assets/img/directores/angel.webp";
+
 import stillQCLN from "assets/img/videos/qcln.jpg";
 import stillQCLNwebp from "assets/img/videos/qcln.webp";
 import gina from "assets/img/directores/gina.jpg";
+import ginawebp from "assets/img/directores/gina.webp";
 
 const InfoSection = styled.div`
   padding-top: 30px;
@@ -97,6 +109,7 @@ const Credits = styled.p`
 
 export default function Cortometrajes(props) {
   document.title = "La Danza de las Fieras | Cortometrajes";
+  const webp = props.webp;
   return (
     <Layout id="Cortometrajes" mobile={props.mobile}>
       <PageTitle>
@@ -122,7 +135,7 @@ export default function Cortometrajes(props) {
         <Fade bottom>
           <TrailerPlayer
             url={"https://vimeo.com/236672379"}
-            still={props.webp ? stillFollowbackwebp : stillFollowback}
+            still={webp ? stillFollowbackwebp : stillFollowback}
           />
         </Fade>
       </Section>
@@ -133,7 +146,7 @@ export default function Cortometrajes(props) {
               <DirectorCard
                 name={"Alayde Castro"}
                 title={"CODIRECTORA"}
-                img={alayde}
+                img={webp ? alaydewebp : alayde}
                 imdb={"https://www.imdb.com/name/nm7429166/"}
                 mail={"alayde.castro@gmail.com"}
                 bio={`Socia fundadora y Directora Creativa de la casa productora 
@@ -146,7 +159,7 @@ export default function Cortometrajes(props) {
                 double={true}
                 name={"Stacy Perskie"}
                 title={"CODIRECTOR"}
-                img={stacy}
+                img={webp ? stacywebp : stacy}
                 imdb={"https://www.imdb.com/name/nm1142384/"}
                 mail={"stacy@redrum.com.mx"}
                 bio={`Co-Fundador de la casa productora <a href="http://redrum.com.mx/" 
@@ -191,18 +204,18 @@ export default function Cortometrajes(props) {
         <Fade bottom>
           <TrailerPlayer
             url={"https://player.vimeo.com/video/236672175"}
-            still={props.webp ? stillDesechableswebp : stillDesechables}
+            still={webp ? stillDesechableswebp : stillDesechables}
           />
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-      <Fade bottom distance={"40px"}>
+        <Fade bottom distance={"40px"}>
           <InfoSection>
             <Directors>
               <DirectorCard
                 name={"Miguel Ángel Fernández"}
                 title={"DIRECTOR"}
-                img={miguel}
+                img={webp ? miguelwebp : miguel}
                 imdb={"https://www.imdb.com/name/nm5699678/"}
                 mail={"fernandezgmiguel@gmail.com"}
                 bio={`Guionista, director y editor del cortometraje <b>
@@ -253,18 +266,18 @@ export default function Cortometrajes(props) {
         <Fade bottom>
           <TrailerPlayer
             url={"https://player.vimeo.com/video/236672641"}
-            still={props.webp ? stillVoceswebp : stillVoces}
+            still={webp ? stillVoceswebp : stillVoces}
           />
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-      <Fade bottom distance={"40px"}>
+        <Fade bottom distance={"40px"}>
           <InfoSection>
             <Directors>
               <DirectorCard
                 name={"Ana Díez"}
                 title={"DIRECTORA"}
-                img={ana}
+                img={webp ? anawebp : ana}
                 imdb={"https://www.imdb.com/name/nm0246781/"}
                 mail={"anadd@telefonica.net"}
                 bio={`Directora española que ha ganado una <em>Diosa de Plata</em>, 
@@ -313,18 +326,18 @@ export default function Cortometrajes(props) {
         <Fade bottom>
           <TrailerPlayer
             url={"https://player.vimeo.com/video/236672575"}
-            still={props.webp ? stillTQDwebp : stillTQD}
+            still={webp ? stillTQDwebp : stillTQD}
           />
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-      <Fade bottom distance={"40px"}>
+        <Fade bottom distance={"40px"}>
           <InfoSection>
             <Directors>
               <DirectorCard
                 name={"Rodrigo Ruiz Patterson"}
                 title={"DIRECTOR"}
-                img={patterson}
+                img={webp ? pattersonwebp : patterson}
                 imdb={"http://www.imdb.com/name/nm2559532/"}
                 ig={"http://instagram.com/eltonayon"}
                 mail={"ruizpattersonrodrigo@gmail.com"}
@@ -377,7 +390,7 @@ export default function Cortometrajes(props) {
         <Fade bottom>
           <TrailerPlayer
             url={"https://player.vimeo.com/video/236672332"}
-            still={props.webp ? stillSBLPwebp : stillSBLP}
+            still={webp ? stillSBLPwebp : stillSBLP}
           />
         </Fade>
       </Section>
@@ -387,7 +400,7 @@ export default function Cortometrajes(props) {
             <DirectorCard
               name={"Ángel Linares"}
               title={"DIRECTOR"}
-              img={angel}
+              img={webp ? angelwebp : angel}
               imdb={"http://www.imdb.com/name/nm9094476/"}
               mail={"arlinco13@gmail.com"}
               bio={`Documentalista que ha sido nominado al <em>Ariel</em> y galardonado en el FICM, DOCSMX y el Festival Internacional de Cine de Caracas. Sus documentales se han presentado en <em>La Semaine de la Critique</em> de Cannes, en el Festival de Cine de Sarajevo y en <em>La Habana</em>. Su documental más premiado ha sido <em>Las Montañas Invisibles</em> (2012).`}
@@ -430,18 +443,18 @@ export default function Cortometrajes(props) {
         <Fade bottom>
           <TrailerPlayer
             url={"https://player.vimeo.com/video/236672459"}
-            still={props.webp ? stillQCLNwebp : stillQCLN}
+            still={webp ? stillQCLNwebp : stillQCLN}
           />
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-      <Fade bottom distance={"40px"}>
+        <Fade bottom distance={"40px"}>
           <InfoSection>
             <Directors>
               <DirectorCard
                 name={"Gina Herrera"}
                 title={"DIRECTORA"}
-                img={gina}
+                img={webp? ginawebp : gina}
                 ig={"http://instagram.com/ginaherrerapascal"}
                 imdb={"http://www.imdb.com/name/nm6163973/"}
                 mail={"ginaherrerapascal@gmail.com"}

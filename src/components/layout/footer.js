@@ -40,6 +40,8 @@ const Capture = styled.div`
     padding: 15px 20px 15px 0;
     font-family: inherit;
     height: 50px;
+    border-radius:none;
+    box-shadow: none;
     ::placeholder {
       color: white;
       opacity: 0.48;

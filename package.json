@@ -13,7 +13,6 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "react-snapshot": "^1.3.0",
     "react-transition-group": "^2.7.0",
     "smooth-scrolling": "^2.3.11",
     "styled-components": "^4.2.0"
@@ -40,10 +39,5 @@
   "devDependencies": {
     "babel-plugin-macros": "^2.5.1",
     "gh-pages": "^2.0.1"
-  },
-  "reactSnapshot": {
-    "include": [
-      "/404"
-    ]
   }
 }

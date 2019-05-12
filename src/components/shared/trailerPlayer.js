@@ -5,13 +5,11 @@ import styled, { css, keyframes } from "styled-components/macro";
 import { ReactComponent as Play } from "assets/img/layout/play.svg";
 import { ReactComponent as Pause } from "assets/img/layout/pause.svg";
 import Loadable from "react-loadable";
+import Loader from "components/shared/loaders/loader";
 
 //52.7 es el de todos menos, desechables tiene una línea negra a la derecha y el trailer está en 1080p
 
 const VideoWrapper = styled.div`
-  div:last-of-type {
-    height: auto !important;
-  }
   padding-bottom: ${props => props.ratio || "52.7%"};
   display: block;
   position: relative;
@@ -103,7 +101,6 @@ const OverStill = styled.div`
   opacity: ${props => (props.hide ? "0" : "1")};
   pointer-events: ${props => (props.hide ? "none" : "auto")};
   background-size: cover;
-  padding-bottom: ${props => props.ratio || "52.7%"};
 `;
 
 const PlayButton = styled(Play)`
@@ -116,10 +113,10 @@ const PauseButton = styled(Pause)`
 
 const ThePlayer = Loadable({
   loader: () => import("react-player"),
-  loading: () => <p>loading...</p>,
+  loading: Loader,
   render(loaded, props) {
     let Component = VimeoPlayer;
-    return <Component {...props} style={{ backgroundColor: "red" }} />;
+    return <Component {...props} />;
   }
 });
 
@@ -127,7 +124,7 @@ function TrailerPlayer(props) {
   const [isPlaying, setPlaying] = useState(false);
   const [isInitial, setInitial] = useState(true);
 
-  function handlePlay(bool = !isPlaying, bool2 = null) {
+  function handlePlay(bool = !isPlaying) {
     setPlaying(bool);
     setInitial(false);
   }
@@ -146,7 +143,7 @@ function TrailerPlayer(props) {
   }
 
   return (
-    <VideoWrapper ratio={props.ratio}>
+    <VideoWrapper ratio={props.ratio} onMouseOver={preloadVideoPlayer}>
       <Clicker onClick={() => handlePlay()} hideSvg={isPlaying}>
         {isPlaying ? <PauseButton id="paused" /> : <PlayButton />}
       </Clicker>
@@ -155,18 +152,22 @@ function TrailerPlayer(props) {
         style={{ backgroundImage: `url(${props.still})` }}
         hide={!isInitial}
         onClick={() => handlePlay(true)}
-        onMouseOver={preloadVideoPlayer}
       />
       {!isInitial && (
         <ThePlayer
           playing={isPlaying}
           url={props.url}
           controls={false}
-          style={{ height: "auto !important" }}
+          height="auto"
           width="100%"
-          onEnded={() => restoreVideo()}
-          onPause={() => pauseVideo()}
+          onEnded={restoreVideo}
+          onPause={pauseVideo}
           onPlay={() => handlePlay(true)}
+          config={{
+            vimeo: {
+              preload: true
+            }
+          }}
         />
       )}
     </VideoWrapper>

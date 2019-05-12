@@ -7,7 +7,7 @@ import Loadable from "react-loadable";
 import Nav from "components/layout/nav";
 import SocialNav from "components/layout/socialNav";
 import BackgroundVideo from "components/container/backgroundVideo";
-import Loader from "components/shared/loader";
+import Loader from "components/shared/loaders/loader";
 
 const Inicio = Loadable({
   loader: () => import("components/pages/inicio"),
@@ -140,7 +140,7 @@ function App(props) {
       }
     };
   })();
-  
+
   return (
     <AppContainer visible={hasLoaded}>
       <Styles />
@@ -163,7 +163,7 @@ function App(props) {
                 <Route
                   exact
                   path="/produccion"
-                  component={() => <Produccion mobile={mobile} />}
+                  component={() => <Produccion mobile={mobile} webp={webp}/>}
                 />
                 <Route
                   exact
@@ -175,7 +175,7 @@ function App(props) {
                 <Route
                   exact
                   path="/prensa"
-                  component={() => <Prensa mobile={mobile} />}
+                  component={() => <Prensa mobile={mobile} webp={webp}/>}
                 />
                 <Route component={() => <NoMatch mobile={mobile} />} />
               </Switch>

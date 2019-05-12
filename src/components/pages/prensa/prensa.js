@@ -10,15 +10,28 @@ import Layout, {
 } from "components/layout/pageLayout";
 import Fade from "react-reveal/Fade";
 import styled, { css } from "styled-components/macro";
+import Loadable from "react-loadable";
+import Loader from "components/shared/loaders/squareLoader";
 import news from "./newsdb";
 
 import englishPresskit from "assets/img/descargables/englishPresskit.png";
+import englishPresskitwebp from "assets/img/descargables/englishPresskit.webp";
 import spanishPresskit from "assets/img/descargables/spanishPresskit.png";
+import spanishPresskitwebp from "assets/img/descargables/spanishPresskit.webp";
 import poster from "assets/img/descargables/poster.png";
+import posterwebp from "assets/img/descargables/poster.webp";
 import stickers from "assets/img/descargables/stickers.png";
+import stickerswebp from "assets/img/descargables/stickers.webp";
 
 import premios from "assets/img/layout/premios.png";
+import premioswebp from "assets/img/layout/premios.webp";
 import selecciones from "assets/img/layout/selecciones.png";
+import seleccioneswebp from "assets/img/layout/selecciones.webp";
+
+const Imagen = Loadable({
+  loader: () => import("./imagen"),
+  loading: Loader
+});
 
 const Descargable = styled.li`
   display: flex;
@@ -65,18 +78,6 @@ const Descargables = styled.ul`
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
   }
-`;
-
-const Imagen = styled.div`
-  height: 0;
-  padding-bottom: 148%;
-  background-size: 100%;
-  background-position: 50% 50%;
-  margin-bottom: 18px;
-  transition: all 0.4s ease;
-  display: flex;
-  width: 100%;
-  cursor: pointer;
 `;
 
 const Noticia = styled.div`
@@ -210,7 +211,7 @@ export default function Prensa(props) {
   });
 
   return (
-    <Layout id="Prensa">
+    <Layout id="Prensa" mobile={props.mobile}>
       <PageTitle>
         <Fade cascade>
           <PrensaTitle />
@@ -234,7 +235,7 @@ export default function Prensa(props) {
                 }
               >
                 <Imagen
-                  style={{ backgroundImage: `url(${englishPresskit})` }}
+                  src={props.webp ? englishPresskitwebp : englishPresskit}
                   alt="English Presskit"
                 />
                 <p>English Presskit</p>
@@ -249,7 +250,7 @@ export default function Prensa(props) {
                 }
               >
                 <Imagen
-                  style={{ backgroundImage: `url(${spanishPresskit})` }}
+                  src={props.webp ? spanishPresskitwebp : spanishPresskit}
                   alt="Presskit en Español"
                 />
                 <p>Presskit</p>
@@ -260,17 +261,14 @@ export default function Prensa(props) {
                 target={"_blank"}
                 href={process.env.PUBLIC_URL + "/descargables/Poster.png"}
               >
-                <Imagen
-                  style={{ backgroundImage: `url(${poster})` }}
-                  alt="Poster"
-                />
+                <Imagen src={props.webp ? posterwebp : poster} alt="Poster" />
                 <p>Poster</p>
               </a>
             </Descargable>
             <Descargable mobile={props.mobile}>
               <a href={process.env.PUBLIC_URL + "/descargables/Stickers.zip"}>
                 <Imagen
-                  style={{ backgroundImage: `url(${stickers})` }}
+                  src={props.webp ? stickerswebp : stickers}
                   alt="Stickers"
                 />
                 <p>Stickers</p>
@@ -284,7 +282,11 @@ export default function Prensa(props) {
           <h2>Premios</h2>
         </Fade>
         <Fade delay={300}>
-          <img src={premios} alt="premios" style={{ marginBottom: "10%" }} />
+          <img
+            src={props.webp ? premioswebp : premios}
+            alt="premios"
+            style={{ marginBottom: "10%" }}
+          />
         </Fade>
       </Section>
       <Section columnStart="3" columnEnd="8" columnStartSmall="2">
@@ -293,7 +295,7 @@ export default function Prensa(props) {
         </Fade>
         <Fade delay={300}>
           <img
-            src={selecciones}
+            src={props.webp ? seleccioneswebp : selecciones}
             alt="selecciones oficiales"
             style={{ marginBottom: "10%" }}
           />

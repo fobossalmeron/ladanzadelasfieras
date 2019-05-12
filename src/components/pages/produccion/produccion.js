@@ -10,6 +10,10 @@ import silvia from "assets/img/productores/silvia.jpg";
 import martha from "assets/img/productores/martha.jpg";
 import german from "assets/img/productores/german.jpg";
 import bernardo from "assets/img/productores/bernardo.jpg";
+import silviawebp from "assets/img/productores/silvia.webp";
+import marthawebp from "assets/img/productores/martha.webp";
+import germanwebp from "assets/img/productores/german.webp";
+import bernardowebp from "assets/img/productores/bernardo.webp";
 import { ReactComponent as ReflektoIcon } from "assets/img/casas/reflekto.svg";
 import { ReactComponent as AntitesisIcon } from "assets/img/casas/antitesis.svg";
 import { ReactComponent as BalaIcon } from "assets/img/casas/bala.svg";
@@ -21,10 +25,10 @@ const Productores = styled.ul`
   grid-gap: 40px;
   margin-bottom: 10%;
   padding: 0;
-  max-width:620px;
+  max-width: 620px;
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
-    max-width:290px;
+    max-width: 290px;
     ${ProducerContainer} {
       height: 200px;
     }
@@ -72,6 +76,7 @@ const Educadores = styled(Productora)`
 
 export default function Produccion(props) {
   document.title = "La Danza de las Fieras | Producción";
+  const webp = props.webp;
   return (
     <Layout id="Produccion" mobile={props.mobile}>
       <PageTitle>
@@ -89,7 +94,7 @@ export default function Produccion(props) {
           <h2>Productores</h2>
           <Productores>
             <Productor
-              img={silvia}
+              img={webp ? silviawebp : silvia}
               title={"Productora Ejecutiva"}
               name={"Silvia Garza"}
               web={"http://www.educadoressinfronteras.mx/"}
@@ -97,7 +102,7 @@ export default function Produccion(props) {
               mobile={props.mobile}
             />
             <Productor
-              img={martha}
+              img={webp ? marthawebp : martha}
               title={"Productora Ejecutiva"}
               name={"Martha Hernández"}
               linked={
@@ -108,7 +113,7 @@ export default function Produccion(props) {
               mobile={props.mobile}
             />
             <Productor
-              img={german}
+              img={webp ? germanwebp : german}
               title={"Productor"}
               name={"German Castilla"}
               ig={"https://www.instagram.com/germancastillag/"}
@@ -117,7 +122,7 @@ export default function Produccion(props) {
               mobile={props.mobile}
             />
             <Productor
-              img={bernardo}
+              img={webp ? bernardowebp : bernardo}
               title={"Productor Asociado"}
               name={"Bernardo de Urquidi"}
               linked={
