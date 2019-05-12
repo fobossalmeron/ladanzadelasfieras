@@ -42,9 +42,11 @@ const Productora = styled.div`
   svg {
     grid-column: 1 / span 1;
     max-height: 120px;
+    width:100%;
   }
   p {
     grid-column: 2 / span 3;
+    margin-bottom: 20%;
   }
   @media (max-width: 900px) {
     svg {
@@ -60,6 +62,7 @@ const Educadores = styled(Productora)`
   grid-template-columns: repeat(5, 1fr);
   svg {
     grid-column: 1 / span 2;
+    width:100%;
   }
   p {
     grid-column: 3 / span 3;

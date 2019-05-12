@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { blackColor } from "components/layout/pageLayout";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Graphic = styled.div`
+  position: relative;
   height: 0;
   padding-bottom: 148%;
   background-size: 100%;
@@ -11,26 +12,43 @@ const Graphic = styled.div`
   transition: all 0.4s ease;
   display: flex;
   width: 100%;
+  overflow:hidden;
   cursor: pointer;
-  transition: opacity .3s ease;
-  background-color: ${props => (props.background ? blackColor : "none")};
+  transition: background-color 0.3s ease;
+  background-color: ${props => (!props.background ? blackColor : "none")};
+  :hover{
+      img{
+          transform: scale(1.07);
+      }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    opacity:0;
+    position: absolute;
+    transition: 0.3s ease all;
+  }
+  ${props =>
+    props.background &&
+    css`
+      img {
+        opacity: 1;
+      }
+    `}
 `;
 
 const Imagen = props => {
   const [hasLoaded, setLoaded] = useState(false);
 
   function doSetLoaded() {
-      console.log("do set loaded in")
+    console.log("do set loaded in");
     setLoaded(true);
   }
 
   return (
-    <Graphic
-      style={{ backgroundImage: `url(${props.src})` }}
-      alt={props.alt}
-      background={!hasLoaded}
-      onLoad={doSetLoaded}
-    />
+    <Graphic background={hasLoaded}>
+      <img src={props.src} alt={props.alt} onLoad={doSetLoaded} />
+    </Graphic>
   );
 };
 

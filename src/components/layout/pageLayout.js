@@ -115,7 +115,6 @@ const Page = styled.div`
   }
 
   p {
-    margin: 0 0 20% 0;
     line-height: 1.2;
   }
 

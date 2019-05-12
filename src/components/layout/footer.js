@@ -4,11 +4,7 @@ import { Transition } from "react-transition-group";
 import styled from "styled-components/macro";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Fade from "react-reveal/Fade";
-import {
-  Heading3,
-  blackColor,
-  redColor
-} from "components/layout/pageLayout";
+import { Heading3, blackColor, redColor } from "components/layout/pageLayout";
 
 import { ReactComponent as credit } from "./../../assets/img/layout/creditos.svg";
 import { ReactComponent as SuccessIcon } from "./../../assets/img/layout/success.svg";
@@ -40,7 +36,8 @@ const Capture = styled.div`
     padding: 15px 20px 15px 0;
     font-family: inherit;
     height: 50px;
-    border-radius:none;
+    border-radius: 0;
+    appearance: none;
     box-shadow: none;
     ::placeholder {
       color: white;
@@ -193,18 +190,17 @@ function Footer() {
           setTimeout(() => {
             console.log(JSON.stringify(values, null, 2));
             axios
-            .post("https://formcarry.com/s/CRlt34grpHi", values, {
-              headers: { Accept: "application/json" }
-            })
-            .then(function(response) {
-              console.log(response);
-            })
-            .catch(function(error) {
-              console.log(error);
-            });
+              .post("https://formcarry.com/s/CRlt34grpHi", values, {
+                headers: { Accept: "application/json" }
+              })
+              .then(function(response) {
+                console.log(response);
+              })
+              .catch(function(error) {
+                console.log(error);
+              });
           }, 400);
           setSubmitting(false);
-
         }}
       >
         {({ isSubmitting }) => (
@@ -244,7 +240,11 @@ function Footer() {
                   component="textarea"
                   placeholder="Escribe tu mensaje"
                 />
-                <ErrorMessage name="message" component={ErroredMessage} style={{marginTop:"-4px"}}/>
+                <ErrorMessage
+                  name="message"
+                  component={ErroredMessage}
+                  style={{ marginTop: "-4px" }}
+                />
               </Capture>
             </StyledForm>
 

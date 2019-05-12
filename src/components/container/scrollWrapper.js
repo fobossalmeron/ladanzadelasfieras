@@ -23,7 +23,7 @@ export default function ScrollWrapper(props) {
       ease: 0.1,
       vs: {
         mouseMultiplier: 0.3,
-        firefoxMultiplier: 20,
+        firefoxMultiplier: 30,
         touchMultiplier: 1,
         keyStep: 300
       },

@@ -8,6 +8,7 @@
     "formik": "^1.5.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "react-ga": "^2.5.7",
     "react-loadable": "^5.5.0",
     "react-player": "^1.9.3",
     "react-reveal": "^1.2.2",
@@ -19,7 +20,7 @@
   },
   "scripts": {
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "yarn run build && firebase deploy",
     "build": "react-scripts build",
     "start": "react-scripts start",
     "test": "react-scripts test",
@@ -37,7 +38,6 @@
   ],
   "homepage": "https://ladanzadelasfieras-pelicula.firebaseapp.com/",
   "devDependencies": {
-    "babel-plugin-macros": "^2.5.1",
-    "gh-pages": "^2.0.1"
+    "babel-plugin-macros": "^2.5.1"
   }
 }

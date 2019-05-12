@@ -81,7 +81,7 @@ export default function Inicio(props) {
         columnEndSmall="8"
       >
         <Fade bottom>
-          <p style={{ marginTop: "10%" }}>
+          <p style={{ marginTop: "10%", marginBottom: "20%" }}>
             <b>LA DANZA DE LAS FIERAS</b> es un largometraje que concientiza y
             genera reflexiones, debates y acciones para prevenir la trata de
             personas. Está dividido en seis historias y cada una aborda un tema
@@ -127,7 +127,7 @@ export default function Inicio(props) {
       >
         <Fade bottom>
           <h2>Sinópsis</h2>
-          <p>
+          <p style={{ marginBottom: "20%" }}>
             El internet como facilitador de víctimas para la esclavitud sexual,
             niños sicarios, jornaleros infantes en condiciones infrahumanas,
             albergues disfuncionales, víctimas colaterales y familias
@@ -161,7 +161,7 @@ export default function Inicio(props) {
             o servicios por medio del uso de la fuerza, fraude o coerción con el
             propósito de subyugación a servitud, peonaje o esclavitud.
           </p>
-          <p>
+          <p style={{ marginBottom: "20%" }}>
             En México, la trata de personas es el segundo delito de más
             importancia económica y se estima que, al año, al menos 20,000 niñas
             sufren explotación sexual.

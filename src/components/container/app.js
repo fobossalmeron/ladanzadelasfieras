@@ -9,6 +9,10 @@ import SocialNav from "components/layout/socialNav";
 import BackgroundVideo from "components/container/backgroundVideo";
 import Loader from "components/shared/loaders/loader";
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-65251724-4');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 const Inicio = Loadable({
   loader: () => import("components/pages/inicio"),
   loading: Loader

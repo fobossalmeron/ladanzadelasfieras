@@ -47,8 +47,7 @@ const InfoSection = styled.div`
   position: relative;
   margin-bottom: 15%;
   @media (max-width: 800px) {
-    padding-bottom: 15%;
-    margin-bottom: 0;
+    display: flex;
   }
 `;
 
@@ -65,14 +64,9 @@ const Directors = styled.div`
   }
   @media (max-width: 800px) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     grid-column: 1 / span 6;
-  }
-  img {
-    border-radius: 100%;
-    max-width: 80px;
-    margin: -15px 0 15px 0px;
   }
 `;
 
@@ -80,24 +74,46 @@ const Credits = styled.p`
   grid-column: 3 / span 4;
   columns: 2;
   column-fill: auto;
+  min-height: 110px;
   height: 100px;
   column-gap: 40px;
   margin: 0;
+  p {
+    margin: 0 !important;
+  }
   @media (max-width: 1150px) {
-    height: 120px;
+    height: 125px;
   }
   @media (max-width: 930px) {
     column-gap: 30px;
   }
   @media (max-width: 900px) {
     grid-column: 1 / span 6;
-    height: auto;
+    min-height: 110px;
+    column-fill: auto;
     width: 100%;
+    margin-top: -30px;
+  }
+  @media (max-width: 800px) {
+    position: absolute;
+    margin-top: 85px;
+    ${props =>
+      props.double &&
+      css`
+        margin-top: 185px;
+      `}
+  }
+  @media (max-width: 60px) {
+    min-height: 140;
+  }
+  @media (max-width: 510px) {
+    columns: 1;
+    height: auto;
   }
   ${props =>
     props.followback &&
     css`
-      height: 120px;
+      height: 125px;
       @media (max-width: 1150px) {
         height: 150px;
       }
@@ -105,6 +121,10 @@ const Credits = styled.p`
         height: auto;
       }
     `}
+`;
+
+const Encapsulator = styled.span`
+  display: block;
 `;
 
 export default function Cortometrajes(props) {
@@ -170,7 +190,7 @@ export default function Cortometrajes(props) {
                 mobile={props.mobile}
               />
             </Directors>
-            <Credits followback>
+            <Credits followback style={{ marginBottom: "0" }} double>
               <b>GÉNERO:</b> Ficción
               <br />
               <b>DURACIÓN:</b> 15:00 minutos
@@ -228,20 +248,21 @@ export default function Cortometrajes(props) {
                 mobile={props.mobile}
               />
             </Directors>
-            <Credits>
+            <Credits style={{ marginBottom: "0" }}>
               <b>GÉNERO:</b> Ficción
               <br />
               <b>DURACIÓN:</b> 19:53 min
               <br />
               <b>GUIÓN:</b> Miguel Ángel Fernández
               <br />
-              <b>
-                DIRECTOR DE
-                <br />
-                FOTOGRAFÍA:{" "}
-              </b>{" "}
-              Alejandro Chávez
-              <br />
+              <Encapsulator>
+                <b>
+                  DIRECTOR DE
+                  <br />
+                  FOTOGRAFÍA:{" "}
+                </b>{" "}
+                Alejandro Chávez
+              </Encapsulator>
               <b>CAST:</b> Rodolfo Calderón, Ángel Noe Alvarado, Francisco Pita,
               Ángel Copado, Eduardo Rodríguez
               <br />
@@ -289,20 +310,21 @@ export default function Cortometrajes(props) {
                 mobile={props.mobile}
               />
             </Directors>
-            <Credits>
+            <Credits style={{ marginBottom: "0" }}>
               <b>GÉNERO:</b> Documental
               <br />
               <b>DURACIÓN:</b> 18:23 min
               <br />
               <b>GUIÓN:</b> Ana Díez
               <br />
-              <b>
-                DIRECTOR DE
-                <br />
-                FOTOGRAFÍA:{" "}
-              </b>
-              Alejandro Chávez
-              <br />
+              <Encapsulator>
+                <b>
+                  DIRECTOR DE
+                  <br />
+                  FOTOGRAFÍA:{" "}
+                </b>
+                Alejandro Chávez
+              </Encapsulator>
               <b>CAST:</b> 30 Niños y niñas de 12 a 18 años
               <br />
               <b>MÚSICA:</b> Ricardo García
@@ -345,28 +367,29 @@ export default function Cortometrajes(props) {
               <a href="https://www.youtube.com/watch?v=IpPrRqnBSXU&t=3s" target="_blank">
               Australia</a></b> (nominada al <em>Ariel 2017</em> y ganadora
               del <em>Mejor Cortometraje Latinoamericano de Ficción</em> en el 
-              <em>FICD</em>. Además dirigió los 
+              <em>FICD</em>). Además dirigió los 
               cortometrajes <em>En el Camino, Vendetta, Berrettas y Pop, Chicklick</em> 
               y <em>Paradisio</em>. Ha sido seleccionado en más de 10 
               festivales de cine internacionales, entre ellos <em>Cannes</em>, 
-              <em>Raindance</em>, <em>La Habana</em> y el <em>FICM</em>`}
+              <em>Raindance</em>, <em>La Habana</em> y el <em>FICM</em>.`}
                 mobile={props.mobile}
               />
             </Directors>
-            <Credits>
+            <Credits style={{ marginBottom: "0" }}>
               <b>GÉNERO:</b> Ficción
               <br />
               <b>DURACIÓN:</b> 19:58 min
               <br />
               <b>GUIÓN:</b> Rodrigo Ruíz Patterson
               <br />
-              <b>
-                DIRECTOR DE
-                <br />
-                FOTOGRAFÍA:{" "}
-              </b>
-              Argel Ahumada
-              <br />
+              <Encapsulator>
+                <b>
+                  DIRECTOR DE
+                  <br />
+                  FOTOGRAFÍA:{" "}
+                </b>
+                Argel Ahumada
+              </Encapsulator>
               <b>CAST:</b> Asur Zagada, Francisco Barreiro, Carmen Ramos
               <br />
               <b>MÚSICA:</b> Mateo Gonzalez Bufi
@@ -395,36 +418,43 @@ export default function Cortometrajes(props) {
         </Fade>
       </Section>
       <Section columnStart="2" columnEnd="8">
-        <InfoSection>
-          <Directors>
-            <DirectorCard
-              name={"Ángel Linares"}
-              title={"DIRECTOR"}
-              img={webp ? angelwebp : angel}
-              imdb={"http://www.imdb.com/name/nm9094476/"}
-              mail={"arlinco13@gmail.com"}
-              bio={`Documentalista que ha sido nominado al <em>Ariel</em> y galardonado en el FICM, DOCSMX y el Festival Internacional de Cine de Caracas. Sus documentales se han presentado en <em>La Semaine de la Critique</em> de Cannes, en el Festival de Cine de Sarajevo y en <em>La Habana</em>. Su documental más premiado ha sido <em>Las Montañas Invisibles</em> (2012).`}
-              mobile={props.mobile}
-            />
-          </Directors>
-          <Credits>
-            <b>GÉNERO:</b> Documental
-            <br />
-            <b>DURACIÓN:</b> 18:23 min
-            <br />
-            <b>GUIÓN:</b> Ángel Linares
-            <br />
-            <b>
-              DIRECTOR DE
+        <Fade bottom distance={"40px"}>
+          <InfoSection>
+            <Directors>
+              <DirectorCard
+                name={"Ángel Linares"}
+                title={"DIRECTOR"}
+                img={webp ? angelwebp : angel}
+                imdb={"http://www.imdb.com/name/nm9094476/"}
+                mail={"arlinco13@gmail.com"}
+                bio={`Documentalista que ha sido nominado al <em>Ariel</em> y galardonado 
+                en el FICM, DOCSMX y el Festival Internacional de Cine de Caracas. Sus 
+                documentales se han presentado en <em>La Semaine de la Critique</em> de 
+                Cannes, en el Festival de Cine de Sarajevo y en <em>La Habana</em>. Su 
+                documental más premiado ha sido <em>Las Montañas Invisibles</em> (2012).`}
+                mobile={props.mobile}
+              />
+            </Directors>
+            <Credits style={{ marginBottom: "0" }}>
+              <b>GÉNERO:</b> Documental
               <br />
-              FOTOGRAFÍA:{" "}
-            </b>
-            Renato Martínez Gómez
-            <br />
-            <b>CAST:</b> Aurelina Díaz, Olivia Ponce, Silvia Ponce, Don Enrique,
-            Pedro Galviz
-          </Credits>
-        </InfoSection>
+              <b>DURACIÓN:</b> 18:23 min
+              <br />
+              <b>GUIÓN:</b> Ángel Linares
+              <br />
+              <Encapsulator>
+                <b>
+                  DIRECTOR DE
+                  <br />
+                  FOTOGRAFÍA:{" "}
+                </b>
+                Renato Martínez Gómez
+              </Encapsulator>
+              <b>CAST:</b> Aurelina Díaz, Olivia Ponce, Silvia Ponce, Don
+              Enrique, Pedro Galviz
+            </Credits>
+          </InfoSection>
+        </Fade>
       </Section>
       <Section columnStart="2" columnEnd="6" columnEndSmall="8">
         <Fade bottom>
@@ -454,7 +484,7 @@ export default function Cortometrajes(props) {
               <DirectorCard
                 name={"Gina Herrera"}
                 title={"DIRECTORA"}
-                img={webp? ginawebp : gina}
+                img={webp ? ginawebp : gina}
                 ig={"http://instagram.com/ginaherrerapascal"}
                 imdb={"http://www.imdb.com/name/nm6163973/"}
                 mail={"ginaherrerapascal@gmail.com"}
@@ -462,20 +492,21 @@ export default function Cortometrajes(props) {
                 mobile={props.mobile}
               />
             </Directors>
-            <Credits>
+            <Credits style={{ marginBottom: "0" }}>
               <b>GÉNERO:</b> Ficción
               <br />
               <b>DURACIÓN:</b> 20:56 min
               <br />
               <b>GUIÓN:</b> Gina Herrera, Genaro Peñalosa
               <br />
-              <b>
-                DIRECTORA DE
-                <br />
-                FOTOGRAFÍA:{" "}
-              </b>
-              Flavia Martínez
-              <br />
+              <Encapsulator>
+                <b>
+                  DIRECTORA DE
+                  <br />
+                  FOTOGRAFÍA:{" "}
+                </b>
+                Flavia Martínez
+              </Encapsulator>
               <b>CAST:</b> Nicole Reyes, Matilde Luna, María Lourdes Pérez,
               Catalina López
               <br />

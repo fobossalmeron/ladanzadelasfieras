@@ -10,7 +10,19 @@ const DirectorContainer = styled.div`
   align-items: center;
   text-align: center;
   @media (max-width: 800px) {
-    grid-column-end: span 9;
+    margin-top: ${props => props.double ? "-70px" : "inherit"}
+  }
+  @media (max-width: 735px) {
+    margin-top: ${props => props.double ? "-80px" : "inherit"}
+  }
+  @media (max-width: 527px) {
+    margin-top: ${props => props.double ? "-100px" : "inherit"}
+  }
+  @media (max-width: 437px) {
+    margin-top: ${props => props.double ? "-110px" : "inherit"}
+  }
+  @media (max-width: 376px) {
+    margin-top: ${props => props.double ? "-120px" : "inherit"}
   }
 `;
 
@@ -23,6 +35,14 @@ const InfoDirector = styled.div`
   cursor: pointer;
   transition: 0.3s ease all;
   width: 100%;
+  @media (max-width: 800px) {
+    align-items: start;
+  }
+  @media (max-width: 800px) {
+    position: absolute;
+    left: 0;
+    padding-left: 10px;
+  }
 `;
 
 const HoverDirector = styled.div`
@@ -30,6 +50,7 @@ const HoverDirector = styled.div`
   background-color: ${blackColor};
   width: 100%;
   position: absolute;
+  left:0;
   grid-column-start: ${props => (props.double ? "2" : "1")};
   align-self: flex-start;
   top: 0;
@@ -46,10 +67,7 @@ const HoverDirector = styled.div`
   p {
     grid-column: ${props => (props.double ? "2 / span 4" : "3 / span 4")};
     padding-right: 40px;
-    @media (max-width: 420px) {
-      padding: 5%;
-      box-sizing: border-box;
-    }
+    margin: 0;
     a {
       color: #c64028;
       font-weight: normal;
@@ -66,15 +84,25 @@ const HoverDirector = styled.div`
       z-index: ${props => (props.double ? "1" : "3")};
       transition: opacity 0.4s ease, z-index 0ms ease;
     `}
-  @media (max-width: 800px) {
-    ${props =>
-      props.double &&
-      css`
-        left: 0;
-        grid-column-start: 1;
-        align-items: flex-end;
-        padding: 0 5% 15% 0;
-      `}
+  @media (max-width:800px) {
+    position: relative;
+    margin-top: -30px;
+    padding-bottom: 40px;
+    display:flex;
+    p{
+      grid-column: 1 / span 6;
+      padding-right: 40px;
+      padding-top: 120px;
+      padding-left: 10px;
+      align-self: flex-start;
+      margin: 0;
+    }
+  }
+  @media (max-width: 420px) {
+    align-items: flex-start;
+    margin-left: -20px;
+    padding-left: 20px;
+    width: calc(100% + 40px);
   }
 `;
 
@@ -107,9 +135,10 @@ function DirectorCard(props) {
     <DirectorContainer
       onClick={() => handleShow()}
       onMouseLeave={handleMouseLeave}
+      double={props.double}
     >
       <InfoDirector double={props.double} onMouseEnter={handleMouseEnter}>
-        <Person {...props} hovered={isHovered} />
+        <Person {...props} hovered={isHovered} marginTop isDirector/>
       </InfoDirector>
       <HoverDirector hovered={isHovered} double={props.double}>
         <p dangerouslySetInnerHTML={createBio()} />
