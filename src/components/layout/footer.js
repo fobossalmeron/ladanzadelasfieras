@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import { blackColor, redColor, Heading3 } from "components/layout/pageLayout";
 import axios from "axios";
 import { Transition } from "react-transition-group";
-import styled from "styled-components/macro";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Fade from "react-reveal/Fade";
-import { Heading3, blackColor, redColor } from "components/layout/pageLayout";
-
+import styled from "styled-components/macro";
 import { ReactComponent as credit } from "./../../assets/img/layout/creditos.svg";
 import { ReactComponent as SuccessIcon } from "./../../assets/img/layout/success.svg";
 
@@ -58,10 +57,9 @@ const FooterWrapper = styled.footer`
 `;
 
 const SendButton = styled.button`
-  font-weight: 700
-  ;
-  background-color: #000000;
-  color: #ffffff;
+  font-weight: 700;
+  background-color: #0a0a0a;
+  color: #f9f9f9;
   text-transform: uppercase;
   padding: 9px 17px 9px 17px;
   display: inline-block;
@@ -89,13 +87,15 @@ const FinalCredit = styled.div`
   text-align: center;
   a {
     font-size: 18.5px;
-    background-color: ${blackColor};
-    color: #c64028;
     text-decoration: none;
     padding: 2px 3px 1px 2px;
     margin-left: 4px;
-    :visited {
+    color: #c64028;
+    background-color: #0a0a0a;
+    &:visited,
+    &:link {
       color: #c64028;
+      background-color: #0a0a0a;
     }
   }
 `;
@@ -137,8 +137,8 @@ const SuccessMessage = styled.div`
 `;
 
 const ErroredMessage = styled.div`
-  background-color: ${redColor};
-  color: ${blackColor};
+  background-color: #c64028;
+  color: #0a0a0a;
   padding: 5px;
 `;
 
@@ -191,7 +191,7 @@ function Footer() {
           setTimeout(() => {
             console.log(JSON.stringify(values, null, 2));
             axios
-              .post("https://formcarry.com/s/CRlt34grpHi", values, {
+              .post("https://formcarry.com/s/FOgvW8mFEh2", values, {
                 headers: { Accept: "application/json" }
               })
               .then(function(response) {
@@ -219,6 +219,7 @@ function Footer() {
                   type="text"
                   name="name"
                   placeholder="Escribe tu nombre"
+                  autoComplete="nope"
                 />
                 <ErrorMessage name="name" component={ErroredMessage} />
               </Capture>
@@ -229,6 +230,7 @@ function Footer() {
                   type="text"
                   name="email"
                   placeholder="Escribe tu email"
+                  autoComplete="off"
                 />
                 <ErrorMessage name="email" component={ErroredMessage} />
               </Capture>
@@ -289,7 +291,7 @@ function Footer() {
           )}
         </Transition>
         <MovieCredits />
-        <FinalCredit>
+        <FinalCredit backColor={blackColor}>
           Diseño y desarrollo por
           <a href="https://rodrigosalmeron.mx/">Rodrigo Salmerón</a>
         </FinalCredit>

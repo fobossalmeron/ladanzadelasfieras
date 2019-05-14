@@ -1,4 +1,5 @@
 ## Notes
 
-Ext:
-Alayde cuenta en (https://formcarry.com/register)
+*
+Video para mobile y para desktop
+autofill jumps the content on form

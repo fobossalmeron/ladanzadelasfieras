@@ -118,19 +118,19 @@ const Page = styled.div`
     line-height: 1.2;
   }
 
-  img{
-    width:100%;
-    height:auto;
+  img {
+    width: 100%;
+    height: auto;
   }
 `;
 
 function Layout(props) {
   return (
     <ScrollWrapper mobile={props.mobile}>
-    <Page id={props.id}>
-      {props.children}
-      <Footer />
-    </Page>
+      <Page id={props.id}>
+        {props.children}
+        <Footer />
+      </Page>
     </ScrollWrapper>
   );
 }

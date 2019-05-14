@@ -301,7 +301,7 @@ export default function Cortometrajes(props) {
                 img={webp ? anawebp : ana}
                 imdb={"https://www.imdb.com/name/nm0246781/"}
                 mail={"anadd@telefonica.net"}
-                bio={`Directora española que ha ganado una <em>Diosa de Plata</em>, 
+                bio={`Directora navarra que ha ganado una <em>Diosa de Plata</em>, 
               un <em>Ariel</em> y un <em>Goya</em>. Ha dirigido 3 documentales y 5 
               largometrajes ficción, entre ellos: <em>Ander Eta Yul</em> (1988), 
               <em>Todo está Oscuro</em> (1997) y <em>Elvira Luz Cruz: Pena Máxima</em> 

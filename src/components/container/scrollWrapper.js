@@ -21,13 +21,13 @@ export default function ScrollWrapper(props) {
       native: false,
       section: section,
       ease: 0.1,
+      passive:true,
       vs: {
         mouseMultiplier: 0.3,
         firefoxMultiplier: 30,
         touchMultiplier: 1,
         keyStep: 300
-      },
-      timer: 1000
+      }
     });
     if (!props.mobile) {
       smooth.init();

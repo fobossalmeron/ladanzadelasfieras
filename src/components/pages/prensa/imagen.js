@@ -41,7 +41,6 @@ const Imagen = props => {
   const [hasLoaded, setLoaded] = useState(false);
 
   function doSetLoaded() {
-    console.log("do set loaded in");
     setLoaded(true);
   }
 
