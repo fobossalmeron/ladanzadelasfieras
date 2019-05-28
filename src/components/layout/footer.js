@@ -194,13 +194,16 @@ function Footer() {
               .post("https://formcarry.com/s/FOgvW8mFEh2", values, {
                 headers: { Accept: "application/json" }
               })
+
               .then(function(response) {
                 console.log(response);
               })
+
               .catch(function(error) {
                 console.log(error);
               });
           }, 400);
+
           setSubmitting(false);
         }}
       >
