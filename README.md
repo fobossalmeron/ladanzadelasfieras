@@ -1,6 +1,6 @@
-<p align="left">
+<p align="center">
   <a href="https://ladanzadelasfieras.com/" target='_blank'>
-    <img alt="LDDLF" src="https://ladanzadelasfieras.com/RMLogo.svg" width="220">
+    <img alt="LDDLF" src="https://ladanzadelasfieras.com/RMLogo.svg" width="300">
   </a>
 </p>
 
@@ -8,5 +8,5 @@
 
 ### Visit our social networks!
 
-- 🤹🏻‍♂️[Instagram](https://www.instagram.com/somos.antitesis/)
 - 🙋🏻‍♀️[Facebook](https://www.facebook.com/ladanzadelasfieras/)
+- 🤹🏻‍♂️[Instagram](https://www.instagram.com/somos.antitesis/)
