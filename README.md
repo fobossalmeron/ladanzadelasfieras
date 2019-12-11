@@ -1,9 +1,12 @@
-## Notes
+<p align="left">
+  <a href="https://ladanzadelasfieras.com/" target='_blank'>
+    <img alt="LDDLF" src="https://ladanzadelasfieras.com/RMLogo.svg" width="220">
+  </a>
+</p>
 
-#*
-Video para mobile y para desktop
-autofill jumps the content on form
+[![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=lddlf-website)](https://ladanzadelasfieras.com)
 
-#WPA
-responsive images
-splash screen
+### Visit our social networks!
+
+- 🤹🏻‍♂️[Instagram](https://www.instagram.com/somos.antitesis/)
+- 🙋🏻‍♀️[Facebook](https://www.facebook.com/ladanzadelasfieras/)
