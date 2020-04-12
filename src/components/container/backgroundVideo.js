@@ -50,7 +50,7 @@ function BackgroundVideo(props) {
   const [isPlaying, setPlaying] = useState(false);
   useEffect(() => {
     setPlaying(true);
-  });
+  },[]);
 
   var background = props.webp ? overlayImgWebP : overlayImg 
   return (

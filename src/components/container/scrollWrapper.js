@@ -20,7 +20,7 @@ export default function ScrollWrapper(props) {
       noscrollbar: true,
       native: false,
       section: section,
-      ease: 0.1,
+      ease: 0.17,
       passive:true,
       vs: {
         mouseMultiplier: 0.3,
