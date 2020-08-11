@@ -97,8 +97,8 @@ export default function Inicio(props) {
       <Section columnStart="2" columnEnd="8">
         <Fade bottom>
           <TrailerPlayer
-            //url={"https://player.vimeo.com/video/226767311"}
-            url={"https://player.vimeo.com/video/309818457"}
+            url={"https://player.vimeo.com/video/226767311"}
+            // url={"https://player.vimeo.com/video/309818457"}
             still={props.webp ? trailerstillwebp : trailerstill}
             ratio={"56.3%"}
           />
