@@ -6,7 +6,7 @@ import { whiteColor } from "components/layout/pageLayout";
 
 const Imagen = Loadable({
   loader: () => import("./imagen"),
-  loading: Loader
+  loading: Loader,
 });
 
 const DescargableContainer = styled.li`
@@ -34,7 +34,7 @@ const DescargableContainer = styled.li`
     text-align: center;
     transition: all 0.4s ease;
   }
-  ${props =>
+  ${(props) =>
     props.mobile &&
     css`
       :hover {
@@ -50,6 +50,7 @@ export default function Descargable(props) {
     <DescargableContainer mobile={props.mobile}>
       <a
         target={"_blank"}
+        rel="noopener noreferrer"
         href={process.env.PUBLIC_URL + "/descargables/" + props.file}
       >
         <Imagen src={props.src} alt={props.title} />
