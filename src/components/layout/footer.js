@@ -91,25 +91,29 @@ const FinalCredit = styled.div`
     padding: 2px 3px 1px 2px;
     margin-left: 4px;
     color: #c64028;
-    background-color: #0a0a0a;
+    background-color: transparent;
     &:visited,
     &:link {
       color: #c64028;
-      background-color: #0a0a0a;
+      background-color: transparent;
+    }
+    img {
+      width: auto;
+      height: 10px;
     }
   }
 `;
 
 const defaultStyle = {
   transition: `opacity 400ms ease-in-out`,
-  opacity: 0
+  opacity: 0,
 };
 
 const transitionStyles = {
   entering: { opacity: 1 },
   entered: { opacity: 1 },
   exiting: { opacity: 0 },
-  exited: { opacity: 0 }
+  exited: { opacity: 0 },
 };
 
 const SuccessMessage = styled.div`
@@ -155,7 +159,7 @@ function Success() {
 function Footer() {
   const [hasBeenSent, setSent] = useState(false);
 
-  const EmailForm = props => {
+  const EmailForm = (props) => {
     function doSetSent() {
       setSent(true);
     }
@@ -167,9 +171,9 @@ function Footer() {
         initialValues={{
           name: "",
           email: "",
-          message: ""
+          message: "",
         }}
-        validate={values => {
+        validate={(values) => {
           let errors = {};
           if (!values.email) {
             errors.email = "Olvidaste escribir tu email";
@@ -192,14 +196,14 @@ function Footer() {
             console.log(JSON.stringify(values, null, 2));
             axios
               .post("https://formcarry.com/s/FOgvW8mFEh2", values, {
-                headers: { Accept: "application/json" }
+                headers: { Accept: "application/json" },
               })
 
-              .then(function(response) {
+              .then(function (response) {
                 console.log(response);
               })
 
-              .catch(function(error) {
+              .catch(function (error) {
                 console.log(error);
               });
           }, 400);
@@ -212,7 +216,7 @@ function Footer() {
             style={{
               display: "flex",
               flexDirection: "column",
-              pointerEvents: clickable
+              pointerEvents: clickable,
             }}
           >
             <StyledForm>
@@ -270,11 +274,11 @@ function Footer() {
           Contacto
         </Heading3>
         <Transition in={!hasBeenSent} timeout={400}>
-          {state => (
+          {(state) => (
             <div
               style={{
                 ...defaultStyle,
-                ...transitionStyles[state]
+                ...transitionStyles[state],
               }}
             >
               <EmailForm />
@@ -282,11 +286,11 @@ function Footer() {
           )}
         </Transition>
         <Transition in={hasBeenSent} timeout={400}>
-          {state => (
+          {(state) => (
             <div
               style={{
                 ...defaultStyle,
-                ...transitionStyles[state]
+                ...transitionStyles[state],
               }}
             >
               <Success />
@@ -296,7 +300,9 @@ function Footer() {
         <MovieCredits />
         <FinalCredit backColor={blackColor}>
           Diseño y desarrollo por
-          <a href="https://rodrigosalmeron.mx/">Rodrigo Salmerón</a>
+          <a href="https://acueducto.studio/">
+            <img src="https://acueducto.studio/assets/img/layout/logo.svg" alt="Acueducto, un estudio de diseño estratégico y tecnología en CDMX"/>
+          </a>
         </FinalCredit>
       </Fade>
     </FooterWrapper>
